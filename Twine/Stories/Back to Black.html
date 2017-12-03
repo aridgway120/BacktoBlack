@@ -29,7 +29,9 @@
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">config.history.controls = false;
+
 
 
 
@@ -122,7 +124,9 @@ A man emerges out of a shadow in a bulky trench coat. He opens it, revealing an 
 [[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="23" name="ICT-ItemChosen" tags="" position="268,1499">Your hands are still bound, so you need someone to grab it for you...
 
 [[Ask the NERD|ICTDeath-ItemGetNerd]]
-[[Ask the STONER|ICT-ItemGetStoner]]</tw-passagedata><tw-passagedata pid="24" name="x" tags="" position="1697,3687">PLACEHOLDER CARD</tw-passagedata><tw-passagedata pid="25" name="ICT-ItemGetStoner" tags="" position="263,1635">&lt;&lt;if $item is &quot;Banana&quot;&gt;&gt;
+[[Ask the STONER|ICT-ItemGetStoner]]</tw-passagedata><tw-passagedata pid="24" name="x" tags="" position="1030,3509">PLACEHOLDER CARD
+
+Cards that need text point to this card.</tw-passagedata><tw-passagedata pid="25" name="ICT-ItemGetStoner" tags="" position="263,1635">&lt;&lt;if $item is &quot;Banana&quot;&gt;&gt;
 The stoner grabs the banana and immediately starts to eat it.
 &lt;&lt;else&gt;&gt;
 Despite what you requested, the stoner grabs the banana and immediately starts to eat it.
@@ -520,6 +524,44 @@ As long as you followed our honour code,
 But if you broke the rules again
 This is where the fun begins.&quot;
 
-[[Continue|JK-Attic1]]
+“Oh fuck no” The Jock whispers, before bolting downstairs. Frozen in fear, you wait while the tower leans progressively further to the left. Your need to find something to stabilize the tower, but the room is bare. The implication is clear: two empty slots, and two surviving players. With any luck, that will complete the challenge and you’ll be set free.
 
-</tw-passagedata><tw-passagedata pid="88" name="JK-Attic1" tags="" position="1372,3719">[[x]]</tw-passagedata></tw-storydata>
+[[Try to wedge yourself under the tower|JK-AtticWedge]]
+[[Follow the Jock downstairs|JK-AtticFollowJ]]</tw-passagedata><tw-passagedata pid="88" name="JK-AtticWedge" tags="" position="1173,3673">[Squeeze in]
+
+[[Wait|JK-AtticWait]]
+[[Call for help|x]]
+[[Get out|x]]</tw-passagedata><tw-passagedata pid="89" name="JK-AtticWait" tags="" position="1173,3791">[Wait]
+
+[[Keep waiting|JK-AtticWait2]]
+[[Call for help|x]]
+[[Get out|x]]</tw-passagedata><tw-passagedata pid="90" name="JK-AtticWait2" tags="" position="1170,3908">[Wait2]
+
+[[Keep waiting|JKDeath-AtticWait3]]
+[[Call for help|x]]
+[[Get out|x]]</tw-passagedata><tw-passagedata pid="91" name="JKDeath-AtticWait3" tags="" position="1053,3911">[Wait3]
+
+[[Try again|Reset]]
+
+[[x]]</tw-passagedata><tw-passagedata pid="92" name="JK-AtticFollowJ" tags="" position="1534,3654">[Follow the Jock]
+
+[[Reason with him|JK-ReasonWithJ]]
+[[Run|JK-AtticRunFromJ]]
+
+[[x]]</tw-passagedata><tw-passagedata pid="93" name="JK-ReasonWithJ" tags="" position="1532,3776">You suggest that you could use the remains of the Stoner to fill out the empty space in the tower. 
+
+“You don’t think I checked that? She’s gone. The only bodies left are you and this useless twerp”
+
+He steps menacingly toward you.
+
+[[Beg for your life|JK-AtticBegJ]]
+[[Run|JK-AtticRunFromJ]]
+
+[[x]]</tw-passagedata><tw-passagedata pid="94" name="JK-AtticBegJ" tags="" position="1539,3926">[Beg]
+
+[[Fight!|JKDeath-FightJ]]
+[[Run away|JK-AtticRunFromJ]]
+
+[[x]]</tw-passagedata><tw-passagedata pid="95" name="JK-AtticRunFromJ" tags="" position="1454,4043">[[x]]</tw-passagedata><tw-passagedata pid="96" name="JKDeath-FightJ" tags="" position="1712,3910">Moving instinctively and with skill, the Jock overpowers you easily. Putting you in a headlock, he snaps your neck.
+
+[[Try again|Reset]]</tw-passagedata></tw-storydata>
