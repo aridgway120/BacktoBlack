@@ -1,0 +1,6 @@
+Save location aliasing instructions:
+
+https://twinery.org/forum/discussion/5094/change-default-save-location
+
+You’ll want to make an alias for the
+"…/BacktoBlack/Twine" folder in "~/User/Documents" (or wherever Twine has put its save file location on your computer)
