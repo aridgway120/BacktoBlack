@@ -1,4 +1,4 @@
-Save location aliasing instructions:
+Save location symbolic link / alias instructions:
 
 https://twinery.org/forum/discussion/5094/change-default-save-location
 
