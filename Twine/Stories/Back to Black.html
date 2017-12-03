@@ -28,7 +28,9 @@
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">config.history.controls = false;
+
 
 
 
@@ -120,7 +122,7 @@ A man emerges out of a shadow in a bulky trench coat. He opens it, revealing an 
 [[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="23" name="ICT-ItemChosen" tags="" position="268,1499">Your hands are still bound, so you need someone to grab it for you...
 
 [[Ask the NERD|ICTDeath-ItemGetNerd]]
-[[Ask the STONER|ICT-ItemGetStoner]]</tw-passagedata><tw-passagedata pid="24" name="x" tags="" position="1640,2572">PLACEHOLDER CARD</tw-passagedata><tw-passagedata pid="25" name="ICT-ItemGetStoner" tags="" position="263,1635">&lt;&lt;if $item is &quot;Banana&quot;&gt;&gt;
+[[Ask the STONER|ICT-ItemGetStoner]]</tw-passagedata><tw-passagedata pid="24" name="x" tags="" position="1697,3687">PLACEHOLDER CARD</tw-passagedata><tw-passagedata pid="25" name="ICT-ItemGetStoner" tags="" position="263,1635">&lt;&lt;if $item is &quot;Banana&quot;&gt;&gt;
 The stoner grabs the banana and immediately starts to eat it.
 &lt;&lt;else&gt;&gt;
 Despite what you requested, the stoner grabs the banana and immediately starts to eat it.
@@ -332,7 +334,7 @@ Well... Okay.
 
 With a loud pop, the screen goes black, and smoke begins to rise out of the back.
 
-[[Leave the room|JK-Hallway]]</tw-passagedata><tw-passagedata pid="59" name="JK-Hallway" tags="" position="1213,1128">You and the others exit the room and find yourself in a hallway. It seems you&#x27;re in a decrepit house. There are stairways leading up and down, and a closed door. Under the stairwell is a storage closet. All except the basement stairs are blocked off by inhuman, red eyed, dwarf-like creatures, who are sweating profusely. A smell akin to garlic mixed with untreated sewage assails your nostrils, and you realize that it is coming from the menacing miniature creatures.
+[[Leave the room|JK-Hallway]]</tw-passagedata><tw-passagedata pid="59" name="JK-Hallway" tags="" position="1213,1128">You and the others exit the room and find yourself in a hallway. It seems you&#x27;re in a decrepit house. There are stairways leading up and down, and a closed door. Under the stairwell is a storage closet. All except the basement stairs are blocked off by inhuman, red eyed, dwarf-like creatures, who are sweating profusely. They are armed with guns and makeshift weapons. A smell akin to garlic mixed with untreated sewage assails your nostrils, and you realize that it is coming from the menacing miniature creatures.
 
 You catch the gaze of one of them and it screams out, &quot;ALL CHEATERS DIE... SLOWLY&quot;, in a shrill voice.
 
@@ -380,7 +382,7 @@ Who should face the challenge?
 [[Draw Straws|JK-BasementChallengeIntro][$JKchallenger = &quot;Straws&quot;]]
 [[Volunteer Yourself|JK-BasementChallengeIntro][$JKchallenger = &quot;Self&quot;]]</tw-passagedata><tw-passagedata pid="67" name="JK-BasementChallengeIntro" tags="" position="1249,1644">&lt;&lt;if $JKchallenger is &quot;Straws&quot;&gt;&gt;You pull the shortest straw. Crap.&lt;&lt;/if&gt;&gt; &lt;&lt;if $JKchallenger is &quot;Self&quot;&gt;&gt;You volunteer.&lt;&lt;/if&gt;&gt;
 
-Once you slip through the cracked door, it slams shut behind you. There is no handle on this side. You are in a furnace. There are gas flames around the edges of the room. &lt;&lt;if $BHmet is 0&gt;&gt;In the center, there is a small red-eyed beast with humanoid form. It has a hunch back and one long pointed tooth. It sits before a game of battleship, and wiggles its single eyebrow at you suggestively. It speaks.
+Once you slip through the cracked door, it slams shut behind you. There is no handle on this side. You are in a furnace. There are gas flames around the edges of the room. &lt;&lt;if $BHmet is 0&gt;&gt;In the center, there is a small red-eyed beast with grey skin. It is quite small, about the size of a toddler, with a form that is almost humanoid, save for an oversized, misshapen head. It has a hunch back and one long pointed tooth. It sits before a game of battleship, and wiggles its single eyebrow at you suggestively. It speaks.
 
 &quot;Hello, we are the one known as Blockhead. Care for a game?&quot;
 &lt;&lt;/if&gt;&gt; &lt;&lt;if $BHmet is 1&gt;&gt;In the center, Blockhead sits before a game of battleship.
@@ -414,7 +416,7 @@ The whole room erupts in flames. Blockhead disappears in a puff of smoke, and yo
 “Hey. Hey... Try B5”
 [[Try B5|JK-BasementChallenge5]]
 [[Ignore Her|JKDeath-BasementChallengeHonest]]
-</tw-passagedata><tw-passagedata pid="73" name="JK-Kitchen" tags="" position="1751,2304">You, the Jock and the Nerd follow Blockhead into the kitchen. In one corner, there is a safe, and in the other a makeshift guillotine comprised of a heavy butcher-knife , some crudely nailed-together cutting boards and an egg-timer. On the other side of the guillotine is the board game &quot;Operation&quot; enclosed in a see through box. There are a pair of light-saber chopsticks on the counter. 
+</tw-passagedata><tw-passagedata pid="73" name="JK-Kitchen" tags="" position="1387,2683">You, the Jock and the Nerd follow Blockhead into the kitchen. In one corner there is a safe, and in the other, a small makeshift guillotine comprised of a heavy butcher-knife, some crudely nailed-together cutting boards, and an egg-timer. On the other side of the guillotine is the board game &quot;Operation&quot; enclosed in a see through box. You&#x27;ll have to put your arms under the blade to play. There is a pair of light-saber chopsticks on the counter. 
 
 Blockhead emerges and chants a riddle to you:
 
@@ -430,9 +432,15 @@ This Operation costs more than degrees!&quot;
 The Nerd volunteers for the challenge, explaining that he is studying to be a doctor.
 
 [[Let the Nerd handle it|JK-KitchenChallenge1]]
-[[Volunteer yourself|JKDeath-KitchenChallenge]]</tw-passagedata><tw-passagedata pid="74" name="JK-KitchenChallenge1" tags="" position="1672,2466">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="75" name="JKDeath-KitchenChallenge" tags="" position="1850,2482">You grab the chopsticks from the counter and slowly wedge yourself into the contraption. You begin to strap your arm into the guillotine. It is shoddily made, and wiggles at every touch. This seems rigged. If you can get your arm in without agitating the blade, you can probably stall for a while.
+[[Volunteer yourself|JKDeath-KitchenChallenge]]</tw-passagedata><tw-passagedata pid="74" name="JK-KitchenChallenge1" tags="" position="1378,2867">The nerd grabs the chopsticks from the counter, and nervously walks to the makeshift contraption. Sweat is dripping down his face as he closes his eyes and takes in 3 heavy breaths. 
 
-You put your arm in, but your hands are shaking like crazy. The egg timer begins to run. The entire contraption feels like it&#x27;s about to collapse any second now. Sweat is pouring down your face as you steadily reach for the funny bone. With your shaky hands you immediately hit the detector on the board game and your face turns pale. The giant blades swing down and lop off both your hands. You fall back screaming in agony as blood pours from your wrists. The last thing you hear as your vision goes dark is the jock saying “Is he ok?”.
+He places his hands in the box, tripping the mechanism that starts the egg timer. 
+You and the Jock anxiously watch as the Nerd performs his life or death operation. So far things are going well; he pulls out a funny bone and places it in the weighted tray. You can’t just sit by and watch, you feel the need to do something.
+
+[[Help keep him calm|JK-KitchenChallenge2]]
+[[Try to disable the trap|JKDeath-KitchenInterfere]]</tw-passagedata><tw-passagedata pid="75" name="JKDeath-KitchenChallenge" tags="" position="1242,2758">You grab the chopsticks from the counter and slowly slide your arms under the contraption. It is shoddily made, and wiggles at every touch. This seems rigged. If you can get your arm in without agitating the blade, you can probably stall for a while.
+
+You pick up the chopsticks, your hands trembling. The egg timer begins to run. The entire contraption feels like it&#x27;s about to collapse. Sweat is pouring down your face as you steadily reach for the funny bone. With your shaky hands, you bump the detector while trying to remove the piece. Your face turns pale. With a click, the blades release, plunging through your wrists. You fall back, screaming in agony as blood pours from your arms. The last thing you hear as your vision goes black is the jock saying “Is he ok?”.
 
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="76" name="JK-BasementChallenge5" tags="" position="1415,2154">With little time left, you decide to take a chance and use the Stoner’s advice. Blockhead luckily doesn’t notice the Stoner since you’ve done a good job ignoring her up until now. 
 
@@ -444,7 +452,7 @@ The stoner whispers “A7”
 [[Ignore Her|JK-BasementChallenge6][$JKcheater=0]]
 </tw-passagedata><tw-passagedata pid="77" name="JKDeath-BasementChallengeHonest" tags="" position="1277,2151">Ignoring the Stoner, you manage to miss three times in a row. Your vision begins to darken, and suddenly you feel your head smack against the table. The last thing you see as the heat saps the remaining life from your body is the final few grains of sand tumbling through the hourglass.
 
-[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="78" name="JK-BasementChallenge6" tags="" position="1415,2284">With only a few seconds left, you &lt;&lt;if $JKcheater is 1&gt;&gt;take the Stoner’s help and utter “A7”. But it’s a miss! The sand in the hourglass runs out and Blockhead unleashes a terrible smelly belch. The room erupts into flames. With this, the Stoner lets out a squeal.
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="78" name="JK-BasementChallenge6" tags="" position="1521,2261">With only a few seconds left, you &lt;&lt;if $JKcheater is 1&gt;&gt;take the Stoner’s help and utter “A7”. But it’s a miss! The sand in the hourglass runs out and Blockhead unleashes a terrible smelly belch. The room erupts into flames. With this, the Stoner lets out a squeal.
 &lt;&lt;/if&gt;&gt;&lt;&lt;if $JKcheater is 0&gt;&gt;choose to ignore the Stoner. Instead, you try “B7”, which turns out to be a hit! You’ve won. Blockhead seems pleased and is doing a dance around the furnace room squealing “FAIR AND SQUARE, FAIR AND SQUARE, FAIR AND SQUARE”. Then, out of the corner of its eye, it notices the stoner smoking in the darkness by the door.
 &lt;&lt;/if&gt;&gt;
 Blockhead turns its head all the way around and screams, “THERE CAN ONLY BE ONE. CHEATER CHEATER CHEATER CHEATER CHEATER CHEATER CHEATER!” &lt;&lt;if $JKcheater is 0&gt;&gt;He unleashes a terrible smelly belch, and the room erupts into flames.&lt;&lt;/if&gt;&gt;
@@ -452,16 +460,66 @@ Blockhead turns its head all the way around and screams, “THERE CAN ONLY BE ON
 Time to get out of here!
 
 [[Try to grab the Stoner|JK-BasementChallenge7][$JKsaveStoner=1]]
-[[Every man for himself!|JK-BasementChallenge7][$JKsaveStoner=0]]</tw-passagedata><tw-passagedata pid="79" name="JK-BasementChallenge7" tags="" position="1417,2414">&lt;&lt;if $JKsaveStoner is 1&gt;&gt;It seems like it wouldn’t be too hard for you to both get out of here.&lt;&lt;/if&gt;&gt;You make a beeline for the door, trying to shake off the flames that are tickling the bottoms of your pants. &lt;&lt;if $JKsaveStoner is 1&gt;&gt;You grab the Stoner to bring her with you, but she pushes you away, excited to have finally lit her joint.
+[[Every man for himself!|JK-BasementChallenge7][$JKsaveStoner=0]]</tw-passagedata><tw-passagedata pid="79" name="JK-BasementChallenge7" tags="" position="1399,2290">&lt;&lt;if $JKsaveStoner is 1&gt;&gt;It seems like it wouldn’t be too hard for you to both get out of here.&lt;&lt;/if&gt;&gt;You make a beeline for the door, trying to shake off the flames that are tickling the bottoms of your pants. &lt;&lt;if $JKsaveStoner is 1&gt;&gt;You grab the Stoner to bring her with you, but she pushes you away, excited to have finally lit her joint.
 
 She &lt;&lt;/if&gt;&gt;&lt;&lt;if $JKsaveStoner is 0&gt;&gt;The Stoner &lt;&lt;/if&gt;&gt;seems remarkably unfazed as she catches fire. She laughs and skips around the furnace as her body burns up, and you make your escape.
 
-[[That was a close one|JK-BasementSuccess]]</tw-passagedata><tw-passagedata pid="80" name="JK-BasementSuccess" tags="" position="1416,2545">You emerge from the furnace room, your clothes somewhat singed, but relatively unharmed. The Jock and Nerd are waiting mouths agape. 
+[[That was a close one|JK-BasementSuccess]]</tw-passagedata><tw-passagedata pid="80" name="JK-BasementSuccess" tags="" position="1276,2368">You emerge from the furnace room, your clothes somewhat singed, but relatively unharmed. The Jock and Nerd are waiting mouths agape. 
 
 “What the hell?! We have to get out of here, this is insane” Says the Jock. The Nerd just stares at you in traumatized silence.
 
 [[Examine Jenga pieces|JKDeath-Pieces]]
-[[Head back upstairs|JK-Hallway2]]</tw-passagedata><tw-passagedata pid="81" name="JK-Hallway2" tags="" position="1416,2695">[[x]]
-Test change
+[[Head back upstairs|JK-HallwayReturn]]</tw-passagedata><tw-passagedata pid="81" name="JK-HallwayReturn" tags="" position="1388,2523">Blockhead appears as you mount the last stair and beckons you to the Kitchen. Other Blockheads appear around the entrances to the other rooms, and won’t let you in. Guess you’ll have to play their game a bit longer.
 
-Test change (github)</tw-passagedata></tw-storydata>
+[[Follow Blockhead|JK-Kitchen]]</tw-passagedata><tw-passagedata pid="82" name="JKDeath-KitchenInterfere" tags="" position="1243,2897">You examine the contraption, fiddling with the strings and springs. You pull at the Butcher knife handle and you hear a clicking sound. The Egg Timer starts to speed up! A blockhead tumbles out of an oven and rolls to you. It stands up and points a giant chef’s knife at you 
+
+“You touch my knife, you lose your Life!”
+
+It lunges at you, plunging the knife into your chest, and fiendishly squeals, “Oopsy.”
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="83" name="JK-KitchenChallenge2" tags="" position="1378,3017">You notice the amount of sweat pouring from the Nerd’s forehead. The sweat is going into his eyes causing them to redden and blink repeatedly; it’s obscuring his vision and causing him pain. You scour the kitchen for anything to help him. You find a cloth, which you run under a tap, and a pair of tongs. You rush to the Nerd’s aid and start padding the sweat from his forehead and eyes. He awkwardly purrs and whispers to you “no one has ever touched me like this before”. A single tear rolls down your right eye as you continue padding his face in disgust.  
+
+You anxiously look at the egg timer; you’re almost out of time. The nerd carefully grabs the last piece, the wishbone, and places it on the tray. The weight of the collective pieces pushes the tray down, turning the board around 180 degrees, revealing a key taped to the back of the game. The nerd quickly pries the key off the game and pulls out both his hands out to give you the key. His face turns pale as he turns back and realizes he left the limited edition lightsaber chopsticks in the box (signed and used by Mark Hamill himself during the shoot of “The Empire Strikes Back”). The Nerd thrusts his right hand back into the box, but before he can pull out the the sticks the egg timer rings and the blade drops, along with the Nerds hand.
+
+Everyone stares in horror as as you watch the Nerd scream and squeal on the ground in pain and agony. He is bleeding out profusely and is moments away from death.
+
+
+“Am - Am I gonna make it guys? Am I gonna be okay? I feel cold…”, The Nerd says as tears run down his face.
+
+With no words, you all stare at the Nerd will soft saddened faces and he gets the message.
+
+“Di- Did I look cool at least? ”, The Nerd says as tears run down his face.
+
+You reply, “The coolest. Just like Mark Hamill.”
+
+The Nerd makes the biggest smile and one final tear of joy rolls down his face moments before his death.
+
+You all stare at the Nerd in remembrance one more time before returning to the task at hand.
+
+[[Leave the Kitchen|JK-HallwayFinal]]</tw-passagedata><tw-passagedata pid="84" name="JK-HallwayFinal" tags="" position="1370,3253">Shaken, you and the Jock exit the kitchen. He looks remarkably on-edge.
+
+“There’s only two of us left... What do you think the chances are we both survive?” The Jock asks you, avoiding your gaze.
+
+The Blockheads have vanished, leaving the stairs and closet unguarded.
+
+[[Try the closet|JK_HallCloset]]
+[[Head upstairs|JK-Attic]]</tw-passagedata><tw-passagedata pid="85" name="JK_HallCloset" tags="" position="1256,3370">You try and open the closet but the door is stuck. It feels like there’s someone behind there actively pulling it closed every time you turn the doorknob. Hmm.
+
+[[Head upstairs|JK-Attic]]</tw-passagedata><tw-passagedata pid="86" name="JK-Attic" tags="" position="1372,3419">You take the staircase which leads upwards. As you climb the stairs, a smell of rot and flesh assault your senses. Incredibly nauseated, you keep climbing, determined to reach the top.
+
+The upper floor is much larger than you expected, stretching upward like the inside of a tower. In front of you is a pile of human bodies intricately stacked upon each-other in rows of 3 going upwards. However, at the base there is only one body in the center. The tower is swaying.
+
+[[What the hell...|JK-AtticRiddle]]</tw-passagedata><tw-passagedata pid="87" name="JK-AtticRiddle" tags="" position="1372,3569">A Blockhead appears again:
+
+&quot;Monopoly, Yahtzee, Sorry, Chess
+They all stack up but Jenga’s the best
+Block by block and limb by limb,
+Life’s a fish, you flop or swim
+From here you’re free to hit the road
+As long as you followed our honour code,
+But if you broke the rules again
+This is where the fun begins.&quot;
+
+[[Continue|JK-Attic1]]
+
+</tw-passagedata><tw-passagedata pid="88" name="JK-Attic1" tags="" position="1372,3719">[[x]]</tw-passagedata></tw-storydata>
