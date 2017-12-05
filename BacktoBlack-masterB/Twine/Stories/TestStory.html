@@ -1,0 +1,244 @@
+<tw-storydata name="TestStory" startnode="7" creator="Twine" creator-version="2.1.3" ifid="3E610642-5310-4A14-A1CD-4A12A49BD54D" format="SugarCube" format-version="2.20.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.aliens:hover {
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">config.history.controls = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script><tw-passagedata pid="1" name="Scenario-1-Start" tags="" position="364,569">You awake in a freezing cold, dark space. Your hands and feet are bound and there is an opaque mask blocking your vision. The icy floor shakes intermittently. Slight noises can be heard around you; they sound human.
+[[Scream for help|ICTDeath-ScreamBlind]]
+[[Try to free yourself|ICT-BlindfoldOff]]
+[[Listen]]</tw-passagedata><tw-passagedata pid="2" name="ICTDeath-ScreamBlind" tags="" position="641,503">The car stops, and you can hear footsteps approaching the back door. It opens suddenly, and you hear a gun being cocked. The last words you hear are “BOOM HEADSHOT”.
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="3" name="Listen" tags="" position="495,580">Lying still and listening, you hear faint music. There&#x27;s something... familiar about it. Behind you, there are muffled voices. You only catch snippets, but it&#x27;s clear you&#x27;ve been kidnapped.
+[[Great.|ICT-AfterListen]]</tw-passagedata><tw-passagedata pid="4" name="ICT-BlindfoldOff" tags="" position="385,815">You make little progress with your bonds, but your efforts knock your mask askew, revealing the room.
+
+As your eyes adjust to the darkness, you see you’re in a small, enclosed space with freezers lining the walls. Your gaze settles on a poster of children enjoying iced treats, bringing the startling realization that you&#x27;re on the floor of an ice cream truck.
+
+Looking around, you see the huddled shapes of four other people. Three are still bound and unconscious.
+In the nearest corner is a nerdy-looking guy, who has managed to knock his mask off and is rocking back and forth rhythmically in silence. His hands are still bound.
+Across from you is a a girl, also maskless, who has managed to loosen her wrist restraints and free her hands. It kind of looks like she’s rolling a joint.
+[[Talk to the Nerd|ICT-NerdConv1]]
+[[Talk to the Stoner|ICT-StonerConv1]]
+[[Scream for help|ICTDeath-ScreamNoBlind]]</tw-passagedata><tw-passagedata pid="5" name="ICT-AfterListen" tags="" position="497,697">The floor continues to shake occasionally, and your fingers feel stiff from the cold.
+[[Scream for help|ICTDeath-ScreamBlind]]
+[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="825,142">&lt;&lt;set $deathCounter to $deathCounter +1&gt;&gt;
+You have died $deathCounter times.
+[[Start|Scenario-1-Start]]
+</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="827,25">&lt;&lt;set $deathCounter to 0&gt;&gt;
+Flame here:
+&lt;img src=&quot;images/flame.jpg&quot; alt=&quot;failure!&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
+[[BEGIN|Scenario-1-Start]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
+The driver yells “Shut the front door! Don’t make me come back there and kill all of you little brats!” This seems to worsen the Nerd’s condition.
+[[Headbutt some sense into him|ICT-NerdHeadbutt]]
+[[Tell him to calm down|ICT-NerdCalmDown]]</tw-passagedata><tw-passagedata pid="9" name="ICT-StonerConv1" tags="" position="500,913">You catch the attention of the girl in front of you. &quot;Hey!&quot; she mumbles, still holding the joint between her lips. &quot;Do you know where we are?&quot; You begin to smell the faint scent of propane coming from her direction.
+[[Stop Her|ICTDeath-StonerInterfere]]
+[[Let Her Smoke|ICT-StonerSmoke]]
+[[Ask Her To Untie You|ICT-StonerConv2]]</tw-passagedata><tw-passagedata pid="10" name="ICTDeath-ScreamNoBlind" tags="" position="628,685">The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “BOOM HEADSHOT”
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="11" name="ICTDeath-StonerInterfere" tags="" position="659,883">You throw your body at her and knock the lighter out of her hand. Unfortunately, an ember falls into an open cannister of gasoline nearby. It immediately ignites, killing everyone.
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="12" name="ICT-StonerSmoke" tags="" position="386,962">She burns through the joint faster than you though possible, and before you can ask her to untie you, she’s giggling to herself in a haze. It seems like she can’t hear anything you’re saying...
+It would have been really nice if she’d untied you first.
+[[Better try talking to the NERD, I suppose.|ICT-NerdConv1]]</tw-passagedata><tw-passagedata pid="13" name="ICT-StonerConv2" tags="" position="573,1079">&quot;Sure, but only if you help me smoke this&quot; she says with an obnoxious laugh.
+[[Let&#x27;s toke it up!|ICT-StonerConv3a]]
+[[I D.A.R.E. not touch that.|ICT-StonerConv3b]]</tw-passagedata><tw-passagedata pid="14" name="ICT-StonerConv3a" tags="" position="594,1242">&quot;Let&#x27;s toke it up brotherrrrr!&quot; you shout in your best Hulk Hogan voice.
+
+She unties you, and you smoke together. After, you unmask and unbind all the others in the back of the truck. There is a Jock and an Instigator, as well as the Nerd who looks like he’s calmed down a bit.
+[[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="15" name="ICT-StonerConv3b" tags="" position="429,1086">She finishes smoking without you, and before you can ask her to untie you she’s become blissfully unresponsive.
+[[Better try talking to the NERD, I suppose.|ICT-NerdConv1]]</tw-passagedata><tw-passagedata pid="16" name="ICT-PART2" tags="" position="523,1839">&lt;&lt;set $InstAlive to 1&gt;&gt;
+The truck suddenly stops and everyone is tossed to the front of the truck. The Nerd hits his head hard, knocking him unconscious and bloody. The Stoner squeals “wheeeeeee!” and seems completely unphased. The sudden jolt wakes up the instigator, who has been silent and motionless up to this point. You can’t really tell if the Jock is alive or dead; his body remains totally limp.
+
+You hear the sound of something hissing, and notice a sudden drop in temperature. Before it was cold but now it’s absolutely freezing. In just a t-shirt and shorts, you’re not going to last long.
+
+[[Talk to INSTIGATOR|ICT2-InstConv1]]
+[[Scream for help|ICTDeath-ScreamNoBlind]]
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="17" name="ICT-NerdHeadbutt" tags="" position="169,1234">The nerd’s breathing slows a bit, and the jolt has left him silent.
+[[Give him a life-affirming pep talk|ICT-NerdPepTalk]]
+[[Tell him you don&#x27;t want his annoying, nasally voice to be the last thing you hear|ICTDeath-NerdFreakout]]</tw-passagedata><tw-passagedata pid="18" name="ICT-NerdCalmDown" tags="" position="337,1236">[text needed]</tw-passagedata><tw-passagedata pid="19" name="ICT-NerdPepTalk" tags="" position="125,1353">In an attempt to recalibrate the nerds focus, you ask him in a calm manner, “is there anyone you can go home to?” He mentions his 11 month relationship he’s having with someone online. He continues passionately explaining every excruciating detail about their intimate life to you. After about 10 minutes you look him in the eyes and tell him “you’ll see her again, [nerd], but I need your help”. He takes a deep breath and finally says “I’m in.”
+[[You ask him if he can see anything of use|ICT-DavidAppears]]</tw-passagedata><tw-passagedata pid="20" name="ICTDeath-NerdFreakout" tags="" position="298,1340">He starts hyperventilating and lets out a bloodcurdling scream. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “BOOM HEADSHOT”
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="21" name="ICT-DavidAppears" tags="" position="128,1495">Before the nerd can respond, a mysterious voice echoes through the truck.
+
+“I&#x27;ve got the solution to you predicament”.
+
+A man emerges out of a shadow in a bulky trench coat. He opens it, revealing an array of items hidden on the inside. To your surprise, there’s another trench coat underneath. He has a knife, a ripe banana, and a copy of Half Life 3.
+
+“You get one, the others are for my nephews upcoming bar mitzvah”
+
+[[Choose Banana|ICT-ItemChosen][$item = &quot;Banana&quot;]]
+[[Choose Knife|ICT-ItemChosen][$item = &quot;Knife&quot;]]
+[[Choose Half Life 3|ICT-ItemChosen][$item = &quot;HL3&quot;]]
+
+[[Sorry, I Don’t Dance With the Devil|ICT-NoDevilDancing]]
+</tw-passagedata><tw-passagedata pid="22" name="ICT-NoDevilDancing" tags="" position="136,1631">The mysterious asian throws a smoke bomb down and disappears, leaving behind the smell of cheap scotch and cigarettes.
+[[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="23" name="ICT-ItemChosen" tags="" position="268,1499">Your hands are still bound, so you need someone to grab it for you...
+
+[[Ask the NERD|ICTDeath-ItemGetNerd]]
+[[Ask the STONER|ICT-ItemGetStoner]]</tw-passagedata><tw-passagedata pid="24" name="x" tags="" position="555,2604">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="25" name="ICT-ItemGetStoner" tags="" position="263,1635">&lt;&lt;if $item is &quot;Banana&quot;&gt;&gt;
+The stoner grabs the banana and immediately starts to eat it.
+&lt;&lt;else&gt;&gt;
+Despite what you requested, the stoner grabs the banana and immediately starts to eat it.
+&lt;&lt;/if&gt;&gt;
+“What? Munchies”
+
+The mysterious asian throws a smoke bomb down and disappears, leaving behind the smell of cheap scotch and cigarettes.
+
+[[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="26" name="ICTDeath-ItemGetNerd" tags="" position="399,1504">&lt;&lt;if $item is &quot;HL3&quot;&gt;&gt;The nerd enthusiastically grabs the copy of the game and begins to screech. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “IT DOESN’T EXIST”
+[[Try again|Reset]]
+&lt;&lt;else&gt;&gt;
+You ask the NERD to help you, but upon looking up, he spots the copy of Half Life 3 and begins to screech. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “IT DOESN’T EXIST”
+[[Try again|Reset]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="ICT-KeepLooking" tags="" position="179,1764">Stumped, you begin to look around the truck again. You notice that the NERD’S shiny Batman belt looks pretty sharp.
+
+[[Rub bindings on his belt|ICT-NerdBelt]]
+</tw-passagedata><tw-passagedata pid="28" name="ICT-NerdBelt" tags="" position="280,1834">You’re now free. Now you unbind the nerd, the Jock and the instigator. The Stoner is just giggling to herself in the corner, completely useless. The Jock seems to be asleep and isn’t moving no matter how much you shake him.
+
+[[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="29" name="ICT2-InstConv1" tags="" position="354,1998">The instigator surveys the surroundings with a blank expression, then turns and looks you dead in the eye.
+
+“What do you want?”
+
+He seems agitated.
+
+[[Ask if he wants to work together|ICT2-InstWorkTogether]]
+[[Play it cool|ICT2-InstPlayItCool]]
+[[Provoke him|ICT2-InstProvoke]]
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="30" name="ICT2-InstWorkTogether" tags="" position="184,2102">“By the looks of it, chances of survival aren’t so good in here. Only one of us is going to make it out alive, and it’s going to be me.”
+[[Play it cool|ICT2-InstPlayItCool]]
+[[Provoke him|ICT2-InstProvoke]]
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="31" name="ICT2-InstPlayItCool" tags="" position="290,2188">You make a lighthearted joke about the situation, trying to ease the tension. He grabs you by the wrist and squeezes tight
+
+“Do you think this is funny? Do you?! It’s pretty cold in here.. bet I could use your guts as a scarf.”
+
+[[Provoke him|ICT2-InstProvoke]]
+[[Defuse the situation|ICTDeath-InstDefuse]]
+[[Scream for help|ICTDeath-ScreamNoBlind]]</tw-passagedata><tw-passagedata pid="32" name="ICT2-InstProvoke" tags="" position="404,2196">You give him a light shove, which he seems to enjoy. He letss out a cackle.
+
+“I won’t die without experiencing the joy of having a loser’s blood on my hands, one last time!”
+
+The Stoner is observing gleefully, chanting “fight fight fight” between giggles.
+
+[[FIGHT!|ICT2-Fight]]
+[[Defuse the situation|ICTDeath-InstDefuse]]
+[[Cower</tw-passagedata><tw-passagedata pid="33" name="ICT2-InvestigateCold" tags="" position="781,2093">The hissing sound is coming from one of the freezers. There is a small tube protruding from the case, but the freezers are padlocked. You try and yank the tube out but it’s so cold you instantly get frostbite on your hands.
+
+[[Look for something to plug the hole with|ICT2-PlugHole]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]
+&lt;&lt;if $InstAlive is 1&gt;&gt;
+[[Talk to INSTIGATOR|ICT2-InstConv1]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="ICT2-WakeUpJock" tags="" position="547,2065">He doesn’t move. It doesn’t seem like he’s alive, but he’s still breathing. The Stoner looks at him and mutters something that sounds kind of like “Chloroform Allergy”, but could have also been “Terraform Strategy”. It’s hard to tell. She’s just smiling to herself.
+
+&lt;&lt;if $InstAlive is 1&gt;&gt;
+[[Talk to INSTIGATOR|ICT2-InstConv1]]
+&lt;&lt;/if&gt;&gt;
+[[Scream for help|ICTDeath-ScreamNoBlind]]
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]</tw-passagedata><tw-passagedata pid="35" name="ICTDeath-InstDefuse" tags="" position="322,2340">As you begin a speech on the value of pacifism and teamwork in times of hardship, the Instigator grabs you by the neck and begins mercilessly choking you while you squirm. The last thing you see is his twisted grin, ecstatic from witnessing your life drain away before of him.
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="36" name="ICT2-Fight" tags="" position="464,2344">&lt;&lt;set $InstAlive to 0&gt;&gt;
+There&#x27;s no time to waste!
+
+You step back and unleash a deadly high-kick onto the Instigator’s skull, but he’s so meaty that it barely phases him. However, while he is stronger, you are faster. You manage to dodge most of his attacks, while your srtikes seem to have little affect. It’s a stalemate.
+
+The Stoner, completely captivated by the scene pulls a banana out of her hat that she’s been stashing. She eats the whole thing, tossing the peel on the ground as you and the instigator have the battle of your lives. Seizing the opportunity, you manage to push the banana peel under the instigator. He slips, smashing his head on a protruding corner of the truck, and crumples in a heap. 
+
+You let out a victory cry, and the Stoner applauds.
+
+The good news is that the heat of battle seems to have warmed you up some, although you don’t know how long it will last.
+
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]
+[[Scream for help|ICTDeath-ScreamNoBlind]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="37" name="ICT2-PlugHole" tags="" position="781,2244">The tube is too narrow to fit a finger into. You try stuffing your shirt into it but the freezing gas permeates through anyways. The longer you spend trying to plug this tube, the colder and more frost-bitten you get.
+
+[[Keep Looking|ICTDeath-FlammableFreon]]
+[[Give up|ICT2-GiveUp]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]
+&lt;&lt;if $InstAlive is 1&gt;&gt;
+[[Talk to INSTIGATOR|ICT2-InstConv1]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="ICTDeath-FlammableFreon" tags="" position="936,2193">The tube looks like you might be able to melt it shut if you had something hot to seal the rubber with. You spot the Stoner’s lighter on the ground and grab it. The moment you click it to test if it works, the entire truck combusts, killing everyone. Turns out some refrigerants are flammable.
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="39" name="ICT2-GiveUp" tags="" position="781,2394">It seems like there aren’t really any more options. The cold and lifeless bodies of the Instigator and Jock lay desolately on the ground. The nerd is unconscious but still breathing. The Stoner still seems unphased, but she isn’t giggling as much anymore. You know you’re going to freeze to death soon if you don’t do anything.
+&lt;&lt;set $waitCounter to 1&gt;&gt;
+[[Wait|ICT2-Wait]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]</tw-passagedata><tw-passagedata pid="40" name="ICT2-Wait" tags="" position="706,2544">&lt;&lt;if $waitCounter is 1&gt;&gt;
+It&#x27;s pretty chilly in here...
+[[Wait|ICT2-Wait][$waitCounter = $waitCounter+1]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]
+&lt;&lt;elseif $waitCounter is 2&gt;&gt;
+The stoner looks bored.
+[[Wait|ICT2-Wait][$waitCounter = $waitCounter+1]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]
+&lt;&lt;elseif $waitCounter is 3&gt;&gt;
+Your breathing begins to slow.
+[[Wait|ICT2-Wait][$waitCounter = $waitCounter+1]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]
+&lt;&lt;elseif $waitCounter is 4&gt;&gt;
+Your vision darkens.
+[[Wait|ICT2-Wait][$waitCounter = $waitCounter+1]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]
+&lt;&lt;elseif $waitCounter is 5&gt;&gt;
+As you feel your life-force slowly exiting your body, the back doors of the Ice Cream truck swing open. There is a group of your friends waiting for you. “SURPRISE! HAPPY BIRTHDAY!”.
+The stoner cries out “I love parties!” 
+
+Wait, what???
+
+The once limp bodies of the Instigator, Jock and Nerd get up and they embrace you. No one died. Friendship is forever. It was just a prank bro!
+
+SCENARIO COMPLETE
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="ICT2-HanSolo" tags="" position="856,2544">You look at the jock with an idea that both disgusts you and delights you.
+He’s still alive and he’s a pretty big guy... bet it’s nice and warm in there.
+[[Gut him with your bare hands|ICT2-HanSolo2][$han = &quot;hands&quot;]]
+[[Gnaw your way in|ICT2-HanSolo2][$han = &quot;teeth&quot;]]</tw-passagedata><tw-passagedata pid="42" name="ICT2-HanSolo2" tags="" position="856,2694">&lt;&lt;if $han is &quot;hands&quot;&gt;&gt;
+You begin to claw at the Jock’s belly. It’s going to take a while but, it’s the only option you have. The warm blood brings feeling back to your fingers.
+&lt;&lt;elseif $han is &quot;teeth&quot;&gt;&gt;
+Face first, you plunge your face into the belly of the Jock. Human flesh isn’t as tough as you imagined to be… actually it’s pretty easy to get big chunks out. You just have to use enough jaw power. Your face is coated in blood.
+&lt;&lt;/if&gt;&gt;
+“Hahahaa what are you doing!? Lol I have a knife if you want”, the Stoner chimes in.
+
+So now she’s willing to help
+[[Cut him open|ICT2-HanSolo3]]
+</tw-passagedata><tw-passagedata pid="43" name="ICT2-HanSolo3" tags="" position="855,2845">Once the Jock is a giant human body-bag, you climb inside him. You tell the Stoner to grab the unconscious Nerd so the three of you can fit and hopefully live for long enough in his warmth (and off of his entrails) to be rescued. As soon as you’re all cozy inside,  the back doors of the Ice Cream truck swing open. There is a group of your friends waiting for you. “SURPRISE, HAPPY BIRTHDAY!”.  
+
+Wait, what???
+
+The Nerd and the Instigator wake up from their respective head head-injuries and begin to scream. 
+
+“YOU KILLED MIKEY! I CAN’T BELIEVE YOU KILLED MIKEY!”
+
+The stoner cries out “I love parties!!” 
+
+Turns out friendship is not forever, you monster.
+
+SCENARIO COMPLETE</tw-passagedata></tw-storydata>
