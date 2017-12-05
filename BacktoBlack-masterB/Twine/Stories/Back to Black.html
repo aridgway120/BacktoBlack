@@ -1,0 +1,605 @@
+<tw-storydata name="Back to Black" startnode="7" creator="Twine" creator-version="2.1.3" ifid="3E610642-5310-4A14-A1CD-4A12A49BD54D" format="SugarCube" format-version="2.20.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.aliens:hover {
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">config.history.controls = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script><tw-passagedata pid="1" name="Scenario-1-Start" tags="" position="364,569">You awake in a freezing cold, dark space. Your hands and feet are bound and there is an opaque mask blocking your vision. The icy floor shakes intermittently. Slight noises can be heard around you; they sound human.
+&lt;&lt;audio &quot;music1&quot; loop play&gt;&gt;
+[[Scream for help|ICTDeath-ScreamBlind]]
+[[Try to free yourself|ICT-BlindfoldOff]]
+[[Listen|ICT-Listen]]</tw-passagedata><tw-passagedata pid="2" name="ICTDeath-ScreamBlind" tags="" position="641,503">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+The car stops, and you can hear footsteps approaching the back door. It opens suddenly, and you hear a gun being cocked. The last words you hear are “BOOM HEADSHOT”.
+&lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="3" name="ICT-Listen" tags="" position="495,580">Lying still and listening, you hear faint music. There&#x27;s something... familiar about it. Behind you, there are muffled voices. You only catch snippets, but it&#x27;s clear you&#x27;ve been kidnapped.
+[[Great.|ICT-AfterListen]]</tw-passagedata><tw-passagedata pid="4" name="ICT-BlindfoldOff" tags="" position="385,815">You make little progress with your bonds, but your efforts knock your mask askew, revealing the room.
+
+As your eyes adjust to the darkness, you see you’re in a small, enclosed space with freezers lining the walls. Your gaze settles on a poster of children enjoying iced treats, bringing the startling realization that you&#x27;re on the floor of an ice cream truck.
+
+Looking around, you see the huddled shapes of four other people. Three are still bound and unconscious.
+In the nearest corner is a nerdy-looking guy, who has managed to knock his mask off and is rocking back and forth rhythmically in silence. His hands are still bound.
+Across from you is a a girl, also maskless, who has managed to loosen her wrist restraints and free her hands. It kind of looks like she’s rolling a joint.
+[[Talk to the Nerd|ICT-NerdConv1]]
+[[Talk to the Stoner|ICT-StonerConv1]]
+[[Scream for help|ICTDeath-ScreamNoBlind]]</tw-passagedata><tw-passagedata pid="5" name="ICT-AfterListen" tags="" position="497,697">The floor continues to shake occasionally, and your fingers feel stiff from the cold.
+[[Scream for help|ICTDeath-ScreamBlind]]
+[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="825,142">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;&lt;set $deathCounter to $deathCounter +1&gt;&gt;
+
+&lt;&lt;audio &quot;aah&quot; play&gt;&gt;
+You have died $deathCounter times.
+[[Start S1|Scenario-1-Start]]
+[[Start S2|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,25">&lt;&lt;set $deathCounter to 0&gt;&gt;
+Flame here:
+&lt;img src=&quot;images/flame.jpg&quot; alt=&quot;failure!&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
+[[BEGIN S1|Scenario-1-Start]]
+[[BEGIN S2|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
+The driver yells “Shut the front door! Don’t make me come back there and kill all of you little brats!” This seems to worsen the Nerd’s condition.
+[[Headbutt some sense into him|ICT-NerdHeadbutt]]
+[[Tell him to calm down|ICT-NerdCalmDown]]</tw-passagedata><tw-passagedata pid="9" name="ICT-StonerConv1" tags="" position="500,913">You catch the attention of the girl in front of you. &quot;Hey!&quot; she mumbles, still holding the joint between her lips. &quot;Do you know where we are?&quot; You begin to smell the faint scent of propane coming from her direction.
+[[Stop Her|ICTDeath-StonerInterfere]]
+[[Let Her Smoke|ICT-StonerSmoke]]
+[[Ask Her To Untie You|ICT-StonerConv2]]</tw-passagedata><tw-passagedata pid="10" name="ICTDeath-ScreamNoBlind" tags="" position="628,685">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “BOOM HEADSHOT”
+&lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="11" name="ICTDeath-StonerInterfere" tags="" position="659,883">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+You throw your body at her and knock the lighter out of her hand. Unfortunately, an ember falls into an open cannister of gasoline nearby. It immediately ignites, killing everyone.
+&lt;&lt;audio &quot;explode&quot; play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="12" name="ICT-StonerSmoke" tags="" position="386,962">She burns through the joint faster than you though possible, and before you can ask her to untie you, she’s giggling to herself in a haze. It seems like she can’t hear anything you’re saying...
+It would have been really nice if she’d untied you first.
+[[Better try talking to the NERD, I suppose.|ICT-NerdConv1]]</tw-passagedata><tw-passagedata pid="13" name="ICT-StonerConv2" tags="" position="573,1079">&quot;Sure, but only if you help me smoke this&quot; she says with an obnoxious laugh.
+[[Let&#x27;s toke it up!|ICT-StonerConv3a]]
+[[I D.A.R.E. not touch that.|ICT-StonerConv3b]]</tw-passagedata><tw-passagedata pid="14" name="ICT-StonerConv3a" tags="" position="594,1242">&quot;Let&#x27;s toke it up brotherrrrr!&quot; you shout in your best Hulk Hogan voice.
+
+She unties you, and you smoke together. After, you unmask and unbind all the others in the back of the truck. There is a Jock and an investigator, as well as the Nerd who looks like he’s calmed down a bit.
+[[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="15" name="ICT-StonerConv3b" tags="" position="429,1086">She finishes smoking without you, and before you can ask her to untie you she’s become blissfully unresponsive.
+[[Better try talking to the NERD, I suppose.|ICT-NerdConv1]]</tw-passagedata><tw-passagedata pid="16" name="ICT-PART2" tags="" position="523,1839">&lt;&lt;set $InstAlive to 1&gt;&gt;
+The truck suddenly stops and everyone is tossed to the front of the truck. The Nerd hits his head hard, knocking him unconscious and bloody. The Stoner squeals “wheeeeeee!” and seems completely unphased. The sudden jolt wakes up the investigator, who has been silent and motionless up to this point. You can’t really tell if the Jock is alive or dead; his body remains totally limp.
+
+You hear the sound of something hissing, and notice a sudden drop in temperature. Before it was cold but now it’s absolutely freezing. In just a t-shirt and shorts, you’re not going to last long.
+
+[[Talk to investigator|ICT2-InstConv1]]
+[[Scream for help|ICTDeath-ScreamNoBlind]]
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="17" name="ICT-NerdHeadbutt" tags="" position="169,1234">The nerd’s breathing slows a bit, and the jolt has left him silent.
+[[Give him a life-affirming pep talk|ICT-NerdPepTalk]]
+[[Tell him you don&#x27;t want his annoying, nasally voice to be the last thing you hear|ICTDeath-NerdFreakout]]</tw-passagedata><tw-passagedata pid="18" name="ICT-NerdCalmDown" tags="" position="339,1205">[text needed]</tw-passagedata><tw-passagedata pid="19" name="ICT-NerdPepTalk" tags="" position="125,1353">In an attempt to recalibrate the nerds focus, you ask him in a calm manner, “is there anyone you can go home to?” He mentions his 11 month relationship he’s having with someone online. He continues passionately explaining every excruciating detail about their intimate life to you. After about 10 minutes you look him in the eyes and tell him “you’ll see her again, [nerd], but I need your help”. He takes a deep breath and finally says “I’m in.”
+[[You ask him if he can see anything of use|ICT-DavidAppears]]</tw-passagedata><tw-passagedata pid="20" name="ICTDeath-NerdFreakout" tags="" position="298,1340">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+He starts hyperventilating and lets out a bloodcurdling scream. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “BOOM HEADSHOT”
+&lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="21" name="ICT-DavidAppears" tags="" position="128,1495">Before the nerd can respond, a mysterious voice echoes through the truck.
+
+“I&#x27;ve got the solution to you predicament”.
+
+A man emerges out of a shadow in a bulky trench coat. He opens it, revealing an array of items hidden on the inside. To your surprise, there’s another trench coat underneath. He has a knife, a ripe banana, and a copy of Half Life 3.
+
+“You get one, the others are for my nephews upcoming bar mitzvah”
+
+[[Choose Banana|ICT-ItemChosen][$item = &quot;Banana&quot;]]
+[[Choose Knife|ICT-ItemChosen][$item = &quot;Knife&quot;]]
+[[Choose Half Life 3|ICT-ItemChosen][$item = &quot;HL3&quot;]]
+
+[[Sorry, I Don’t Dance With the Devil|ICT-NoDevilDancing]]
+</tw-passagedata><tw-passagedata pid="22" name="ICT-NoDevilDancing" tags="" position="136,1631">The mysterious asian throws a smoke bomb down and disappears, leaving behind the smell of cheap scotch and cigarettes.
+[[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="23" name="ICT-ItemChosen" tags="" position="268,1499">Your hands are still bound, so you need someone to grab it for you...
+
+[[Ask the NERD|ICTDeath-ItemGetNerd]]
+[[Ask the STONER|ICT-ItemGetStoner]]</tw-passagedata><tw-passagedata pid="24" name="x" tags="" position="1297,4522">PLACEHOLDER CARD
+
+Cards that need text point to this card.</tw-passagedata><tw-passagedata pid="25" name="ICT-ItemGetStoner" tags="" position="263,1635">&lt;&lt;if $item is &quot;Banana&quot;&gt;&gt;
+The stoner grabs the banana and immediately starts to eat it.
+&lt;&lt;else&gt;&gt;
+Despite what you requested, the stoner grabs the banana and immediately starts to eat it.
+&lt;&lt;/if&gt;&gt;
+“What? Munchies”
+
+The mysterious asian throws a smoke bomb down and disappears, leaving behind the smell of cheap scotch and cigarettes.
+
+[[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="26" name="ICTDeath-ItemGetNerd" tags="" position="399,1504">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;&lt;if $item is &quot;HL3&quot;&gt;&gt;The nerd enthusiastically grabs the copy of the game and begins to screech. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “IT DOESN’T EXIST”
+&lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
+[[Try again|Reset]]
+&lt;&lt;else&gt;&gt;
+You ask the NERD to help you, but upon looking up, he spots the copy of Half Life 3 and begins to screech. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “IT DOESN’T EXIST”
+&lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
+[[Try again|Reset]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="ICT-KeepLooking" tags="" position="179,1764">Stumped, you begin to look around the truck again. You notice that the NERD’S shiny Batman belt looks pretty sharp.
+
+[[Rub bindings on his belt|ICT-NerdBelt]]
+</tw-passagedata><tw-passagedata pid="28" name="ICT-NerdBelt" tags="" position="280,1834">You’re now free. Now you unbind the nerd, the Jock and the investigator. The Stoner is just giggling to herself in the corner, completely useless. The Jock seems to be asleep and isn’t moving no matter how much you shake him.
+
+[[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="29" name="ICT2-InstConv1" tags="" position="354,1998">The investigator surveys the surroundings with a blank expression, then turns and looks you dead in the eye.
+
+“What do you want?”
+
+He seems agitated.
+
+[[Ask if he wants to work together|ICT2-InstWorkTogether]]
+[[Play it cool|ICT2-InstPlayItCool]]
+[[Provoke him|ICT2-InstProvoke]]
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="30" name="ICT2-InstWorkTogether" tags="" position="184,2102">“By the looks of it, chances of survival aren’t so good in here. Only one of us is going to make it out alive, and it’s going to be me.”
+[[Play it cool|ICT2-InstPlayItCool]]
+[[Provoke him|ICT2-InstProvoke]]
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="31" name="ICT2-InstPlayItCool" tags="" position="290,2188">You make a lighthearted joke about the situation, trying to ease the tension. He grabs you by the wrist and squeezes tight
+
+“Do you think this is funny? Do you?! It’s pretty cold in here.. bet I could use your guts as a scarf.”
+
+[[Provoke him|ICT2-InstProvoke]]
+[[Defuse the situation|ICTDeath-InstDefuse]]
+[[Scream for help|ICTDeath-ScreamNoBlind]]</tw-passagedata><tw-passagedata pid="32" name="ICT2-InstProvoke" tags="" position="404,2196">You give him a light shove, which he seems to enjoy. He letss out a cackle.
+
+“I won’t die without experiencing the joy of having a loser’s blood on my hands, one last time!”
+
+The Stoner is observing gleefully, chanting “fight fight fight” between giggles.
+
+[[FIGHT!|ICT2-Fight]]
+[[Defuse the situation|ICTDeath-InstDefuse]]</tw-passagedata><tw-passagedata pid="33" name="ICT2-InvestigateCold" tags="" position="781,2093">The hissing sound is coming from one of the freezers. There is a small tube protruding from the case, but the freezers are padlocked. You try and yank the tube out but it’s so cold you instantly get frostbite on your hands.
+
+[[Look for something to plug the hole with|ICT2-PlugHole]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]
+&lt;&lt;if $InstAlive is 1&gt;&gt;
+[[Talk to investigator|ICT2-InstConv1]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="ICT2-WakeUpJock" tags="" position="547,2065">He doesn’t move. It doesn’t seem like he’s alive, but he’s still breathing. The Stoner looks at him and mutters something that sounds kind of like “Chloroform Allergy”, but could have also been “Terraform Strategy”. It’s hard to tell. She’s just smiling to herself.
+
+&lt;&lt;if $InstAlive is 1&gt;&gt;
+[[Talk to investigator|ICT2-InstConv1]]
+&lt;&lt;/if&gt;&gt;
+[[Scream for help|ICTDeath-ScreamNoBlind]]
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]</tw-passagedata><tw-passagedata pid="35" name="ICTDeath-InstDefuse" tags="" position="322,2340">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+As you begin a speech on the value of pacifism and teamwork in times of hardship, the investigator grabs you by the neck and begins mercilessly choking you while you squirm. The last thing you see is his twisted grin, ecstatic from witnessing your life drain away before of him.
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="36" name="ICT2-Fight" tags="" position="464,2344">&lt;&lt;set $InstAlive to 0&gt;&gt;
+There&#x27;s no time to waste!
+
+You step back and unleash a deadly high-kick onto the investigator’s skull, but he’s so meaty that it barely phases him. However, while he is stronger, you are faster. You manage to dodge most of his attacks, while your srtikes seem to have little affect. It’s a stalemate.
+
+The Stoner, completely captivated by the scene pulls a banana out of her hat that she’s been stashing. She eats the whole thing, tossing the peel on the ground as you and the investigator have the battle of your lives. Seizing the opportunity, you manage to push the banana peel under the investigator. He slips, smashing his head on a protruding corner of the truck, and crumples in a heap. 
+
+You let out a victory cry, and the Stoner applauds.
+
+The good news is that the heat of battle seems to have warmed you up some, although you don’t know how long it will last.
+
+[[Look for the source of the temperature drop|ICT2-InvestigateCold]]
+[[Scream for help|ICTDeath-ScreamNoBlind]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="37" name="ICT2-PlugHole" tags="" position="781,2244">The tube is too narrow to fit a finger into. You try stuffing your shirt into it but the freezing gas permeates through anyways. The longer you spend trying to plug this tube, the colder and more frost-bitten you get.
+
+[[Keep Looking|ICTDeath-FlammableFreon]]
+[[Give up|ICT2-GiveUp]]
+[[Try to wake up the JOCK|ICT2-WakeUpJock]]
+&lt;&lt;if $InstAlive is 1&gt;&gt;
+[[Talk to investigator|ICT2-InstConv1]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="ICTDeath-FlammableFreon" tags="" position="646,2257">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+The tube looks like you might be able to melt it shut if you had something hot to seal the rubber with. You spot the Stoner’s lighter on the ground and grab it. The moment you click it to test if it works, the entire truck combusts, killing everyone. Turns out some refrigerants are flammable.
+&lt;&lt;audio &quot;explode&quot; play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="39" name="ICT2-GiveUp" tags="" position="781,2394">It seems like there aren’t really any more options. The cold and lifeless bodies of the investigator and Jock lay desolately on the ground. The nerd is unconscious but still breathing. The Stoner still seems unphased, but she isn’t giggling as much anymore. You know you’re going to freeze to death soon if you don’t do anything.
+&lt;&lt;set $waitCounter to 1&gt;&gt;
+[[Wait|ICT2-Wait]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]</tw-passagedata><tw-passagedata pid="40" name="ICT2-Wait" tags="" position="706,2544">&lt;&lt;if $waitCounter is 1&gt;&gt;
+It&#x27;s pretty chilly in here...
+[[Wait|ICT2-Wait][$waitCounter = $waitCounter+1]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]
+&lt;&lt;elseif $waitCounter is 2&gt;&gt;
+The stoner looks bored.
+[[Wait|ICT2-Wait][$waitCounter = $waitCounter+1]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]
+&lt;&lt;elseif $waitCounter is 3&gt;&gt;
+Your breathing begins to slow.
+[[Wait|ICT2-Wait][$waitCounter = $waitCounter+1]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]
+&lt;&lt;elseif $waitCounter is 4&gt;&gt;
+Your vision darkens.
+[[Wait|ICT2-Wait][$waitCounter = $waitCounter+1]]
+[[Channel your inner Han Solo|ICT2-HanSolo]]
+&lt;&lt;elseif $waitCounter is 5&gt;&gt;
+As you feel your life-force slowly exiting your body, the back doors of the Ice Cream truck swing open. There is a group of your friends waiting for you. “SURPRISE! HAPPY BIRTHDAY!”.
+The stoner cries out “I love parties!” 
+
+Wait, what???
+
+The once limp bodies of the investigator, Jock and Nerd get up and they embrace you. No one died. Friendship is forever. It was just a prank bro!
+
+SCENARIO COMPLETE
+&lt;&lt;audio &quot;yay&quot; play&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="ICT2-HanSolo" tags="" position="856,2544">You look at the jock with an idea that both disgusts you and delights you.
+He’s still alive and he’s a pretty big guy... bet it’s nice and warm in there.
+[[Gut him with your bare hands|ICT2-HanSolo2][$han = &quot;hands&quot;]]
+[[Gnaw your way in|ICT2-HanSolo2][$han = &quot;teeth&quot;]]</tw-passagedata><tw-passagedata pid="42" name="ICT2-HanSolo2" tags="" position="856,2694">&lt;&lt;if $han is &quot;hands&quot;&gt;&gt;
+You begin to claw at the Jock’s belly. It’s going to take a while but, it’s the only option you have. The warm blood brings feeling back to your fingers.
+&lt;&lt;elseif $han is &quot;teeth&quot;&gt;&gt;
+Face first, you plunge your face into the belly of the Jock. Human flesh isn’t as tough as you imagined to be… actually it’s pretty easy to get big chunks out. You just have to use enough jaw power. Your face is coated in blood.
+&lt;&lt;/if&gt;&gt;
+“Hahahaa what are you doing!? Lol I have a knife if you want”, the Stoner chimes in.
+
+So now she’s willing to help
+[[Cut him open|ICT2-HanSolo3]]
+</tw-passagedata><tw-passagedata pid="43" name="ICT2-HanSolo3" tags="" position="855,2845">Once the Jock is a giant human body-bag, you climb inside him. You tell the Stoner to grab the unconscious Nerd so the three of you can fit and hopefully live for long enough in his warmth (and off of his entrails) to be rescued. As soon as you’re all cozy inside,  the back doors of the Ice Cream truck swing open. There is a group of your friends waiting for you. “SURPRISE, HAPPY BIRTHDAY!”.  
+
+Wait, what???
+
+The Nerd and the investigator wake up from their respective head head-injuries and begin to scream. 
+
+“YOU KILLED MIKEY! I CAN’T BELIEVE YOU KILLED MIKEY!”
+
+The stoner cries out “I love parties!!” 
+
+Turns out friendship is not forever, you monster.
+
+SCENARIO COMPLETE
+
+&lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Scenario-2-Start" tags="" position="1069,201">You’re in a dark room illuminated only by the flickering static of and old CRT TV.
+&lt;&lt;set $JKtalkedToJock to 0&gt;&gt;&lt;&lt;set $JKtalkedToNerd to 0&gt;&gt;&lt;&lt;set $JKtalkedToStoner to 0&gt;&gt;&lt;&lt;set $JKtalkedToInst to 0&gt;&gt;&lt;&lt;set $BHmet to 1&gt;&gt;
+&lt;&lt;audio &quot;music2&quot; loop play&gt;&gt;
+[[Look Around|JK-LookAround]]
+[[Call Out|JK-CallOut]]
+[[Wait|JK-Wait]]</tw-passagedata><tw-passagedata pid="45" name="JK-LookAround" tags="" position="963,344">There are four other people with you, all standing in silence. A nerd, a jock, an investigator and a stoner. Everyone is waiting in an apprehensive silence.
+
+After some time, the TV screen turns a familiar shade of beige. Like alder wood, almost. A voice crackles through half-broken speakers,
+
+&quot;Well Hello, I bet you are wondering why you are here. You’ve all spent so much time having fun on your phone&#x27;s, going online to fight your friends and strangers, taking pleasure out of these debaucherous modern games that destroy the essence of what leisure used to be. You’re here because you’ve forgotten what it’s like to play a wholesome game with the whole family. Like JENGA for instance. Well, I’m here to teach you a little lesson about teamwork and family fun. Good luck. And let’s hope your tower doesn’t topple&quot;
+
+[[The Transmission Ends|JK-AfterTransmission]]</tw-passagedata><tw-passagedata pid="46" name="JK-CallOut" tags="" position="1086,343">&quot;Hey, what’s going on here?&quot;, you shout. For a long while there is no reply.
+
+Eventually, the TV screen turns a familiar shade of beige. Like alder wood, almost. A voice crackles through half-broken speakers,
+
+&quot;Well Hello. I bet you’re wondering why you are here. You’ve all spent so much time having fun on your phones, going online to fight your friends and strangers, taking pleasure out of these debaucherous modern games that destroy the essence of what leisure used to be. You’re here because you’ve forgotten what it’s like to play a wholesome game with the whole family. Like JENGA for instance. Well, I’m here to teach you a little lesson about teamwork and family fun. Good luck, and let’s hope your tower doesn’t topple&quot;
+
+[[The Transmission Ends|JK-AfterTransmission]]</tw-passagedata><tw-passagedata pid="47" name="JK-Wait" tags="" position="1212,344">After some time, the TV screen turns a familiar shade of beige. Like alder wood, almost. A voice crackles through half-broken speakers,
+
+&quot;Well Hello. I bet you’re wondering why you are here. You’ve all spent so much time having fun on your phones, going online to fight your friends and strangers, taking pleasure out of these debaucherous modern games that destroy the essence of what leisure used to be. You’re here because you’ve forgotten what it’s like to play a wholesome game with the whole family. Like JENGA for instance. Well, I’m here to teach you a little lesson about teamwork and family fun. Good luck, and let’s hope your tower doesn’t topple&quot;
+
+[[The Transmission Ends|JK-AfterTransmission]]</tw-passagedata><tw-passagedata pid="48" name="JK-AfterTransmission" tags="" position="1082,465">The television clicks off, retaining a slight glow, and a pale yellow light flickers on, illuminating the room. 
+
+The room is empty save for the archaic &#x27;80s television and your fellow victims. Windowless, the only exit is a simple wooden door.
+
+[[Talk to Jock|JK-Jock1]]
+[[Talk to Stoner|JK-Stoner1]]
+[[Talk to investigator|JK-Inst1]]
+[[Talk to Nerd|JK-Nerd1]]
+[[Check the door|JKDeath-CheckDoor]]</tw-passagedata><tw-passagedata pid="49" name="JK-Jock1" tags="" position="901,601">&quot;I don&#x27;t know what the heck is going on, but I gotta find some protein quick. I have a workout later!&quot;
+&lt;&lt;set $JKtalkedToJock to 1&gt;&gt;
+[[Continue|JK-ConvHub]]</tw-passagedata><tw-passagedata pid="50" name="JK-Stoner1" tags="" position="1031,600">&quot;This is kind of funny isn’t it? Ahahaha. Someone should check that door out. Oh me? Nah. I’d need to be really medicated, if you know what I mean. Why don’t you check it out?&quot;
+&lt;&lt;set $JKtalkedToStoner to 1&gt;&gt;
+[[Continue|JK-ConvHub]]</tw-passagedata><tw-passagedata pid="51" name="JK-Nerd1" tags="" position="1161,599">He doesn&#x27;t look so good.
+
+&quot;What is that guy talking about? What is going on?! I have to get back home man... my computer... my save games...&quot;
+&lt;&lt;set $JKtalkedToNerd to 1&gt;&gt;
+[[Continue|JK-ConvHub]]</tw-passagedata><tw-passagedata pid="52" name="JKDeath-CheckDoor" tags="" position="1410,489">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+The door opens without a problem, but outside, you find yourself looking down the barrel of a shotgun at a sinister-looking dwarf. You meet his percing gaze, and he squeezes the trigger.
+&lt;&lt;audio &quot;shotty&quot; play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="53" name="JK-Inst1" tags="" position="1291,600">&quot;I GOTTA get out of here man.  Maybe we should split up and look for clues.&quot;
+&lt;&lt;set $JKtalkedToInst to 1&gt;&gt;
+[[&quot;Why don&#x27;t you try opening the door?&quot;|JK-InstCheckDoor]]
+[[Talk to someone else|JK-ConvHub]]</tw-passagedata><tw-passagedata pid="54" name="JK-ConvHub" tags="" position="1405,709">Well that wasn&#x27;t very helpful. Maybe someone else has an idea.
+&lt;&lt;if $JKtalkedToJock is 0&gt;&gt;
+[[Talk to Jock|JK-Jock1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToStoner is 0&gt;&gt;
+[[Talk to Stoner|JK-Stoner1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToInst is 0&gt;&gt;
+[[Talk to investigator|JK-Inst1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToNerd is 0&gt;&gt;
+[[Talk to Nerd|JK-Nerd1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToInst is 1&gt;&gt;
+[[Ask investigator to open the door|JK-InstCheckDoor]]&lt;&lt;/if&gt;&gt;
+[[Check the door|JKDeath-CheckDoor]]</tw-passagedata><tw-passagedata pid="55" name="JK-InstCheckDoor" tags="" position="1200,749">&quot;So you want me to take charge? Smart choice. You can go mess around with the TV and see if you can find any more information. Just stay out of my way!&quot;
+
+He approaches the door and pulls it open. After a brief moment, you hear a gunshot, and the investigator tumbles to the ground. The door slowly creaks open, but whoever fired the gun is gone. A brief examination reveals a gaping hole in his chest.
+
+You don&#x27;t think he&#x27;s going to make it.
+
+[[You hear a click as the TV springs to life|JK-TV2]]</tw-passagedata><tw-passagedata pid="56" name="JK-TV2" tags="" position="1200,879">The TV finishes powering on and the voice within cackles.
+
+&quot;So now you see what is at stake. 
+
+You’re all here because of your sins as gamers.
+
+You have one challenge: Work together as a team, acting in harmony with a positive competitive spirit, or face your death.&quot;
+
+[[&quot;What the hell does that mean?&quot;|JK-TV2Elaborate]]
+[[&quot;Shut up, you crazy disembodied voice!&quot;|JK-TV2ShutUp]]</tw-passagedata><tw-passagedata pid="57" name="JK-TV2Elaborate" tags="" position="1126,995">Surprisingly, the voice seems to hear you.
+
+&quot;The Nerd who plays violently, mindless all day.
+The Jock with his balls, competitive and trained
+The Stoner, well, I don’t know, she’s OK
+And YOU? What kind of games do you even play?&quot;
+
+Well... Okay.
+
+[[Leave the room|JK-Hallway]]</tw-passagedata><tw-passagedata pid="58" name="JK-TV2ShutUp" tags="" position="1278,998">Surprisingly, the voice seems to hear you.
+
+&quot;Fine then, I guess you don&#x27;t need any hints. Let&#x27;s see how you fare with my challenges.&quot;
+
+With a loud pop, the screen goes black, and smoke begins to rise out of the back.
+
+[[Leave the room|JK-Hallway]]</tw-passagedata><tw-passagedata pid="59" name="JK-Hallway" tags="" position="1213,1128">You and the others exit the room and find yourself in a hallway. It seems you&#x27;re in a decrepit house. There are stairways leading up and down, and a closed door. Under the stairwell is a storage closet. All except the basement stairs are blocked off by inhuman, red eyed, dwarf-like creatures, who are sweating profusely. They are armed with guns and makeshift weapons. A smell akin to garlic mixed with untreated sewage assails your nostrils, and you realize that it is coming from the menacing miniature creatures.
+
+You catch the gaze of one of them and it screams out, &quot;ALL CHEATERS DIE... SLOWLY&quot;, in a shrill voice.
+
+Better stay away from these guys.
+
+[[Check out the basement|JK-FollowDwarf]]</tw-passagedata><tw-passagedata pid="60" name="JK-FollowDwarf" tags="" position="1087,1125">You move toward the staircase. The Nerd protests timidly.
+
+&quot;There&#x27;s no way I&#x27;m going down there. Only an idiot would-&quot;
+
+&quot;Exactly. Follow me, idiots! Prepare yourselves for some basement exploraton&quot;, the Jock exclaims.
+
+[[Head downstairs|JK-Basement]]</tw-passagedata><tw-passagedata pid="61" name="JK-Basement" tags="" position="1092,1241">As you descend, you hear a strange whirring sound, which gradually gets louder. 
+Your party ventures down the creaking stairs, descending much deeper than you had imagined. As your descend further, the temperature increases, becoming rather unpleasant. By the time you reach the bottom, everyone is drenched in sweat.
+
+The basement is dim and hazy. Once you reach the bottom you see blood spatter and jenga pieces scattered around the floor.
+
+[[Examine Jenga pieces|JKDeath-Pieces]]
+[[Search the basement|JK-SearchBasement]]</tw-passagedata><tw-passagedata pid="62" name="JKDeath-Pieces" tags="" position="963,1119">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+Looking closer, you see that some of the pieces have been arranged to make a message. It says, “look up”. Your gaze shoots upward, and you lock eyes with the dwarf, concealed in the rafters. He stares at you with glowing red eyes, releasing the trigger of a shotgun as he says “BOOM, HEADSHOT!”
+&lt;&lt;audio &quot;shotty&quot; play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="63" name="JK-SearchBasement" tags="" position="962,1250">In one corner are several flats of water stacked on top of each other. There is a closed door, from which the whirring noise emanates, and a lengthy message spray-painted in bright pink on the wall. The scattered Jenga pieces lay in a cluster on the other side of the room
+
+[[Examine Jenga pieces|JKDeath-Pieces]]
+[[Read Message|JK-BasementRiddle]]
+[[Check out the Door|JK-BasementExamineDoor]]</tw-passagedata><tw-passagedata pid="64" name="JK-BasementRiddle" tags="" position="959,1380">The message on the wall reads: 
+
+&quot;Come on in if you dare
+But only one can fit in here
+Join the battle but don’t you sink
+Don’t you cheat, don’t you blink
+Respect the rules, respect the game
+Cause this is more than just my name
+Have fun and don’t fret
+All cheaters burn in a fatal sweat.&quot;
+
+[[Examine Jenga pieces|JKDeath-Pieces]]
+[[Check out the Door|JK-BasementExamineDoor]]</tw-passagedata><tw-passagedata pid="65" name="JK-BasementExamineDoor" tags="" position="1101,1501">“My guess is there&#x27;s a challenge behind this door. Are we all going to go in, or just one of us?”,  says the Jock.
+
+[[All go in|JK-BasementAllIn][$JKchallenger=&quot;all&quot;]]
+[[Send a scout|JK-BasementAllIn][$JKchallenger=&quot;one&quot;]]
+</tw-passagedata><tw-passagedata pid="66" name="JK-BasementAllIn" tags="" position="1100,1632">You touch the doorknob but it’s blistering hot and burns your skin. You try kicking the door, and it opens a little. &lt;&lt;$if JKchallenger is &quot;all&quot;&gt;&gt;The room is small, so not everyone can fit inside. Its interior glows red.
+&lt;&lt;/if&gt;&gt;&lt;&lt;$if JKchallenger is &quot;one&quot;&gt;&gt;The room is cramped, and has a warm red glow.
+&lt;&lt;/if&gt;&gt;
+Who should face the challenge?
+&lt;&lt;audio &quot;fires&quot; volume 0.2 loop play&gt;&gt;
+[[Draw Straws|JK-BasementChallengeIntro][$JKchallenger = &quot;Straws&quot;]]
+[[Volunteer Yourself|JK-BasementChallengeIntro][$JKchallenger = &quot;Self&quot;]]</tw-passagedata><tw-passagedata pid="67" name="JK-BasementChallengeIntro" tags="" position="1249,1644">&lt;&lt;audio &quot;fires&quot; volume 0.4&gt;&gt;
+&lt;&lt;if $JKchallenger is &quot;Straws&quot;&gt;&gt;You pull the shortest straw. Crap.&lt;&lt;/if&gt;&gt; &lt;&lt;if $JKchallenger is &quot;Self&quot;&gt;&gt;You volunteer.&lt;&lt;/if&gt;&gt;
+
+Once you slip through the cracked door, it slams shut behind you. There is no handle on this side. You are in a furnace. There are gas flames around the edges of the room. &lt;&lt;if $BHmet is 0&gt;&gt;In the center, there is a small red-eyed beast with grey skin. It is quite small, about the size of a toddler, with a form that is almost humanoid, save for an oversized, misshapen head. It has a hunch back and one long pointed tooth. It sits before a game of battleship, and wiggles its single eyebrow at you suggestively. It speaks.
+
+&quot;Hello, we are the one known as Blockhead. Care for a game?&quot;
+&lt;&lt;/if&gt;&gt; &lt;&lt;if $BHmet is 1&gt;&gt;In the center, Blockhead sits before a game of battleship.
+
+&quot;Hello again, friend. Care for a game?&quot;
+&lt;&lt;/if&gt;&gt;
+[[Let&#x27;s play|JK-BasementChallenge1]]</tw-passagedata><tw-passagedata pid="68" name="JK-BasementChallenge1" tags="" position="1365,1648">You sit down and begin arranging your ships. Blockhead sets a five minute hourglass, explaining that you are to play for your life.
+
+&quot;LET THE GAMES BEGIN!&quot;, it shrieks.
+[[GAME ON|JK-BasementChallenge2]]</tw-passagedata><tw-passagedata pid="69" name="JK-BasementChallenge2" tags="" position="1365,1778">You begin the game. A few rounds in, you’ve already sunk one of its ships, but you know you’re running out of time. The heat has become unbearable, and you fear you may not make survive until the sand runs out.
+
+The door opens a crack, and the Stoner slips into the corner of the room. You watch her over Blockhead&#x27;s shoulder as she attempts to light a joint against the grate of the furnace.
+
+“Psst! Hey!”, she whispers.  “Try C1!”
+
+Blockhead doesn’t seem to notice her, but you can’t be sure.
+
+[[Try C1|JKDeath-BasementFlames]]
+[[Ignore her|JK-BasementChallenge3]]</tw-passagedata><tw-passagedata pid="70" name="JKDeath-BasementFlames" tags="" position="999,1800">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+Blockhead turns its head all the way around and screams &quot;CHEATER CHEATER CHEATER CHEATER CHEATER CHEATER CHEATER&quot;.
+
+The whole room erupts in flames. Blockhead disappears in a puff of smoke, and you are burned alive.
+&lt;&lt;audio &quot;fires&quot; volume 1 play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="71" name="JK-BasementChallenge3" tags="" position="1366,1908">You continue to play the game, trying to ignore the Stoner. You’re unsure of what outcome cheating against this beast will bring.
+
+&quot;Hey. Hey... Try F9&quot;
+&lt;&lt;audio &quot;fires&quot; volume 0.6&gt;&gt;
+[[Try F9|JKDeath-BasementFlames]]
+[[Ignore her again|JK-BasementChallenge4]]</tw-passagedata><tw-passagedata pid="72" name="JK-BasementChallenge4" tags="" position="1366,2038">You ignore the Stoner again, with growing frustration. Blockhead is completely engrossed in the game, and hardly notices as you crumple against the table, barely able to keep your head up in the deadly heat.
+
+“Hey. Hey... Try B5”
+&lt;&lt;audio &quot;fires&quot; volume 0.8&gt;&gt;
+[[Try B5|JK-BasementChallenge5]]
+[[Ignore Her|JKDeath-BasementChallengeHonest]]
+</tw-passagedata><tw-passagedata pid="73" name="JK-Kitchen" tags="" position="1387,2683">You, the Jock and the Nerd follow Blockhead into the kitchen. In one corner there is a safe, and in the other, a small makeshift guillotine comprised of a heavy butcher-knife, some crudely nailed-together cutting boards, and an egg-timer. On the other side of the guillotine is the board game &quot;Operation&quot; enclosed in a see through box. You&#x27;ll have to put your arms under the blade to play. There is a pair of light-saber chopsticks on the counter. 
+
+Blockhead emerges and chants a riddle to you:
+
+&quot;I Welcome Thee to Cannibal&#x27;s Kitchen
+It’s Not Too Hot so stop your bitching
+And please don’t cheat, cause you’ve been warned
+Just ask the corpse on the furnace floor
+This game is fun, This game is free
+It comes straight from your wildest dreams
+So come on in, but don’t you cheat
+This Operation costs more than degrees!&quot;
+
+The Nerd volunteers for the challenge, explaining that he is studying to be a doctor.
+
+[[Let the Nerd handle it|JK-KitchenChallenge1]]
+[[Volunteer yourself|JKDeath-KitchenChallenge]]</tw-passagedata><tw-passagedata pid="74" name="JK-KitchenChallenge1" tags="" position="1378,2867">The nerd grabs the chopsticks from the counter, and nervously walks to the makeshift contraption. Sweat is dripping down his face as he closes his eyes and takes in 3 heavy breaths. 
+
+He places his hands in the box, tripping the mechanism that starts the egg timer. 
+You and the Jock anxiously watch as the Nerd performs his life or death operation. So far things are going well; he pulls out a funny bone and places it in the weighted tray. You can’t just sit by and watch, you feel the need to do something.
+
+[[Help keep him calm|JK-KitchenChallenge2]]
+[[Try to disable the trap|JKDeath-KitchenInterfere]]</tw-passagedata><tw-passagedata pid="75" name="JKDeath-KitchenChallenge" tags="" position="1242,2758">You grab the chopsticks from the counter and slowly slide your arms under the contraption. It is shoddily made, and wiggles at every touch. This seems rigged. If you can get your arm in without agitating the blade, you can probably stall for a while.
+
+You pick up the chopsticks, your hands trembling. The egg timer begins to run. The entire contraption feels like it&#x27;s about to collapse. Sweat is pouring down your face as you steadily reach for the funny bone. With your shaky hands, you bump the detector while trying to remove the piece. Your face turns pale. With a click, the blades release, plunging through your wrists. You fall back, screaming in agony as blood pours from your arms. The last thing you hear as your vision goes black is the jock saying “Is he ok?”.
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="76" name="JK-BasementChallenge5" tags="" position="1415,2154">With little time left, you decide to take a chance and use the Stoner’s advice. Blockhead luckily doesn’t notice the Stoner since you’ve done a good job ignoring her up until now. 
+
+With that hit, you&#x27;re only one move away from defeating your opponent. 
+
+The stoner whispers “A7”
+
+[[Try A7|JK-BasementChallenge6][$JKcheater=1]]
+[[Ignore Her|JK-BasementChallenge6][$JKcheater=0]]
+</tw-passagedata><tw-passagedata pid="77" name="JKDeath-BasementChallengeHonest" tags="" position="1277,2151">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+Ignoring the Stoner, you manage to miss three times in a row. Your vision begins to darken, and suddenly you feel your head smack against the table. The last thing you see as the heat saps the remaining life from your body is the final few grains of sand tumbling through the hourglass.
+&lt;&lt;audio &quot;fires&quot; volume 1 play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="78" name="JK-BasementChallenge6" tags="" position="1521,2261">With only a few seconds left, you &lt;&lt;if $JKcheater is 1&gt;&gt;take the Stoner’s help and utter “A7”. But it’s a miss! The sand in the hourglass runs out and Blockhead unleashes a terrible smelly belch. The room erupts into flames. With this, the Stoner lets out a squeal.
+&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKcheater is 0&gt;&gt;choose to ignore the Stoner. Instead, you try “B7”, which turns out to be a hit! You’ve won. Blockhead seems pleased and is doing a dance around the furnace room squealing “FAIR AND SQUARE, FAIR AND SQUARE, FAIR AND SQUARE”. Then, out of the corner of its eye, it notices the stoner smoking in the darkness by the door.
+&lt;&lt;/if&gt;&gt;
+Blockhead turns its head all the way around and screams, “THERE CAN ONLY BE ONE. CHEATER CHEATER CHEATER CHEATER CHEATER CHEATER CHEATER!” &lt;&lt;if $JKcheater is 0&gt;&gt;He unleashes a terrible smelly belch, and the room erupts into flames.&lt;&lt;/if&gt;&gt;
+
+Time to get out of here!
+&lt;&lt;audio &quot;fires&quot; volume 1&gt;&gt;
+[[Try to grab the Stoner|JK-BasementChallenge7][$JKsaveStoner=1]]
+[[Every man for himself!|JK-BasementChallenge7][$JKsaveStoner=0]]</tw-passagedata><tw-passagedata pid="79" name="JK-BasementChallenge7" tags="" position="1399,2290">&lt;&lt;if $JKsaveStoner is 1&gt;&gt;It seems like it wouldn’t be too hard for you to both get out of here.&lt;&lt;/if&gt;&gt;You make a beeline for the door, trying to shake off the flames that are tickling the bottoms of your pants. &lt;&lt;if $JKsaveStoner is 1&gt;&gt;You grab the Stoner to bring her with you, but she pushes you away, excited to have finally lit her joint.
+
+She &lt;&lt;/if&gt;&gt;&lt;&lt;if $JKsaveStoner is 0&gt;&gt;The Stoner &lt;&lt;/if&gt;&gt;seems remarkably unfazed as she catches fire. She laughs and skips around the furnace as her body burns up, and you make your escape.
+&lt;&lt;audio &quot;fires&quot; stop&gt;&gt;
+[[That was a close one|JK-BasementSuccess]]</tw-passagedata><tw-passagedata pid="80" name="JK-BasementSuccess" tags="" position="1276,2368">You emerge from the furnace room, your clothes somewhat singed, but relatively unharmed. The Jock and Nerd are waiting mouths agape. 
+
+“What the hell?! We have to get out of here, this is insane” Says the Jock. The Nerd just stares at you in traumatized silence.
+
+[[Examine Jenga pieces|JKDeath-Pieces]]
+[[Head back upstairs|JK-HallwayReturn]]</tw-passagedata><tw-passagedata pid="81" name="JK-HallwayReturn" tags="" position="1388,2523">Blockhead appears as you mount the last stair and beckons you to the Kitchen. Other Blockheads appear around the entrances to the other rooms, and won’t let you in. Guess you’ll have to play their game a bit longer.
+
+[[Follow Blockhead|JK-Kitchen]]</tw-passagedata><tw-passagedata pid="82" name="JKDeath-KitchenInterfere" tags="" position="1243,2897">You examine the contraption, fiddling with the strings and springs. You pull at the Butcher knife handle and you hear a clicking sound. The Egg Timer starts to speed up! A blockhead tumbles out of an oven and rolls to you. It stands up and points a giant chef’s knife at you 
+
+“You touch my knife, you lose your Life!”
+
+It lunges at you, plunging the knife into your chest, and fiendishly squeals, “Oopsy.”
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="83" name="JK-KitchenChallenge2" tags="" position="1378,3017">You notice the amount of sweat pouring from the Nerd’s forehead. The sweat is going into his eyes causing them to redden and blink repeatedly; it’s obscuring his vision and causing him pain. You scour the kitchen for anything to help him. You find a cloth, which you run under a tap, and a pair of tongs. You rush to the Nerd’s aid and start padding the sweat from his forehead and eyes. He awkwardly purrs and whispers to you “no one has ever touched me like this before”. A single tear rolls down your right eye as you continue padding his face in disgust.  
+
+You anxiously look at the egg timer; you’re almost out of time. The nerd carefully grabs the last piece, the wishbone, and places it on the tray. The weight of the collective pieces pushes the tray down, turning the board around 180 degrees, revealing a key taped to the back of the game. The nerd quickly pries the key off the game and pulls out both his hands out to give you the key. His face turns pale as he turns back and realizes he left the limited edition lightsaber chopsticks in the box (signed and used by Mark Hamill himself during the shoot of “The Empire Strikes Back”). The Nerd thrusts his right hand back into the box, but before he can pull out the the sticks the egg timer rings and the blade drops, along with the Nerds hand.
+
+Everyone stares in horror as as you watch the Nerd scream and squeal on the ground in pain and agony. He is bleeding out profusely and is moments away from death.
+
+
+“Am - Am I gonna make it guys? Am I gonna be okay? I feel cold…”, The Nerd says as tears run down his face.
+
+With no words, you all stare at the Nerd will soft saddened faces and he gets the message.
+
+“Di- Did I look cool at least? ”, The Nerd says as tears run down his face.
+
+You reply, “The coolest. Just like Mark Hamill.”
+
+The Nerd makes the biggest smile and one final tear of joy rolls down his face moments before his death.
+
+You all stare at the Nerd in remembrance one more time before returning to the task at hand.
+
+[[Leave the Kitchen|JK-HallwayFinal]]</tw-passagedata><tw-passagedata pid="84" name="JK-HallwayFinal" tags="" position="1370,3253">Shaken, you and the Jock exit the kitchen. He looks remarkably on-edge.
+
+“There’s only two of us left... What do you think the chances are we both survive?” The Jock asks you, avoiding your gaze.
+
+The Blockheads have vanished, leaving the stairs and closet unguarded.
+
+[[Try the closet|JK_HallCloset]]
+[[Head upstairs|JK-Attic]]</tw-passagedata><tw-passagedata pid="85" name="JK_HallCloset" tags="" position="1256,3370">You try and open the closet but the door is stuck. It feels like there’s someone behind there actively pulling it closed every time you turn the doorknob. Hmm.
+
+[[Head upstairs|JK-Attic]]</tw-passagedata><tw-passagedata pid="86" name="JK-Attic" tags="" position="1372,3419">You take the staircase which leads upwards. As you climb the stairs, a smell of rot and flesh assault your senses. Incredibly nauseated, you keep climbing, determined to reach the top.
+
+The upper floor is much larger than you expected, stretching upward like the inside of a tower. In front of you is a pile of human bodies intricately stacked upon each-other in rows of 3 going upwards. However, at the base there is only one body in the center. The tower is swaying.
+
+[[What the hell...|JK-AtticRiddle]]</tw-passagedata><tw-passagedata pid="87" name="JK-AtticRiddle" tags="" position="1372,3569">A Blockhead appears again:
+
+&quot;Monopoly, Yahtzee, Sorry, Chess
+They all stack up but Jenga’s the best
+Block by block and limb by limb,
+Life’s a fish, you flop or swim
+From here you’re free to hit the road
+As long as you followed our honour code,
+But if you broke the rules again
+This is where the fun begins.&quot;
+
+“Oh fuck no” The Jock whispers, before bolting downstairs. Frozen in fear, you wait while the tower leans progressively further to the left. Your need to find something to stabilize the tower, but the room is bare. The implication is clear: two empty slots, and two surviving players. With any luck, that will complete the challenge and you’ll be set free.
+
+[[Try to wedge yourself under the tower|JK-AtticWedge]]
+[[Follow the Jock downstairs|JK-AtticFollowJ]]</tw-passagedata><tw-passagedata pid="88" name="JK-AtticWedge" tags="" position="1173,3673">[Squeeze in]
+
+[[Wait|JK-AtticWait]]
+[[Call for help|x]]
+[[Get out|JK-GetOut]]</tw-passagedata><tw-passagedata pid="89" name="JK-AtticWait" tags="" position="1173,3791">[Wait]
+
+[[Keep waiting|JK-AtticWait2]]
+[[Call for help|x]]
+[[Get out|JK-GetOut]]</tw-passagedata><tw-passagedata pid="90" name="JK-AtticWait2" tags="" position="1170,3908">[Wait2]
+
+[[Keep waiting|JKDeath-AtticWait3]]
+[[Call for help|x]]
+[[Get out|JK-GetOut]]</tw-passagedata><tw-passagedata pid="91" name="JKDeath-AtticWait3" tags="" position="1005,3887">[Wait3]
+
+[[Try again|Reset]]
+
+[[x]]</tw-passagedata><tw-passagedata pid="92" name="JK-AtticFollowJ" tags="" position="1534,3654">[Follow the Jock]
+
+[[Reason with him|JK-ReasonWithJ]]
+[[Run|JK-AtticRunFromJ]]
+
+[[x]]</tw-passagedata><tw-passagedata pid="93" name="JK-ReasonWithJ" tags="" position="1532,3776">You suggest that you could use the remains of the Stoner to fill out the empty space in the tower. 
+
+“You don’t think I checked that? She’s gone. The only bodies left are you and this useless twerp”
+
+He steps menacingly toward you.
+
+[[Beg for your life|JK-AtticBegJ]]
+[[Run|JK-AtticRunFromJ]]
+
+[[x]]</tw-passagedata><tw-passagedata pid="94" name="JK-AtticBegJ" tags="" position="1539,3926">[Beg]
+
+[[Fight!|JKDeath-FightJ]]
+[[Run away|JK-AtticRunFromJ]]
+
+[[x]]</tw-passagedata><tw-passagedata pid="95" name="JK-AtticRunFromJ" tags="" position="1454,4043">[[x]]</tw-passagedata><tw-passagedata pid="96" name="JKDeath-FightJ" tags="" position="1712,3910">Moving instinctively and with skill, the Jock overpowers you easily. Putting you in a headlock, he snaps your neck.
+&lt;&lt;audio &quot;fires&quot; play&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="97" name="JK-GetOut" tags="" position="1358,3716">You can no longer bear the horrid stench and decide it’s best to get out while you still can. With no option left you set out to find the Jock to try and reason with him.
+(leads to [Reason with him] )
+[[x]]</tw-passagedata><tw-passagedata pid="98" name="StoryInit" tags="" position="1052,9">&lt;&lt;cacheaudio &quot;aah&quot; &quot;sound/0477.ogg&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;eagle&quot; &quot;sound/40_smith_wesson_single-mike-koenig.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;shotty&quot; &quot;sound/shotgun-mossberg590-RA_The_Sun_God-451502290.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;explode&quot; &quot;sound/Explosion-SoundBibleMikeKoenig.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;fires&quot; &quot;sound/Fire-SoundBible.com-517801090.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;snap&quot; &quot;sound/neck_snap-Vladimir-719669812.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;yay&quot; &quot;sound/1_person_cheering-Jett_Rifkin-1851518140.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;music1&quot; &quot;sound/Come_Play_with_Me.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;music2&quot; &quot;sound/Slow_Ticking_Clock.mp3&quot;&gt;&gt;</tw-passagedata></tw-storydata>
