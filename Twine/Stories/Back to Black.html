@@ -38,7 +38,9 @@
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">config.history.controls = false;
+
 
 
 
@@ -620,8 +622,65 @@ The room is pretty bare, so you head over to the furnace, hoping it is a decent 
 [[Hide and wait|JKDeath-FightJ][$hiddenInFurnace=1]]
 [[Turn on the furnace|JKDeath-FurnaceReturn]]
 [[Look for another hiding place|JKDeath-FightJ][$newHidingSpot=1]]
-</tw-passagedata><tw-passagedata pid="100" name="JK-Closet" tags="" position="1561,4137">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="101" name="JKDeath-FurnaceReturn" tags="" position="1042,4097">The furnace clicks to life and burns you alive.
+</tw-passagedata><tw-passagedata pid="100" name="JK-Closet" tags="" position="1598,4138">A mysterious figure lets you into the closet. He holds the door closed with surprising strength as the Jock hammers and screams at the door.
+
+“I may have something to help you through your predicament” Says the mysterious figure. “Choose one, and choose wisely.”
+
+He reveals a baseball bat, a 20-Sided Die, and a walkman with a Mariah Carey disc in it.
+
+[[20-Sided Die|JK-D20]]
+[[Walkman|JKDeath-Walkman]]
+[[Bat|JKDeath-Bat]]</tw-passagedata><tw-passagedata pid="101" name="JKDeath-FurnaceReturn" tags="" position="1042,4097">The furnace clicks to life and burns you alive.
 
 Why did you do that? Dumbass.
 
-[[Try again|Reset]]</tw-passagedata></tw-storydata>
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="102" name="JK-D20" tags="" position="1626,4401">You’re trying to get into the mind of this game-loving torturer, and maybe this is the way to do it. You open the closet door and throw the die, trying to aim for the Jock’s gaped-open, screaming mouth. Maybe you can choke him. The Mysterious Figure watches from the shadows.
+
+You miss. The dice bounces off his nose, angering him further, and lands on the ground in between you.
+
+It’s a 20.
+
+“Oh, wow. Good initiative roll.” says the Jock. He seems to have calmed down. “You make the first move. Fair is fair”.
+
+[[SMASH HIM|JK-SmashHim]]
+[[Reason through this|JK-ReasonWithJ2]]</tw-passagedata><tw-passagedata pid="103" name="JKDeath-Walkman" tags="" position="1334,4274">What a useless, outdated piece of garbage. And this CD doesn’t even have any hits on it. The mysterious figure says nothing and vanishes in a cloud of cheap cologne and used $2 scratch cards.
+
+The Jock opens the door to the closet. You attempt to wrap the cord of the walkman around his neck but he simply flexes and the wire disintegrates. Moving instinctively and with skill, the Jock overpowers you easily. Putting you in a headlock, he snaps your neck. Hey, at least that was quick and painless.
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="104" name="JKDeath-Bat" tags="" position="1462,4272">“A very interesting choice. A logical one too. Let’s see how you do.”, says the Mysterious Figure before he disappears in a cloud of cheap cologne and used $2 scratch cards.
+
+You open the closet door and get let out a good swing. The Jock is pushed back. He laughs, “You’re tougher than you look! But not as tough as me”
+
+Charging forward, he snatches the bat out of your grip with ease and clubs you over the head. You collapse to the ground, feeling confused. There is no light, just pain. He takes the bat again and strikes once more before everything goes black
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="105" name="JK-SmashHim" tags="" position="1490,4525">You snag the baseball bat, and the mysterious figure vanishes in a puff of cheap cologne and used $2 scratch-cards. The walls are singing: “CHEATER, CHEATER,CHEATER,CHEATER”. But there’s not time to waste, so you better waste the Jock.
+
+Slamming the bat against his groin to stun him, you then go for the head. He crumples to the floor, unconscious but not dead.
+
+[[FINISH HIM!|JK-MurderJock][$JockAlive=0]]
+[[Drag him upstairs as is|JK-MurderJock][$JockAlive=1]]</tw-passagedata><tw-passagedata pid="106" name="JK-ReasonWithJ2" tags="" position="1798,4536">“There isn’t a way we can both make it through this alive. Like it or not,” says the Jock.
+
+[[Convince Him Otherwise|JK-ReasonWithJ3]]
+[[Attack|JK-SmashHim]]</tw-passagedata><tw-passagedata pid="107" name="JK-MurderJock" tags="" position="1490,4675">&lt;&lt;if $JockAlive == 0&gt;&gt;You smash his head one final time. There is blood everywhere. The walls are screaming now. “CHEATERCHEATERCHEATERCHEATERCHEATERCHEATERCHEATER”
+ Oh god. Make it stop.
+
+You drag the body,&lt;&lt;/if&gt;&gt;&lt;&lt;if $JockAlive==1&gt;&gt;You drag his unconscious form,&lt;&lt;/if&gt;&gt; which is unbelievably heavy, up the stairs, along with the Nerd. &lt;&lt;if $JockAlive==1&gt;&gt;The Jock stirs.&lt;&lt;/if&gt;&gt;
+
+[[x]]</tw-passagedata><tw-passagedata pid="108" name="JK-ReasonWithJ3" tags="" position="1798,4686">You try to convince the Jock that the puzzle could be solved if you both went under the tower, and used your own bodies to stabilize it.
+
+“I’ll try it for 30 seconds. If it doesn’t work. I’m killing you and putting that damn nerd in my place”
+
+[[Complete the challenge together|JK-GoodEnd]]</tw-passagedata><tw-passagedata pid="109" name="JK-GoodEnd" tags="" position="1798,4836">Complete the Tower Together
+You and the Jock wriggle your way under the tower together. It stabilizes.
+
+Waiting apprehensively, you pray this was the solution to this ridiculous puzzle. You know you won’t survive the Jock’s wrath otherwise...
+
+After a moment, a parade of Blockheads emerge from the corridor, and they begin to deconstruct the tower from the top down, freeing you.
+
+They are chanting:
+“TEAMWORK MAKES THE DREAM WORK! TEAM WORK MAKES THE DREAM WORK!”
+It’s a scene of joy..
+
+In the doorway, the slightly charred Stoner appears and lights up a joint.
+
+“Wow, what a thing of beauty ahahaha... took you long enough”</tw-passagedata></tw-storydata>
