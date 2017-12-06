@@ -39,7 +39,9 @@
 
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">config.history.controls = false;
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">//config.history.controls = false;
+
 
 
 
@@ -129,8 +131,11 @@ You hear the sound of something hissing, and notice a sudden drop in temperature
 [[Look for the source of the temperature drop|ICT2-InvestigateCold]]
 [[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="17" name="ICT-NerdHeadbutt" tags="" position="169,1234">The nerd’s breathing slows a bit, and the jolt has left him silent.
 [[Give him a life-affirming pep talk|ICT-NerdPepTalk]]
-[[Tell him you don&#x27;t want his annoying, nasally voice to be the last thing you hear|ICTDeath-NerdFreakout]]</tw-passagedata><tw-passagedata pid="18" name="ICT-NerdCalmDown" tags="" position="339,1205">[text needed]</tw-passagedata><tw-passagedata pid="19" name="ICT-NerdPepTalk" tags="" position="125,1353">In an attempt to recalibrate the nerds focus, you ask him in a calm manner, “is there anyone you can go home to?” He mentions his 11 month relationship he’s having with someone online. He continues passionately explaining every excruciating detail about their intimate life to you. After about 10 minutes you look him in the eyes and tell him “you’ll see her again, [nerd], but I need your help”. He takes a deep breath and finally says “I’m in.”
-[[You ask him if he can see anything of use|ICT-DavidAppears]]</tw-passagedata><tw-passagedata pid="20" name="ICTDeath-NerdFreakout" tags="" position="298,1340">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+[[Tell him you don&#x27;t want his annoying, nasally voice to be the last thing you hear|ICTDeath-NerdFreakout]]</tw-passagedata><tw-passagedata pid="18" name="ICT-NerdCalmDown" tags="" position="344,1204">You’re not sure if he heard you, but regardless, your words of warning have no effect; he only becomes louder and more panicked, now thrashing against the wall.
+
+[[Headbutt some sense into him|ICT-NerdHeadbutt]]
+[[Tell him you don&#x27;t want his annoying, nasally voice to be the last thing you hear|ICTDeath-NerdFreakout]]</tw-passagedata><tw-passagedata pid="19" name="ICT-NerdPepTalk" tags="" position="125,1353">In an attempt to recalibrate the nerds focus, you ask him in a calm manner, “is there anyone you can go home to?” He mentions his 11 month relationship he’s having with someone online. He continues passionately explaining every excruciating detail about their intimate life to you. After about 10 minutes you look him in the eyes and tell him “you’ll see her again, [nerd], but I need your help”. He takes a deep breath and finally says “I’m in.”
+[[You ask him if he can see anything of use|ICT-DavidAppears]]</tw-passagedata><tw-passagedata pid="20" name="ICTDeath-NerdFreakout" tags="" position="296,1344">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 He starts hyperventilating and lets out a bloodcurdling scream. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “BOOM HEADSHOT”
 &lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="21" name="ICT-DavidAppears" tags="" position="128,1495">Before the nerd can respond, a mysterious voice echoes through the truck.
@@ -161,7 +166,7 @@ Despite what you requested, the stoner grabs the banana and immediately starts t
 
 The mysterious asian throws a smoke bomb down and disappears, leaving behind the smell of cheap scotch and cigarettes.
 
-[[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="26" name="ICTDeath-ItemGetNerd" tags="" position="399,1504">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+[[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="26" name="ICTDeath-ItemGetNerd" tags="" position="398,1492">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;if $item is &quot;HL3&quot;&gt;&gt;The nerd enthusiastically grabs the copy of the game and begins to screech. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “IT DOESN’T EXIST”
 &lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
 [[Try again|Reset]]
@@ -172,7 +177,7 @@ You ask the NERD to help you, but upon looking up, he spots the copy of Half Lif
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="ICT-KeepLooking" tags="" position="179,1764">Stumped, you begin to look around the truck again. You notice that the NERD’S shiny Batman belt looks pretty sharp.
 
 [[Rub bindings on his belt|ICT-NerdBelt]]
-</tw-passagedata><tw-passagedata pid="28" name="ICT-NerdBelt" tags="" position="280,1834">You’re now free. Now you unbind the nerd, the Jock and the investigator. The Stoner is just giggling to herself in the corner, completely useless. The Jock seems to be asleep and isn’t moving no matter how much you shake him.
+</tw-passagedata><tw-passagedata pid="28" name="ICT-NerdBelt" tags="" position="307,1844">You’re now free. Now you unbind the nerd, the Jock and the investigator. The Stoner is just giggling to herself in the corner, completely useless. The Jock seems to be asleep and isn’t moving no matter how much you shake him.
 
 [[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="29" name="ICT2-InstConv1" tags="" position="354,1998">The investigator surveys the surroundings with a blank expression, then turns and looks you dead in the eye.
 
@@ -603,7 +608,7 @@ He steps menacingly toward you.
 The Closet door opens a crack and a pair of eyes peer out. You can throw yourself at the mercy of whoever (or whatever) is in there, or try your chances in the basement.
 
 [[Run downstairs|JK-BasementReturn]]
-[[Dive for the closet|JK-Closet]]</tw-passagedata><tw-passagedata pid="96" name="JKDeath-FightJ" tags="" position="1794,3976">&lt;&lt;if $hiddenInFurnace == 1&gt;&gt;The angry footsteps of the Jock close in on you. He whips open the furnace door. &lt;&lt;/if&gt;&gt;&lt;&lt;if $newHidingSpot&gt;&gt;You exit the furnace, hoping to find better refuge. But as you reach the middle of the room, the Jock comes barreling down the stairs. &lt;&lt;/if&gt;&gt;Moving instinctively and with skill, the Jock overpowers you easily. Putting you in a headlock, he snaps your neck.
+[[Dive for the closet|JK-Closet]]</tw-passagedata><tw-passagedata pid="96" name="JKDeath-FightJ" tags="" position="1838,4085">&lt;&lt;if $hiddenInFurnace == 1&gt;&gt;The angry footsteps of the Jock close in on you. He whips open the furnace door. &lt;&lt;/if&gt;&gt;&lt;&lt;if $newHidingSpot&gt;&gt;You exit the furnace, hoping to find better refuge. But as you reach the middle of the room, the Jock comes barreling down the stairs. &lt;&lt;/if&gt;&gt;Moving instinctively and with skill, the Jock overpowers you easily. Putting you in a headlock, he snaps your neck.
 &lt;&lt;audio &quot;fires&quot; play&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="97" name="JK-GetOut" tags="" position="1380,3694">You can no longer bear the horrid stench and decide it’s best to get out while you still can. With no option left you set out to find the Jock and try to work together.
 
@@ -653,7 +658,7 @@ You open the closet door and get let out a good swing. The Jock is pushed back. 
 
 Charging forward, he snatches the bat out of your grip with ease and clubs you over the head. You collapse to the ground, feeling confused. There is no light, just pain. He takes the bat again and strikes once more before everything goes black
 
-[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="105" name="JK-SmashHim" tags="" position="1490,4525">You snag the baseball bat, and the mysterious figure vanishes in a puff of cheap cologne and used $2 scratch-cards. The walls are singing: “CHEATER, CHEATER,CHEATER,CHEATER”. But there’s not time to waste, so you better waste the Jock.
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="105" name="JK-SmashHim" tags="" position="1505,4521">You snag the baseball bat, and the mysterious figure vanishes in a puff of cheap cologne and used $2 scratch-cards. The walls are singing: “CHEATER, CHEATER,CHEATER,CHEATER”. But there’s not time to waste, so you better waste the Jock.
 
 Slamming the bat against his groin to stun him, you then go for the head. He crumples to the floor, unconscious but not dead.
 
@@ -661,16 +666,16 @@ Slamming the bat against his groin to stun him, you then go for the head. He cru
 [[Drag him upstairs as is|JK-MurderJock][$JockAlive=1]]</tw-passagedata><tw-passagedata pid="106" name="JK-ReasonWithJ2" tags="" position="1798,4536">“There isn’t a way we can both make it through this alive. Like it or not,” says the Jock.
 
 [[Convince Him Otherwise|JK-ReasonWithJ3]]
-[[Attack|JK-SmashHim]]</tw-passagedata><tw-passagedata pid="107" name="JK-MurderJock" tags="" position="1490,4675">&lt;&lt;if $JockAlive == 0&gt;&gt;You smash his head one final time. There is blood everywhere. The walls are screaming now. “CHEATERCHEATERCHEATERCHEATERCHEATERCHEATERCHEATER”
+[[Attack|JK-SmashHim]]</tw-passagedata><tw-passagedata pid="107" name="JK-MurderJock" tags="" position="1378,4549">&lt;&lt;if $JockAlive == 0&gt;&gt;You smash his head one final time. There is blood everywhere. The walls are screaming now. “CHEATERCHEATERCHEATERCHEATERCHEATERCHEATERCHEATER”
  Oh god. Make it stop.
 
 You drag the body,&lt;&lt;/if&gt;&gt;&lt;&lt;if $JockAlive==1&gt;&gt;You drag his unconscious form,&lt;&lt;/if&gt;&gt; which is unbelievably heavy, up the stairs, along with the Nerd. &lt;&lt;if $JockAlive==1&gt;&gt;The Jock stirs.&lt;&lt;/if&gt;&gt;
 
-[[x]]</tw-passagedata><tw-passagedata pid="108" name="JK-ReasonWithJ3" tags="" position="1798,4686">You try to convince the Jock that the puzzle could be solved if you both went under the tower, and used your own bodies to stabilize it.
+[[Let&#x27;s finish this|JK-AtticFinal]]</tw-passagedata><tw-passagedata pid="108" name="JK-ReasonWithJ3" tags="" position="1796,4666">You try to convince the Jock that the puzzle could be solved if you both went under the tower, and used your own bodies to stabilize it.
 
 “I’ll try it for 30 seconds. If it doesn’t work. I’m killing you and putting that damn nerd in my place”
 
-[[Complete the challenge together|JK-GoodEnd]]</tw-passagedata><tw-passagedata pid="109" name="JK-GoodEnd" tags="" position="1798,4836">Complete the Tower Together
+[[Complete the challenge together|JK-CooperationEnd]]</tw-passagedata><tw-passagedata pid="109" name="JK-CooperationEnd" tags="" position="1798,4815">Complete the Tower Together
 You and the Jock wriggle your way under the tower together. It stabilizes.
 
 Waiting apprehensively, you pray this was the solution to this ridiculous puzzle. You know you won’t survive the Jock’s wrath otherwise...
@@ -681,6 +686,73 @@ They are chanting:
 “TEAMWORK MAKES THE DREAM WORK! TEAM WORK MAKES THE DREAM WORK!”
 It’s a scene of joy..
 
-In the doorway, the slightly charred Stoner appears and lights up a joint.
+A hidden doorway opens, and the slightly charred Stoner appears and lights up a joint.
 
-“Wow, what a thing of beauty ahahaha... took you long enough”</tw-passagedata></tw-storydata>
+“Wow, what a thing of beauty. Hahaha... took you long enough.”
+
+SCENARIO COMPLETE</tw-passagedata><tw-passagedata pid="110" name="JK-AtticFinal" tags="" position="1301,4899">You arrive at the top of the stairs, ready to face your final gruesome challenge. Who do you use to stabilize the tower?
+&lt;&lt;if $JockAlive==1&gt;&gt;
+[[Jock and Nerd|JKDeath-JNCollapse(Alive)]]
+[[Nerd and you|JK-GoodEnd]]
+[[Jock and you|JKDeath-JockAliveEnd]]
+&lt;&lt;else&gt;&gt;
+[[Jock and Nerd|JKDeath-JNCollapse(Dead)]]
+[[Nerd and you|JKDeath-NYCollapse]]
+[[Jock and you|JK-BadEnd]]
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="111" name="JKDeath-JockAliveEnd" tags="" position="1101,5100">You stuff the Jock underneath the tower, and then wedge yourself in.
+The Blockheads emerge,  cheering
+“TEAMWORK TEAMWORK! MAKES THE DREAM WORK!”
+
+Have you made it?!
+
+The Jock wakes up and begins thrashing. The tower topples crushing you, leaving you immobilized until you suffocate. 
+
+The blockheads look on, overjoyed at your display of teamwork and tactical thinking.
+
+You won, I guess. But you also died... 
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="112" name="JK-BadEnd" tags="" position="1502,5100">You wedge the Jock’s body underneath the tower first. It stabilizes slightly. Overpowered by unbearable guilt, you decide to skip the Nerd and just put yourself under. You don’t deserve to survive.
+
+Once you are secured underneath the pile of rotting bodies, you begin to come to terms with your own death. Only then do a parade of Blockheads emerge from the corridors, filling the room, and begin deconstructing the tower from the top down, freeing you.
+
+They are chanting 
+TEAMWORK MAKES THE DREAM WORK! TEAM WORK MAKES THE DREAM WORK!
+
+It’s a scene of joy... until you realize the Jock never had to die.
+Did anyone have to die? 
+
+A hidden doorway opens, and the slightly charred Stoner appears and lights up a joint.
+
+“Wow, what a thing of beauty. Hahaha… took you long enough.”
+</tw-passagedata><tw-passagedata pid="113" name="JKDeath-NYCollapse" tags="" position="1500,4953">You wedge the Nerd’s body underneath the tower first. It stabilizes slightly. Overpowered by unbearable guilt, you decide to skip the Jock and just put yourself under. You don’t deserve to survive.
+
+Once you are secured underneath the pile of rotting bodies, you begin to come to terms with your own death. Only then do a parade of Blockheads emerge, filling the room, and begin deconstructing the tower from the top down, freeing you.
+
+&quot;CHEATER, CHEATER, WHAT WILL YOUR FATE BE YOU DIRTY, DIRTY, DIRTY, CHEATER???&quot;
+
+The blockheads grab all your limbs and start to pull... It’s a slow and agonizing process as they tear your body apart, feasting on the limbs as they detach.
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="114" name="JKDeath-JNCollapse(Alive)" tags="" position="1100,4800">You stuff the Jock and Nerd underneath the tower. This wasn’t wise. The Jock comes to and begins thrashing. The tower topples down on you, smothering you in rotting flesh.
+
+The Blockheads laugh and jeer at you as you suffocate.
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="115" name="JKDeath-JNCollapse(Dead)" tags="" position="1500,4800">You stuff the smaller corpse, the Nerd, under the tower first. Then, you place the Jock, stabilizing the towering monstrosity. Nothing happens for a while... then, you hear:
+
+&quot;CHEATER, CHEATER, WHAT WILL YOUR FATE BE, YOU DIRTY, DIRTY, DIRTY, CHEATER???&quot;
+
+The blockheads grab your limbs and start to pull... It’s a slow and agonizing process as they tear your body apart, feasting on the limbs as they detach them.
+
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="116" name="JK-GoodEnd" tags="" position="1100,4950">Overcome with guilt, you decide to ditch the Jock. Let him live.
+
+You wedge the Nerd’s body underneath the tower first. It stabilizes slightly. You don’t deserve to survive. You slide yourself underneath.
+
+Once you are secured underneath the pile of rotting bodies, you begin to come to terms with your own death. Only then do a parade of Blockheads emerge, filling the room, and begin deconstructing the tower from the top down, freeing you.
+
+They are chanting 
+“TEAMWORK MAKES THE DREAM WORK! TEAMWORK MAKES THE DREAM WORK!”
+It’s a scene of joy. The Jock comes to, and looks amazed.
+
+A hidden door slides open, and you leave together, hand in hand. Free forever.
+
+SCENARIO COMPLETE</tw-passagedata></tw-storydata>
