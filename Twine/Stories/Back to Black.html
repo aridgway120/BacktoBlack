@@ -41,7 +41,9 @@
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">//config.history.controls = false;
+
 
 
 
@@ -422,8 +424,8 @@ All cheaters burn in a fatal sweat.&quot;
 
 [[All go in|JK-BasementAllIn][$JKchallenger=&quot;all&quot;]]
 [[Send a scout|JK-BasementAllIn][$JKchallenger=&quot;one&quot;]]
-</tw-passagedata><tw-passagedata pid="66" name="JK-BasementAllIn" tags="" position="1100,1632">You touch the doorknob but it’s blistering hot and burns your skin. You try kicking the door, and it opens a little. &lt;&lt;$if JKchallenger is &quot;all&quot;&gt;&gt;The room is small, so not everyone can fit inside. Its interior glows red.
-&lt;&lt;/if&gt;&gt;&lt;&lt;$if JKchallenger is &quot;one&quot;&gt;&gt;The room is cramped, and has a warm red glow.
+</tw-passagedata><tw-passagedata pid="66" name="JK-BasementAllIn" tags="" position="1100,1632">You touch the doorknob but it’s blistering hot and burns your skin. You try kicking the door, and it opens a little. &lt;&lt;if $JKchallenger is &quot;all&quot;&gt;&gt;The room is small, so not everyone can fit inside. Its interior glows red.
+&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKchallenger is &quot;one&quot;&gt;&gt;The room is cramped, and has a warm red glow.
 &lt;&lt;/if&gt;&gt;
 Who should face the challenge?
 &lt;&lt;audio &quot;fires&quot; volume 0.2 loop play&gt;&gt;
