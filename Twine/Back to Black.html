@@ -988,7 +988,7 @@ A hidden door slides open, and you leave together, hand in hand. Free forever.
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="EndGame" tags="" position="578,5693">Congratulations, you&#x27;ve finished the game!
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 You died a total of $deathCounter time&lt;&lt;if $deathCounter &gt;= 2 ||$deathCounter == 0&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 [[Start again|Stats][$currentScenario=3]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="795.9999999999999,184">You have died $deathCounter time&lt;&lt;if $deathCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 You have been shot $shotCounter time&lt;&lt;if $shotCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 You have been pulled apart $pullCounter time&lt;&lt;if $pullCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
@@ -1012,8 +1012,8 @@ You have obtained the Friendly Fun ending.&lt;&lt;/if&gt;&gt;&lt;&lt;if $MercyJe
 You have obtained the Survivors ending.&lt;&lt;/if&gt;&gt;&lt;&lt;if $BadJen == 1&gt;&gt; 
 You have obtained the Cheater ending.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $currentScenario == 1&gt;&gt;&lt;&lt;if $S2Complete == 0&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $currentScenario == 2&gt;&gt;&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $currentScenario == 3&gt;&gt;[[I Scream, You Scream|Scenario-1-Start][$currentScenario=1]]
-[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $currentScenario == 2&gt;&gt;&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $currentScenario == 3&gt;&gt;[[I Scream, You Scream|Scenario-1-Start]]
+[[The Jenga Killer|Scenario-2-Start]]&lt;&lt;/if&gt;&gt;
 
 </tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
