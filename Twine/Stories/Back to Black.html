@@ -1,7 +1,8 @@
-<tw-storydata name="Back to Black" startnode="7" creator="Twine" creator-version="2.1.3" ifid="3E610642-5310-4A14-A1CD-4A12A49BD54D" format="SugarCube" format-version="2.20.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.aliens:hover {
+<tw-storydata name="Back to Black" startnode="7" creator="Twine" creator-version="2.1.3" ifid="3E610642-5310-4A14-A1CD-4A12A49BD54D" format="SugarCube" format-version="2.18.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.aliens:hover {
   opacity: 0;
   transition: 1s all ease;
 }
+
 
 
 
@@ -78,6 +79,7 @@
 
 
 
+
 </script><tw-passagedata pid="1" name="Scenario-1-Start" tags="" position="364,569">You awake in a freezing cold, dark space. Your hands and feet are bound and there is an opaque mask blocking your vision. The icy floor shakes intermittently. Slight noises can be heard around you; they sound human.
 &lt;&lt;audio &quot;music1&quot; loop play&gt;&gt;
 [[Scream for help|ICTDeath-ScreamBlind]]
@@ -103,11 +105,10 @@ Across from you is a a girl, also maskless, who has managed to loosen her wrist 
 &lt;&lt;audio &quot;aah&quot; play&gt;&gt;
 You have died $deathCounter times.
 [[Start S1|Scenario-1-Start]]
-[[Start S2|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,25">&lt;&lt;set $deathCounter to 0&gt;&gt;
-Flame here:
-&lt;img src=&quot;images/cov.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;470&quot;&gt;
-[[BEGIN S1|Scenario-1-Start]]
-[[BEGIN S2|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
+[[Start S2|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,26">&lt;&lt;set $deathCounter to 0&gt;&gt;
+
+[[I Scream, You Scream|Scenario-1-Start]]
+[[The Jenga Killer|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
 The driver yells “Shut the front door! Don’t make me come back there and kill all of you little brats!” This seems to worsen the Nerd’s condition.
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Headbutt some sense into him|ICT-NerdHeadbutt]]
