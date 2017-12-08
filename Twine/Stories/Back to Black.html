@@ -44,7 +44,9 @@
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">//config.history.controls = false;
+
 
 
 
@@ -99,16 +101,43 @@ Across from you is a a girl, also maskless, who has managed to loosen her wrist 
 [[Talk to the Stoner|ICT-StonerConv1]]
 [[Scream for help|ICTDeath-ScreamNoBlind]]</tw-passagedata><tw-passagedata pid="5" name="ICT-AfterListen" tags="" position="497,697">The floor continues to shake occasionally, and your fingers feel stiff from the cold.
 [[Scream for help|ICTDeath-ScreamBlind]]
-[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="825,142">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="825,143">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;set $deathCounter to $deathCounter +1&gt;&gt;
 &lt;img src=&quot;images/ver.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;470&quot;&gt;
 &lt;&lt;audio &quot;aah&quot; play&gt;&gt;
-You have died $deathCounter times.
-[[Start S1|Scenario-1-Start]]
-[[Start S2|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,26">&lt;&lt;set $deathCounter to 0&gt;&gt;
+&lt;&lt;if $S1Complete==1 &amp;&amp; $S2Complete==1&gt;&gt;Congratulations, you&#x27;ve finished the game!
 
-[[I Scream, You Scream|Scenario-1-Start]]
-[[The Jenga Killer|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
+You died a total of $deathCounter time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.&lt;&lt;else&gt;&gt;You have died $deathCounter time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+&lt;&lt;if $currentScenario == 1&gt;&gt;
+&lt;&lt;if $S2Complete == 0&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $currentScenario == 2&gt;&gt;
+&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,26">&lt;&lt;set $deathCounter to 0&gt;&gt;&lt;&lt;set $S1Complete to 0&gt;&gt;&lt;&lt;set $S2Complete to 0&gt;&gt;&lt;&lt;set $currentScenario to 0&gt;&gt;The story so far:
+You find yourself trapped in a rotating roster of scenarios both terrifying and ridiculous, forced to resurrect and relive until you manage to escape. Aware that you are a black man trapped in a horror film (with all the stereotypical tropes and hardships that follow), you must use all your cunning to stay alive and see this adventure through to the end. The wrong decision can – no, WILL – lead you to your death. Die. Learn. Repeat.
+
+The cast of characters:
+
+The Jock
+More brawn than brains, he is your typical tough guy who serves as the “big brother” figure of the group, though his motives are not always as clear as they appear.
+
+The Nerd
+The brains of the crew. His ability to think quick on his feet (and overthink in some cases) is a gift and a curse. He can quickly become overwhelmed and breakdown under pressure.
+
+The Stoner
+The cheery comic relief of the crew. She always seems to be in her own world no matter what type of near death scenario the group finds themselves in. But don’t underestimate her… she’s a survivor if nothing else.
+
+The Investigator
+Smart? Debatable. Brave? Mostly. Insane? Definitely. No matter the danger, he’s always the first one to suggest investigating the scene for clues and splitting up (among the numerous other norms we’ve grown to love in classic horror films).
+
+The Mysterious Mystical Dude
+A supernatural aid of sorts that magically appears at just the right moment, offering you an ultimatum that can either save your life or doom you. 
+
+You
+The unlikely hero, conscious of his horrific fate, but determined to make it out alive (eventually)
+
+Choose your starting scenario:
+[[I Scream, You Scream|Scenario-1-Start][$currentScenario=1]]
+[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
 The driver yells “Shut the front door! Don’t make me come back there and kill all of you little brats!” This seems to worsen the Nerd’s condition.
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Headbutt some sense into him|ICT-NerdHeadbutt]]
@@ -131,15 +160,15 @@ It would have been really nice if she’d untied you first.
 [[Let&#x27;s toke it up!|ICT-StonerConv3a]]
 [[I D.A.R.E. not touch that.|ICT-StonerConv3b]]</tw-passagedata><tw-passagedata pid="14" name="ICT-StonerConv3a" tags="" position="594,1242">&quot;Let&#x27;s toke it up brotherrrrr!&quot; you shout in your best Hulk Hogan voice.
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-She unties you, and you smoke together. After, you unmask and unbind all the others in the back of the truck. There is a Jock and an investigator, as well as the Nerd who looks like he’s calmed down a bit.
+She unties you, and you smoke together. After, you unmask and unbind all the others in the back of the truck. There is a Jock and an Investigator, as well as the Nerd who looks like he’s calmed down a bit.
 [[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="15" name="ICT-StonerConv3b" tags="" position="429,1086">She finishes smoking without you, and before you can ask her to untie you she’s become blissfully unresponsive.
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Better try talking to the NERD, I suppose.|ICT-NerdConv1]]</tw-passagedata><tw-passagedata pid="16" name="ICT-PART2" tags="" position="523,1839">&lt;&lt;set $InstAlive to 1&gt;&gt;
-The truck suddenly stops and everyone is tossed to the front of the truck. The Nerd hits his head hard, knocking him unconscious and bloody. The Stoner squeals “wheeeeeee!” and seems completely unphased. The sudden jolt wakes up the investigator, who has been silent and motionless up to this point. You can’t really tell if the Jock is alive or dead; his body remains totally limp.
+The truck suddenly stops and everyone is tossed to the front of the truck. The Nerd hits his head hard, knocking him unconscious and bloody. The Stoner squeals “wheeeeeee!” and seems completely unphased. The sudden jolt wakes up the Investigator, who has been silent and motionless up to this point. You can’t really tell if the Jock is alive or dead; his body remains totally limp.
 
 You hear the sound of something hissing, and notice a sudden drop in temperature. Before it was cold but now it’s absolutely freezing. In just a t-shirt and shorts, you’re not going to last long.
 
-[[Talk to investigator|ICT2-InstConv1]]
+[[Talk to Investigator|ICT2-InstConv1]]
 [[Scream for help|ICTDeath-ScreamNoBlind]]
 [[Look for the source of the temperature drop|ICT2-InvestigateCold]]
 [[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="17" name="ICT-NerdHeadbutt" tags="" position="169,1234">The nerd’s breathing slows a bit, and the jolt has left him silent.
@@ -195,8 +224,8 @@ You ask the NERD to help you, but upon looking up, he spots the copy of Half Lif
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="ICT-KeepLooking" tags="" position="179,1764">Stumped, you begin to look around the truck again. You notice that the NERD’S shiny Batman belt looks pretty sharp.
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Rub bindings on his belt|ICT-NerdBelt]]
-</tw-passagedata><tw-passagedata pid="28" name="ICT-NerdBelt" tags="" position="307,1844">You’re now free. Now you unbind the nerd, the Jock and the investigator. The Stoner is just giggling to herself in the corner, completely useless. The Jock seems to be asleep and isn’t moving no matter how much you shake him.
-[[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="29" name="ICT2-InstConv1" tags="" position="354,1998">The investigator surveys the surroundings with a blank expression, then turns and looks you dead in the eye.
+</tw-passagedata><tw-passagedata pid="28" name="ICT-NerdBelt" tags="" position="307,1844">You’re now free. Now you unbind the nerd, the Jock and the Investigator. The Stoner is just giggling to herself in the corner, completely useless. The Jock seems to be asleep and isn’t moving no matter how much you shake him.
+[[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="29" name="ICT2-InstConv1" tags="" position="354,1998">The Investigator surveys the surroundings with a blank expression, then turns and looks you dead in the eye.
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 “What do you want?”
 
@@ -229,22 +258,22 @@ The Stoner is observing gleefully, chanting “fight fight fight” between gigg
 [[Look for something to plug the hole with|ICT2-PlugHole]]
 [[Try to wake up the JOCK|ICT2-WakeUpJock]]
 &lt;&lt;if $InstAlive is 1&gt;&gt;
-[[Talk to investigator|ICT2-InstConv1]]
+[[Talk to Investigator|ICT2-InstConv1]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="ICT2-WakeUpJock" tags="" position="547,2065">He doesn’t move. It doesn’t seem like he’s alive, but he’s still breathing. The Stoner looks at him and mutters something that sounds kind of like “Chloroform Allergy”, but could have also been “Terraform Strategy”. It’s hard to tell. She’s just smiling to herself.
 &lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;if $InstAlive is 1&gt;&gt;
-[[Talk to investigator|ICT2-InstConv1]]
+[[Talk to Investigator|ICT2-InstConv1]]
 &lt;&lt;/if&gt;&gt;
 [[Scream for help|ICTDeath-ScreamNoBlind]]
 [[Look for the source of the temperature drop|ICT2-InvestigateCold]]</tw-passagedata><tw-passagedata pid="35" name="ICTDeath-InstDefuse" tags="" position="322,2340">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-As you begin a speech on the value of pacifism and teamwork in times of hardship, the investigator grabs you by the neck and begins mercilessly choking you while you squirm. The last thing you see is his twisted grin, ecstatic from witnessing your life drain away before of him.
+As you begin a speech on the value of pacifism and teamwork in times of hardship, the Investigator grabs you by the neck and begins mercilessly choking you while you squirm. The last thing you see is his twisted grin, ecstatic from witnessing your life drain away before of him.
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="36" name="ICT2-Fight" tags="" position="464,2344">&lt;&lt;set $InstAlive to 0&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="36" name="ICT2-Fight" tags="" position="465,2344">&lt;&lt;set $InstAlive to 0&gt;&gt;
 There&#x27;s no time to waste!
 
-You step back and unleash a deadly high-kick onto the investigator’s skull, but he’s so meaty that it barely phases him. However, while he is stronger, you are faster. You manage to dodge most of his attacks, while your srtikes seem to have little affect. It’s a stalemate.
+You step back and unleash a deadly high-kick onto the Investigator’s skull, but he’s so meaty that it barely phases him. However, while he is stronger, you are faster. You manage to dodge most of his attacks, while your srtikes seem to have little affect. It’s a stalemate.
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-The Stoner, completely captivated by the scene pulls a banana out of her hat that she’s been stashing. She eats the whole thing, tossing the peel on the ground as you and the investigator have the battle of your lives. Seizing the opportunity, you manage to push the banana peel under the investigator. He slips, smashing his head on a protruding corner of the truck, and crumples in a heap. 
+The Stoner, completely captivated by the scene pulls a banana out of her hat that she’s been stashing. She eats the whole thing, tossing the peel on the ground as you and the Investigator have the battle of your lives. Seizing the opportunity, you manage to push the banana peel under the Investigator. He slips, smashing his head on a protruding corner of the truck, and crumples in a heap. 
 
 You let out a victory cry, and the Stoner applauds.
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
@@ -258,11 +287,11 @@ The good news is that the heat of battle seems to have warmed you up some, altho
 [[Give up|ICT2-GiveUp]]
 [[Try to wake up the JOCK|ICT2-WakeUpJock]]
 &lt;&lt;if $InstAlive is 1&gt;&gt;
-[[Talk to investigator|ICT2-InstConv1]]
+[[Talk to Investigator|ICT2-InstConv1]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="ICTDeath-FlammableFreon" tags="" position="646,2257">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 The tube looks like you might be able to melt it shut if you had something hot to seal the rubber with. You spot the Stoner’s lighter on the ground and grab it. The moment you click it to test if it works, the entire truck combusts, killing everyone. Turns out some refrigerants are flammable.
 &lt;&lt;audio &quot;explode&quot; play&gt;&gt;
-[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="39" name="ICT2-GiveUp" tags="" position="781,2394">It seems like there aren’t really any more options. The cold and lifeless bodies of the investigator and Jock lay desolately on the ground. The nerd is unconscious but still breathing. The Stoner still seems unphased, but she isn’t giggling as much anymore. You know you’re going to freeze to death soon if you don’t do anything.
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="39" name="ICT2-GiveUp" tags="" position="781,2394">It seems like there aren’t really any more options. The cold and lifeless bodies of the Investigator and Jock lay desolately on the ground. The nerd is unconscious but still breathing. The Stoner still seems unphased, but she isn’t giggling as much anymore. You know you’re going to freeze to death soon if you don’t do anything.
 &lt;&lt;set $waitCounter to 1&gt;&gt;
 [[Wait|ICT2-Wait]]
 [[Channel your inner Han Solo|ICT2-HanSolo]]</tw-passagedata><tw-passagedata pid="40" name="ICT2-Wait" tags="" position="706,2544">&lt;&lt;if $waitCounter is 1&gt;&gt;
@@ -287,9 +316,9 @@ The stoner cries out “I love parties!”
 
 Wait, what???
 
-The once limp bodies of the investigator, Jock and Nerd get up and they embrace you. No one died. Friendship is forever. It was just a prank bro!
+The once limp bodies of the Investigator, Jock and Nerd get up and they embrace you. No one died. Friendship is forever. It was just a prank bro!
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-SCENARIO COMPLETE
+&lt;&lt;if $S2Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S1Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Scenario-2-Start][$S1Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="ICT2-HanSolo" tags="" position="856,2544">You look at the jock with an idea that both disgusts you and delights you.
 He’s still alive and he’s a pretty big guy... bet it’s nice and warm in there.
@@ -309,7 +338,7 @@ So now she’s willing to help
 
 Wait, what???
 
-The Nerd and the investigator wake up from their respective head head-injuries and begin to scream. 
+The Nerd and the Investigator wake up from their respective head head-injuries and begin to scream. 
 
 “YOU KILLED MIKEY! I CAN’T BELIEVE YOU KILLED MIKEY!”
 
@@ -317,14 +346,14 @@ The stoner cries out “I love parties!!”
 
 Turns out friendship is not forever, you monster.
 
-SCENARIO COMPLETE
+&lt;&lt;if $S2Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S1Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Scenario-2-Start][$S1Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Scenario-2-Start" tags="" position="1069,201">You’re in a dark room illuminated only by the flickering static of and old CRT TV.
 &lt;&lt;set $JKtalkedToJock to 0&gt;&gt;&lt;&lt;set $JKtalkedToNerd to 0&gt;&gt;&lt;&lt;set $JKtalkedToStoner to 0&gt;&gt;&lt;&lt;set $JKtalkedToInst to 0&gt;&gt;&lt;&lt;set $BHmet to 1&gt;&gt;
 &lt;&lt;audio &quot;music2&quot; loop play&gt;&gt;
 [[Look Around|JK-LookAround]]
 [[Call Out|JK-CallOut]]
-[[Wait|JK-Wait]]</tw-passagedata><tw-passagedata pid="45" name="JK-LookAround" tags="" position="963,344">There are four other people with you, all standing in silence. A nerd, a jock, an investigator and a stoner. Everyone is waiting in an apprehensive silence.
+[[Wait|JK-Wait]]</tw-passagedata><tw-passagedata pid="45" name="JK-LookAround" tags="" position="963,344">There are four other people with you, all standing in silence. A nerd, a jock, an Investigator and a stoner. Everyone is waiting in an apprehensive silence.
 
 After some time, the TV screen turns a familiar shade of beige. Like alder wood, almost. A voice crackles through half-broken speakers,
 
@@ -346,7 +375,7 @@ The room is empty save for the archaic &#x27;80s television and your fellow vict
 
 [[Talk to Jock|JK-Jock1]]
 [[Talk to Stoner|JK-Stoner1]]
-[[Talk to investigator|JK-Inst1]]
+[[Talk to Investigator|JK-Inst1]]
 [[Talk to Nerd|JK-Nerd1]]
 [[Check the door|JKDeath-CheckDoor]]</tw-passagedata><tw-passagedata pid="49" name="JK-Jock1" tags="" position="901,601">&quot;I don&#x27;t know what the heck is going on, but I gotta find some protein quick. I have a workout later!&quot;
 &lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
@@ -370,12 +399,12 @@ The door opens without a problem, but outside, you find yourself looking down th
 &lt;&lt;if $JKtalkedToJock is 0&gt;&gt;
 [[Talk to Jock|JK-Jock1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToStoner is 0&gt;&gt;
 [[Talk to Stoner|JK-Stoner1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToInst is 0&gt;&gt;
-[[Talk to investigator|JK-Inst1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToNerd is 0&gt;&gt;
+[[Talk to Investigator|JK-Inst1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToNerd is 0&gt;&gt;
 [[Talk to Nerd|JK-Nerd1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToInst is 1&gt;&gt;
-[[Ask investigator to open the door|JK-InstCheckDoor]]&lt;&lt;/if&gt;&gt;
+[[Ask Investigator to open the door|JK-InstCheckDoor]]&lt;&lt;/if&gt;&gt;
 [[Check the door|JKDeath-CheckDoor]]</tw-passagedata><tw-passagedata pid="55" name="JK-InstCheckDoor" tags="" position="1200,749">&quot;So you want me to take charge? Smart choice. You can go mess around with the TV and see if you can find any more information. Just stay out of my way!&quot;
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-He approaches the door and pulls it open. After a brief moment, you hear a gunshot, and the investigator tumbles to the ground. The door slowly creaks open, but whoever fired the gun is gone. A brief examination reveals a gaping hole in his chest.
+He approaches the door and pulls it open. After a brief moment, you hear a gunshot, and the Investigator tumbles to the ground. The door slowly creaks open, but whoever fired the gun is gone. A brief examination reveals a gaping hole in his chest.
 
 You don&#x27;t think he&#x27;s going to make it.
 
@@ -728,9 +757,11 @@ It’s a scene of joy..
 A hidden doorway opens, and the slightly charred Stoner appears and lights up a joint.
 
 “Wow, what a thing of beauty. Hahaha... took you long enough.”
+
+&lt;&lt;if $S1Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S2Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Scenario-1-Start][$S2Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;
-SCENARIO COMPLETE</tw-passagedata><tw-passagedata pid="110" name="JK-AtticFinal" tags="" position="1300,4899">You arrive at the top of the stairs, ready to face your final gruesome challenge. Who do you use to stabilize the tower?
+</tw-passagedata><tw-passagedata pid="110" name="JK-AtticFinal" tags="" position="1299,4899">You arrive at the top of the stairs, ready to face your final gruesome challenge. Who do you use to stabilize the tower?
 &lt;&lt;if $JockAlive==1&gt;&gt;
 [[Jock and Nerd|JKDeath-JNCollapse(Alive)]]
 [[Nerd and you|JK-GoodEnd]]
@@ -753,7 +784,7 @@ The blockheads look on, overjoyed at your display of teamwork and tactical think
 You won, I guess. But you also died... 
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;
-[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="112" name="JK-BadEnd" tags="" position="1502,5100">You wedge the Jock’s body underneath the tower first. It stabilizes slightly. Overpowered by unbearable guilt, you decide to skip the Nerd and just put yourself under. You don’t deserve to survive.
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="112" name="JK-BadEnd" tags="" position="1503.6666666666667,5100">You wedge the Jock’s body underneath the tower first. It stabilizes slightly. Overpowered by unbearable guilt, you decide to skip the Nerd and just put yourself under. You don’t deserve to survive.
 
 Once you are secured underneath the pile of rotting bodies, you begin to come to terms with your own death. Only then do a parade of Blockheads emerge from the corridors, filling the room, and begin deconstructing the tower from the top down, freeing you.
 
@@ -765,7 +796,9 @@ Did anyone have to die?
 
 A hidden doorway opens, and the slightly charred Stoner appears and lights up a joint.
 
-“Wow, what a thing of beauty. Hahaha… took you long enough.”
+“Wow, what a thing of beauty. Hahaha... took you long enough.”
+
+&lt;&lt;if $S1Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S2Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Scenario-1-Start][$S2Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="JKDeath-NYCollapse" tags="" position="1500,4953">You wedge the Nerd’s body underneath the tower first. It stabilizes slightly. Overpowered by unbearable guilt, you decide to skip the Jock and just put yourself under. You don’t deserve to survive.
 
@@ -796,6 +829,9 @@ They are chanting
 It’s a scene of joy. The Jock comes to, and looks amazed.
 
 A hidden door slides open, and you leave together, hand in hand. Free forever.
+
+&lt;&lt;if $S1Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S2Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Scenario-1-Start][$S2Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-&lt;&lt;audio &quot;yay&quot; play&gt;&gt;
-SCENARIO COMPLETE</tw-passagedata></tw-storydata>
+&lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="EndGame" tags="" position="578.6666666666666,5693">Congratulations, you&#x27;ve finished the game!
+
+You died a total of $deathCounter time&lt;&lt;if $deathCounter &gt;= 2 ||$deathCounter == 0&gt;&gt;s&lt;&lt;/if&gt;&gt;.</tw-passagedata></tw-storydata>
