@@ -112,20 +112,7 @@ Across from you is a a girl, also maskless, who has managed to loosen her wrist 
 &lt;&lt;audio &quot;aah&quot; play&gt;&gt;
 &lt;&lt;if $S1Complete==1 &amp;&amp; $S2Complete==1&gt;&gt;Congratulations, you&#x27;ve finished the game!&lt;&lt;/if&gt;&gt;.
 
-[[Stats|Stats]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,26">&lt;&lt;set $deathCounter to 0&gt;&gt;&lt;&lt;set $S1Complete to 0&gt;&gt;&lt;&lt;set $S2Complete to 0&gt;&gt;&lt;&lt;set $currentScenario to 0&gt;&gt;
-&lt;&lt;set $pullCounter to 0&gt;&gt;
-&lt;&lt;set $shotCounter to 0&gt;&gt;
-&lt;&lt;set $burnCounter to 0&gt;&gt;
-&lt;&lt;set $stabCounter to 0&gt;&gt;
-&lt;&lt;set $explodeCounter to 0&gt;&gt;
-&lt;&lt;set $chopCounter to 0&gt;&gt;
-&lt;&lt;set $snapCounter to 0&gt;&gt;
-&lt;&lt;set $clubCounter to 0&gt;&gt;
-&lt;&lt;set $chokeCounter to 0&gt;&gt;
-&lt;&lt;set $crushCounter to 0&gt;&gt;
-&lt;&lt;set $JocDeath to 0&gt;&gt;&lt;&lt;set $NerDeath to 0&gt;&gt;&lt;&lt;set $StoDeath to 0&gt;&gt;&lt;&lt;set $InvDeath to 0&gt;&gt;
-&lt;&lt;set $GoodIce to 0&gt;&gt;&lt;&lt;set $BadIce to 0&gt;&gt;&lt;&lt;set $TeamJen to 0&gt;&gt;&lt;&lt;set $MercyJen to 0&gt;&gt;&lt;&lt;set $BadJen to 0&gt;&gt;
-
+[[Stats|Stats]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,26">
 The story so far:
 You find yourself trapped in a rotating roster of scenarios both terrifying and ridiculous, forced to resurrect and relive until you manage to escape. Aware that you are a black man trapped in a horror film (with all the stereotypical tropes and hardships that follow), you must use all your cunning to stay alive and see this adventure through to the end. The wrong decision can – no, WILL – lead you to your death. Die. Learn. Repeat.
 
@@ -157,7 +144,21 @@ The unlikely hero, conscious of his horrific fate, but determined to make it out
 
 Choose your starting scenario:
 [[I Scream, You Scream|Scenario-1-Start][$currentScenario=1]]
-[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
+[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]
+&lt;&lt;set $deathCounter to 0&gt;&gt;&lt;&lt;set $S1Complete to 0&gt;&gt;&lt;&lt;set $S2Complete to 0&gt;&gt;&lt;&lt;set $currentScenario to 0&gt;&gt;
+&lt;&lt;set $pullCounter to 0&gt;&gt;
+&lt;&lt;set $shotCounter to 0&gt;&gt;
+&lt;&lt;set $burnCounter to 0&gt;&gt;
+&lt;&lt;set $stabCounter to 0&gt;&gt;
+&lt;&lt;set $explodeCounter to 0&gt;&gt;
+&lt;&lt;set $chopCounter to 0&gt;&gt;
+&lt;&lt;set $snapCounter to 0&gt;&gt;
+&lt;&lt;set $clubCounter to 0&gt;&gt;
+&lt;&lt;set $chokeCounter to 0&gt;&gt;
+&lt;&lt;set $crushCounter to 0&gt;&gt;
+&lt;&lt;set $JocDeath to 0&gt;&gt;&lt;&lt;set $NerDeath to 0&gt;&gt;&lt;&lt;set $StoDeath to 0&gt;&gt;&lt;&lt;set $InvDeath to 0&gt;&gt;
+&lt;&lt;set $GoodIce to 0&gt;&gt;&lt;&lt;set $BadIce to 0&gt;&gt;&lt;&lt;set $TeamJen to 0&gt;&gt;&lt;&lt;set $MercyJen to 0&gt;&gt;&lt;&lt;set $BadJen to 0&gt;&gt;
+</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
 The driver yells “Shut the front door! Don’t make me come back there and kill all of you little brats!” This seems to worsen the Nerd’s condition.
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Headbutt some sense into him|ICT-NerdHeadbutt]]
@@ -885,22 +886,22 @@ A hidden door slides open, and you leave together, hand in hand. Free forever.
 
 You died a total of $deathCounter time&lt;&lt;if $deathCounter &gt;= 2 ||$deathCounter == 0&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 
-[[Start again|Stats]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="795.9999999999999,184">You have died $deathCounter time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-The jock has died $JocDeath time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-The nerd has died $NerDeath time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-The stoner has died $StoDeath time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-The investigator has died $InvDeath time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+[[Start again|Stats][$currentScenario=3]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="795.9999999999999,184">You have died $deathCounter time&lt;&lt;if $deathCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been shot $shotCounter time&lt;&lt;if $shotCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been pulled apart $pullCounter time&lt;&lt;if $pullCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have burned to death $burnCounter time&lt;&lt;if $burnCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been stabbed $stabCounter time&lt;&lt;if $stabCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have blown up $explodeCounter time&lt;&lt;if $explodeCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have had limbs chopped off $chopCounter time&lt;&lt;if $chopCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have had your neck snapped $snapCounter time&lt;&lt;if $snapCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been beaten to death $clubCounter time&lt;&lt;if $clubCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been strangled $chokeCounter time&lt;&lt;if $chokeCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been crushed $crushCounter time&lt;&lt;if $crushCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 
-You have been shot $shotCounter time&lt;&lt;if $shotCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have been pulled apart $pullCounter time&lt;&lt;if $pullCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have burned to death $burnCounter time&lt;&lt;if $burnCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have been stabbed $stabCounter time&lt;&lt;if $stabCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have blown up $explodeCounter time&lt;&lt;if $explodeCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have had limbs chopped off $chopCounter time&lt;&lt;if $chopCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have had your neck snapped $snapCounter time&lt;&lt;if $snapCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have been beaten to death $clubCounter time&lt;&lt;if $clubCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have been strangled $chokeCounter time&lt;&lt;if $chokeCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-You have been crushed $crushCounter time&lt;&lt;if $crushCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+The jock has died $JocDeath time&lt;&lt;if $JocDeath != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+The nerd has died $NerDeath time&lt;&lt;if $NerDeath != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+The stoner has died $StoDeath time&lt;&lt;if $StoDeath != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+The investigator has died $InvDeath time&lt;&lt;if $InvDeath != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 
 &lt;&lt;if $GoodIce == 1&gt;&gt; You have obtained the Surprise Party ending.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $BadIce == 1&gt;&gt; You have obtained the Unfortunate Misunderstanding ending.&lt;&lt;/if&gt;&gt;
@@ -911,7 +912,10 @@ You have been crushed $crushCounter time&lt;&lt;if $crushCounter &gt;= 2&gt;&gt;
 &lt;&lt;if $currentScenario == 1&gt;&gt;
 &lt;&lt;if $S2Complete == 0&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $currentScenario == 2&gt;&gt;
-&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $currentScenario == 3&gt;&gt;
+[[I Scream, You Scream|Scenario-1-Start][$currentScenario=1]]
+[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]
+&lt;&lt;/if&gt;&gt;
 
 </tw-passagedata></tw-storydata>
