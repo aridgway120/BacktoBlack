@@ -716,8 +716,7 @@ She &lt;&lt;/if&gt;&gt;&lt;&lt;if $JKsaveStoner is 0&gt;&gt;The Stoner &lt;&lt;/
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;fires&quot; stop&gt;&gt;
 [[That was a close one|JK-BasementSuccess]]</tw-passagedata><tw-passagedata pid="80" name="JK-BasementSuccess" tags="" position="1276,2368">You emerge from the furnace room, your clothes somewhat singed, but relatively unharmed. The Jock and Nerd are waiting mouths agape. 
-&lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;
-&lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;
+&lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;&lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;
 “What the hell?! We have to get out of here, this is insane” Says the Jock. The Nerd just stares at you in traumatized silence.
 
 [[Examine Jenga pieces|JKDeath-Pieces]]
@@ -987,7 +986,7 @@ A hidden door slides open, and you leave together, hand in hand. Free forever.
 &lt;&lt;if $S1Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S2Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Stats][$S2Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="EndGame" tags="" position="578,5693">Congratulations, you&#x27;ve finished the game!
-
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 You died a total of $deathCounter time&lt;&lt;if $deathCounter &gt;= 2 ||$deathCounter == 0&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 
 [[Start again|Stats][$currentScenario=3]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="795.9999999999999,184">You have died $deathCounter time&lt;&lt;if $deathCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
