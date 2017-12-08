@@ -1006,21 +1006,15 @@ The jock has died $JocDeath time&lt;&lt;if $JocDeath != 1&gt;&gt;s&lt;&lt;/if&gt
 The nerd has died $NerDeath time&lt;&lt;if $NerDeath != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 The stoner has died $StoDeath time&lt;&lt;if $StoDeath != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 The investigator has died $InvDeath time&lt;&lt;if $InvDeath != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
-
-&lt;&lt;if $GoodIce == 1&gt;&gt; You have obtained the Surprise Party ending.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $BadIce == 1&gt;&gt; You have obtained the Unfortunate Misunderstanding ending.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $TeamJen == 1&gt;&gt; You have obtained the Friendly Fun ending.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $MercyJen == 1&gt;&gt; You have obtained the Survivors ending.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $BadJen == 1&gt;&gt; You have obtained the Cheater ending.&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $currentScenario == 1&gt;&gt;
-&lt;&lt;if $S2Complete == 0&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $currentScenario == 2&gt;&gt;
-&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $currentScenario == 3&gt;&gt;
-[[I Scream, You Scream|Scenario-1-Start][$currentScenario=1]]
-[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $GoodIce == 1&gt;&gt; 
+You have obtained the Surprise Party ending.&lt;&lt;/if&gt;&gt;&lt;&lt;if $BadIce == 1&gt;&gt;
+You have obtained the Unfortunate Misunderstanding ending.&lt;&lt;/if&gt;&gt;&lt;&lt;if $TeamJen == 1&gt;&gt; 
+You have obtained the Friendly Fun ending.&lt;&lt;/if&gt;&gt;&lt;&lt;if $MercyJen == 1&gt;&gt;
+You have obtained the Survivors ending.&lt;&lt;/if&gt;&gt;&lt;&lt;if $BadJen == 1&gt;&gt; 
+You have obtained the Cheater ending.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $currentScenario == 1&gt;&gt;&lt;&lt;if $S2Complete == 0&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $currentScenario == 2&gt;&gt;&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $currentScenario == 3&gt;&gt;[[I Scream, You Scream|Scenario-1-Start][$currentScenario=1]]
+[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;
 
 </tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
