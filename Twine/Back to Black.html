@@ -147,7 +147,15 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 
 
 
+
+
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">//config.history.controls = false;
+
+
+
+
 
 
 
@@ -189,6 +197,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 [[Listen|ICT-Listen]]</tw-passagedata><tw-passagedata pid="2" name="ICTDeath-ScreamBlind" tags="" position="641,503">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 The car stops, and you can hear footsteps approaching the back door. It opens suddenly, and you hear a gun being cocked. The last words you hear are “BOOM HEADSHOT”.
 &lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
+&lt;&lt;set $shotCounter to $shotCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="3" name="ICT-Listen" tags="" position="495,580">Lying still and listening, you hear faint music. There&#x27;s something... familiar about it. Behind you, there are muffled voices. You only catch snippets, but it&#x27;s clear you&#x27;ve been kidnapped.
 [[Great.|ICT-AfterListen]]</tw-passagedata><tw-passagedata pid="4" name="ICT-BlindfoldOff" tags="" position="385,815">You make little progress with your bonds, but your efforts knock your mask askew, revealing the room.
 
@@ -201,17 +210,58 @@ Across from you is a a girl, also maskless, who has managed to loosen her wrist 
 [[Talk to the Stoner|ICT-StonerConv1]]
 [[Scream for help|ICTDeath-ScreamNoBlind]]</tw-passagedata><tw-passagedata pid="5" name="ICT-AfterListen" tags="" position="497,697">The floor continues to shake occasionally, and your fingers feel stiff from the cold.
 [[Scream for help|ICTDeath-ScreamBlind]]
-[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="825,142">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="798.3333333333334,328">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;set $deathCounter to $deathCounter +1&gt;&gt;
 &lt;img src=&quot;images/ver.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;470&quot;&gt;
 &lt;&lt;audio &quot;aah&quot; play&gt;&gt;
-You have died $deathCounter times.
-[[Start S1|Scenario-1-Start]]
-[[Start S2|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,25">&lt;&lt;set $deathCounter to 0&gt;&gt;
-Flame here:
-&lt;img src=&quot;images/cov.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;470&quot;&gt;
-[[BEGIN S1|Scenario-1-Start]]
-[[BEGIN S2|Scenario-2-Start]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
+&lt;&lt;if $S1Complete==1 &amp;&amp; $S2Complete==1&gt;&gt;Congratulations, you&#x27;ve finished the game!&lt;&lt;/if&gt;&gt;.
+
+[[Stats|Stats]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,26">&lt;&lt;set $deathCounter to 0&gt;&gt;&lt;&lt;set $S1Complete to 0&gt;&gt;&lt;&lt;set $S2Complete to 0&gt;&gt;&lt;&lt;set $currentScenario to 0&gt;&gt;
+&lt;&lt;set $pullCounter to 0&gt;&gt;
+&lt;&lt;set $shotCounter to 0&gt;&gt;
+&lt;&lt;set $burnCounter to 0&gt;&gt;
+&lt;&lt;set $stabCounter to 0&gt;&gt;
+&lt;&lt;set $explodeCounter to 0&gt;&gt;
+&lt;&lt;set $chopCounter to 0&gt;&gt;
+&lt;&lt;set $snapCounter to 0&gt;&gt;
+&lt;&lt;set $clubCounter to 0&gt;&gt;
+&lt;&lt;set $chokeCounter to 0&gt;&gt;
+&lt;&lt;set $crushCounter to 0&gt;&gt;
+&lt;&lt;set $JocDeath to 0&gt;&gt;&lt;&lt;set $NerDeath to 0&gt;&gt;&lt;&lt;set $StoDeath to 0&gt;&gt;&lt;&lt;set $InvDeath to 0&gt;&gt;
+&lt;&lt;set $GoodIce to 0&gt;&gt;&lt;&lt;set $BadIce to 0&gt;&gt;&lt;&lt;set $TeamJen to 0&gt;&gt;&lt;&lt;set $MercyJen to 0&gt;&gt;&lt;&lt;set $BadJen to 0&gt;&gt;
+
+The story so far:
+You find yourself trapped in a rotating roster of scenarios both terrifying and ridiculous, forced to resurrect and relive until you manage to escape. Aware that you are a black man trapped in a horror film (with all the stereotypical tropes and hardships that follow), you must use all your cunning to stay alive and see this adventure through to the end. The wrong decision can – no, WILL – lead you to your death. Die. Learn. Repeat.
+
+The cast of characters:
+
+The Jock
+More brawn than brains, he is your typical tough guy who serves as the “big brother” figure of the group, though his motives are not always as clear as they appear.
+&lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
+
+The Nerd
+The brains of the crew. His ability to think quick on his feet (and overthink in some cases) is a gift and a curse. He can quickly become overwhelmed and breakdown under pressure.
+&lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
+
+The Stoner
+The cheery comic relief of the crew. She always seems to be in her own world no matter what type of near death scenario the group finds themselves in. But don’t underestimate her… she’s a survivor if nothing else.
+&lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
+
+The Investigator
+Smart? Debatable. Brave? Mostly. Insane? Definitely. No matter the danger, he’s always the first one to suggest investigating the scene for clues and splitting up (among the numerous other norms we’ve grown to love in classic horror films).
+&lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
+
+The Mysterious Mystical Dude
+A supernatural aid of sorts that magically appears at just the right moment, offering you an ultimatum that can either save your life or doom you. 
+&lt;img src=&quot;images/mys.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
+
+You
+The unlikely hero, conscious of his horrific fate, but determined to make it out alive (eventually)
+&lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
+
+Choose your starting scenario:
+[[I Scream, You Scream|Scenario-1-Start][$currentScenario=1]]
+[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]</tw-passagedata><tw-passagedata pid="8" name="ICT-NerdConv1" tags="" position="229,1086">When you acknowledge the Nerd’s presence he begins to squeak, breathing heavily.
 The driver yells “Shut the front door! Don’t make me come back there and kill all of you little brats!” This seems to worsen the Nerd’s condition.
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Headbutt some sense into him|ICT-NerdHeadbutt]]
@@ -222,8 +272,14 @@ The driver yells “Shut the front door! Don’t make me come back there and kil
 [[Ask Her To Untie You|ICT-StonerConv2]]</tw-passagedata><tw-passagedata pid="10" name="ICTDeath-ScreamNoBlind" tags="" position="628,685">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “BOOM HEADSHOT”
 &lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
+&lt;&lt;set $shotCounter to $shotCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="11" name="ICTDeath-StonerInterfere" tags="" position="659,883">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 You throw your body at her and knock the lighter out of her hand. Unfortunately, an ember falls into an open cannister of gasoline nearby. It immediately ignites, killing everyone.
+&lt;&lt;set $StoDeath to $StoDeath +1&gt;&gt;
+&lt;&lt;set $StoDeath to $NerDeath +1&gt;&gt;
+&lt;&lt;set $StoDeath to $JocDeath +1&gt;&gt;
+&lt;&lt;set $StoDeath to $InvDeath +1&gt;&gt;
+&lt;&lt;set $explodeCounter to $explodeCounter+1&gt;&gt;
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;explode&quot; play&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="12" name="ICT-StonerSmoke" tags="" position="386,962">She burns through the joint faster than you though possible, and before you can ask her to untie you, she’s giggling to herself in a haze. It seems like she can’t hear anything you’re saying...
@@ -234,15 +290,15 @@ It would have been really nice if she’d untied you first.
 [[Let&#x27;s toke it up!|ICT-StonerConv3a]]
 [[I D.A.R.E. not touch that.|ICT-StonerConv3b]]</tw-passagedata><tw-passagedata pid="14" name="ICT-StonerConv3a" tags="" position="594,1242">&quot;Let&#x27;s toke it up brotherrrrr!&quot; you shout in your best Hulk Hogan voice.
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-She unties you, and you smoke together. After, you unmask and unbind all the others in the back of the truck. There is a Jock and an investigator, as well as the Nerd who looks like he’s calmed down a bit.
+She unties you, and you smoke together. After, you unmask and unbind all the others in the back of the truck. There is a Jock and an Investigator, as well as the Nerd who looks like he’s calmed down a bit.
 [[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="15" name="ICT-StonerConv3b" tags="" position="429,1086">She finishes smoking without you, and before you can ask her to untie you she’s become blissfully unresponsive.
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Better try talking to the NERD, I suppose.|ICT-NerdConv1]]</tw-passagedata><tw-passagedata pid="16" name="ICT-PART2" tags="" position="523,1839">&lt;&lt;set $InstAlive to 1&gt;&gt;
-The truck suddenly stops and everyone is tossed to the front of the truck. The Nerd hits his head hard, knocking him unconscious and bloody. The Stoner squeals “wheeeeeee!” and seems completely unphased. The sudden jolt wakes up the investigator, who has been silent and motionless up to this point. You can’t really tell if the Jock is alive or dead; his body remains totally limp.
+The truck suddenly stops and everyone is tossed to the front of the truck. The Nerd hits his head hard, knocking him unconscious and bloody. The Stoner squeals “wheeeeeee!” and seems completely unphased. The sudden jolt wakes up the Investigator, who has been silent and motionless up to this point. You can’t really tell if the Jock is alive or dead; his body remains totally limp.
 
 You hear the sound of something hissing, and notice a sudden drop in temperature. Before it was cold but now it’s absolutely freezing. In just a t-shirt and shorts, you’re not going to last long.
 
-[[Talk to investigator|ICT2-InstConv1]]
+[[Talk to Investigator|ICT2-InstConv1]]
 [[Scream for help|ICTDeath-ScreamNoBlind]]
 [[Look for the source of the temperature drop|ICT2-InvestigateCold]]
 [[Try to wake up the JOCK|ICT2-WakeUpJock]]</tw-passagedata><tw-passagedata pid="17" name="ICT-NerdHeadbutt" tags="" position="169,1234">The nerd’s breathing slows a bit, and the jolt has left him silent.
@@ -257,6 +313,7 @@ You hear the sound of something hissing, and notice a sudden drop in temperature
 He starts hyperventilating and lets out a bloodcurdling scream. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “BOOM HEADSHOT”
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
+&lt;&lt;set $shotCounter to $shotCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="21" name="ICT-DavidAppears" tags="" position="128,1495">Before the nerd can respond, a mysterious voice echoes through the truck.
 
 “I&#x27;ve got the solution to you predicament”.
@@ -287,19 +344,21 @@ The mysterious asian throws a smoke bomb down and disappears, leaving behind the
 
 [[Keep Looking Around|ICT-KeepLooking]]</tw-passagedata><tw-passagedata pid="26" name="ICTDeath-ItemGetNerd" tags="" position="398,1492">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;if $item is &quot;HL3&quot;&gt;&gt;The nerd enthusiastically grabs the copy of the game and begins to screech. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “IT DOESN’T EXIST”
+&lt;&lt;set $shotCounter to $shotCounter+1&gt;&gt;
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
 [[Try again|Reset]]
 &lt;&lt;else&gt;&gt;
 You ask the NERD to help you, but upon looking up, he spots the copy of Half Life 3 and begins to screech. The car stops, and you can hear footsteps approaching the back door. It opens suddenly and a gold plated Desert Eagle gun is pointed at you, and the last words you hear are “IT DOESN’T EXIST”
+&lt;&lt;set $shotCounter to $shotCounter+1&gt;&gt;
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;eagle&quot; play&gt;&gt;
 [[Try again|Reset]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="ICT-KeepLooking" tags="" position="179,1764">Stumped, you begin to look around the truck again. You notice that the NERD’S shiny Batman belt looks pretty sharp.
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Rub bindings on his belt|ICT-NerdBelt]]
-</tw-passagedata><tw-passagedata pid="28" name="ICT-NerdBelt" tags="" position="307,1844">You’re now free. Now you unbind the nerd, the Jock and the investigator. The Stoner is just giggling to herself in the corner, completely useless. The Jock seems to be asleep and isn’t moving no matter how much you shake him.
-[[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="29" name="ICT2-InstConv1" tags="" position="354,1998">The investigator surveys the surroundings with a blank expression, then turns and looks you dead in the eye.
+</tw-passagedata><tw-passagedata pid="28" name="ICT-NerdBelt" tags="" position="307,1844">You’re now free. Now you unbind the nerd, the Jock and the Investigator. The Stoner is just giggling to herself in the corner, completely useless. The Jock seems to be asleep and isn’t moving no matter how much you shake him.
+[[The truck suddenly screeches to a halt|ICT-PART2]]</tw-passagedata><tw-passagedata pid="29" name="ICT2-InstConv1" tags="" position="354,1998">The Investigator surveys the surroundings with a blank expression, then turns and looks you dead in the eye.
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 “What do you want?”
 
@@ -332,22 +391,23 @@ The Stoner is observing gleefully, chanting “fight fight fight” between gigg
 [[Look for something to plug the hole with|ICT2-PlugHole]]
 [[Try to wake up the JOCK|ICT2-WakeUpJock]]
 &lt;&lt;if $InstAlive is 1&gt;&gt;
-[[Talk to investigator|ICT2-InstConv1]]
+[[Talk to Investigator|ICT2-InstConv1]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="ICT2-WakeUpJock" tags="" position="547,2065">He doesn’t move. It doesn’t seem like he’s alive, but he’s still breathing. The Stoner looks at him and mutters something that sounds kind of like “Chloroform Allergy”, but could have also been “Terraform Strategy”. It’s hard to tell. She’s just smiling to herself.
 &lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;if $InstAlive is 1&gt;&gt;
-[[Talk to investigator|ICT2-InstConv1]]
+[[Talk to Investigator|ICT2-InstConv1]]
 &lt;&lt;/if&gt;&gt;
 [[Scream for help|ICTDeath-ScreamNoBlind]]
 [[Look for the source of the temperature drop|ICT2-InvestigateCold]]</tw-passagedata><tw-passagedata pid="35" name="ICTDeath-InstDefuse" tags="" position="322,2340">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-As you begin a speech on the value of pacifism and teamwork in times of hardship, the investigator grabs you by the neck and begins mercilessly choking you while you squirm. The last thing you see is his twisted grin, ecstatic from witnessing your life drain away before of him.
+As you begin a speech on the value of pacifism and teamwork in times of hardship, the Investigator grabs you by the neck and begins mercilessly choking you while you squirm. The last thing you see is his twisted grin, ecstatic from witnessing your life drain away before of him.
+&lt;&lt;set $chokeCounter to $chokeCounter+1&gt;&gt;
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="36" name="ICT2-Fight" tags="" position="464,2344">&lt;&lt;set $InstAlive to 0&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="36" name="ICT2-Fight" tags="" position="465,2344">&lt;&lt;set $InstAlive to 0&gt;&gt;
 There&#x27;s no time to waste!
 
-You step back and unleash a deadly high-kick onto the investigator’s skull, but he’s so meaty that it barely phases him. However, while he is stronger, you are faster. You manage to dodge most of his attacks, while your srtikes seem to have little affect. It’s a stalemate.
+You step back and unleash a deadly high-kick onto the Investigator’s skull, but he’s so meaty that it barely phases him. However, while he is stronger, you are faster. You manage to dodge most of his attacks, while your srtikes seem to have little affect. It’s a stalemate.
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-The Stoner, completely captivated by the scene pulls a banana out of her hat that she’s been stashing. She eats the whole thing, tossing the peel on the ground as you and the investigator have the battle of your lives. Seizing the opportunity, you manage to push the banana peel under the investigator. He slips, smashing his head on a protruding corner of the truck, and crumples in a heap. 
+The Stoner, completely captivated by the scene pulls a banana out of her hat that she’s been stashing. She eats the whole thing, tossing the peel on the ground as you and the Investigator have the battle of your lives. Seizing the opportunity, you manage to push the banana peel under the Investigator. He slips, smashing his head on a protruding corner of the truck, and crumples in a heap. 
 
 You let out a victory cry, and the Stoner applauds.
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
@@ -361,11 +421,12 @@ The good news is that the heat of battle seems to have warmed you up some, altho
 [[Give up|ICT2-GiveUp]]
 [[Try to wake up the JOCK|ICT2-WakeUpJock]]
 &lt;&lt;if $InstAlive is 1&gt;&gt;
-[[Talk to investigator|ICT2-InstConv1]]
+[[Talk to Investigator|ICT2-InstConv1]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="ICTDeath-FlammableFreon" tags="" position="646,2257">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 The tube looks like you might be able to melt it shut if you had something hot to seal the rubber with. You spot the Stoner’s lighter on the ground and grab it. The moment you click it to test if it works, the entire truck combusts, killing everyone. Turns out some refrigerants are flammable.
+&lt;&lt;set $explodeCounter to $explodeCounter+1&gt;&gt;
 &lt;&lt;audio &quot;explode&quot; play&gt;&gt;
-[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="39" name="ICT2-GiveUp" tags="" position="781,2394">It seems like there aren’t really any more options. The cold and lifeless bodies of the investigator and Jock lay desolately on the ground. The nerd is unconscious but still breathing. The Stoner still seems unphased, but she isn’t giggling as much anymore. You know you’re going to freeze to death soon if you don’t do anything.
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="39" name="ICT2-GiveUp" tags="" position="781,2394">It seems like there aren’t really any more options. The cold and lifeless bodies of the Investigator and Jock lay desolately on the ground. The nerd is unconscious but still breathing. The Stoner still seems unphased, but she isn’t giggling as much anymore. You know you’re going to freeze to death soon if you don’t do anything.
 &lt;&lt;set $waitCounter to 1&gt;&gt;
 [[Wait|ICT2-Wait]]
 [[Channel your inner Han Solo|ICT2-HanSolo]]</tw-passagedata><tw-passagedata pid="40" name="ICT2-Wait" tags="" position="706,2544">&lt;&lt;if $waitCounter is 1&gt;&gt;
@@ -390,9 +451,10 @@ The stoner cries out “I love parties!”
 
 Wait, what???
 
-The once limp bodies of the investigator, Jock and Nerd get up and they embrace you. No one died. Friendship is forever. It was just a prank bro!
+The once limp bodies of the Investigator, Jock and Nerd get up and they embrace you. No one died. Friendship is forever. It was just a prank bro!
+&lt;&lt;set $GoodIce to 1&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-SCENARIO COMPLETE
+&lt;&lt;if $S2Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S1Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Stats][$S1Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="ICT2-HanSolo" tags="" position="856,2544">You look at the jock with an idea that both disgusts you and delights you.
 He’s still alive and he’s a pretty big guy... bet it’s nice and warm in there.
@@ -407,27 +469,28 @@ Face first, you plunge your face into the belly of the Jock. Human flesh isn’t
 “Hahahaa what are you doing!? Lol I have a knife if you want”, the Stoner chimes in.
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 So now she’s willing to help
+&lt;&lt;set $JocDeath to $JocDeath +1&gt;&gt;
 [[Cut him open|ICT2-HanSolo3]]
 </tw-passagedata><tw-passagedata pid="43" name="ICT2-HanSolo3" tags="" position="855,2845">Once the Jock is a giant human body-bag, you climb inside him. You tell the Stoner to grab the unconscious Nerd so the three of you can fit and hopefully live for long enough in his warmth (and off of his entrails) to be rescued. As soon as you’re all cozy inside,  the back doors of the Ice Cream truck swing open. There is a group of your friends waiting for you. “SURPRISE, HAPPY BIRTHDAY!”.  
 
 Wait, what???
 
-The Nerd and the investigator wake up from their respective head head-injuries and begin to scream. 
+The Nerd and the Investigator wake up from their respective head head-injuries and begin to scream. 
 
 “YOU KILLED MIKEY! I CAN’T BELIEVE YOU KILLED MIKEY!”
 
 The stoner cries out “I love parties!!” 
 
 Turns out friendship is not forever, you monster.
-
-SCENARIO COMPLETE
+&lt;&lt;set $BadIce to 1&gt;&gt;
+&lt;&lt;if $S2Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S1Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Stats][$S1Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Scenario-2-Start" tags="" position="1069,201">You’re in a dark room illuminated only by the flickering static of and old CRT TV.
 &lt;&lt;set $JKtalkedToJock to 0&gt;&gt;&lt;&lt;set $JKtalkedToNerd to 0&gt;&gt;&lt;&lt;set $JKtalkedToStoner to 0&gt;&gt;&lt;&lt;set $JKtalkedToInst to 0&gt;&gt;&lt;&lt;set $BHmet to 1&gt;&gt;
 &lt;&lt;audio &quot;music2&quot; loop play&gt;&gt;
 [[Look Around|JK-LookAround]]
 [[Call Out|JK-CallOut]]
-[[Wait|JK-Wait]]</tw-passagedata><tw-passagedata pid="45" name="JK-LookAround" tags="" position="963,344">There are four other people with you, all standing in silence. A nerd, a jock, an investigator and a stoner. Everyone is waiting in an apprehensive silence.
+[[Wait|JK-Wait]]</tw-passagedata><tw-passagedata pid="45" name="JK-LookAround" tags="" position="963,344">There are four other people with you, all standing in silence. A nerd, a jock, an Investigator and a stoner. Everyone is waiting in an apprehensive silence.
 
 After some time, the TV screen turns a familiar shade of beige. Like alder wood, almost. A voice crackles through half-broken speakers,
 
@@ -449,7 +512,7 @@ The room is empty save for the archaic &#x27;80s television and your fellow vict
 
 [[Talk to Jock|JK-Jock1]]
 [[Talk to Stoner|JK-Stoner1]]
-[[Talk to investigator|JK-Inst1]]
+[[Talk to Investigator|JK-Inst1]]
 [[Talk to Nerd|JK-Nerd1]]
 [[Check the door|JKDeath-CheckDoor]]</tw-passagedata><tw-passagedata pid="49" name="JK-Jock1" tags="" position="901,601">&quot;I don&#x27;t know what the heck is going on, but I gotta find some protein quick. I have a workout later!&quot;
 &lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
@@ -465,6 +528,7 @@ The room is empty save for the archaic &#x27;80s television and your fellow vict
 [[Continue|JK-ConvHub]]</tw-passagedata><tw-passagedata pid="52" name="JKDeath-CheckDoor" tags="" position="1410,489">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 The door opens without a problem, but outside, you find yourself looking down the barrel of a shotgun at a sinister-looking dwarf. You meet his percing gaze, and he squeezes the trigger.
 &lt;&lt;audio &quot;shotty&quot; play&gt;&gt;
+&lt;&lt;set $shotCounter to $shotCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="53" name="JK-Inst1" tags="" position="1291,600">&quot;I GOTTA get out of here man.  Maybe we should split up and look for clues.&quot;
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;set $JKtalkedToInst to 1&gt;&gt;
@@ -473,13 +537,13 @@ The door opens without a problem, but outside, you find yourself looking down th
 &lt;&lt;if $JKtalkedToJock is 0&gt;&gt;
 [[Talk to Jock|JK-Jock1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToStoner is 0&gt;&gt;
 [[Talk to Stoner|JK-Stoner1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToInst is 0&gt;&gt;
-[[Talk to investigator|JK-Inst1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToNerd is 0&gt;&gt;
+[[Talk to Investigator|JK-Inst1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToNerd is 0&gt;&gt;
 [[Talk to Nerd|JK-Nerd1]]&lt;&lt;/if&gt;&gt;&lt;&lt;if $JKtalkedToInst is 1&gt;&gt;
-[[Ask investigator to open the door|JK-InstCheckDoor]]&lt;&lt;/if&gt;&gt;
+[[Ask Investigator to open the door|JK-InstCheckDoor]]&lt;&lt;/if&gt;&gt;
 [[Check the door|JKDeath-CheckDoor]]</tw-passagedata><tw-passagedata pid="55" name="JK-InstCheckDoor" tags="" position="1200,749">&quot;So you want me to take charge? Smart choice. You can go mess around with the TV and see if you can find any more information. Just stay out of my way!&quot;
 &lt;img src=&quot;images/inv.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-He approaches the door and pulls it open. After a brief moment, you hear a gunshot, and the investigator tumbles to the ground. The door slowly creaks open, but whoever fired the gun is gone. A brief examination reveals a gaping hole in his chest.
-
+He approaches the door and pulls it open. After a brief moment, you hear a gunshot, and the Investigator tumbles to the ground. The door slowly creaks open, but whoever fired the gun is gone. A brief examination reveals a gaping hole in his chest.
+&lt;&lt;set $InvDeath to $InvDeath +1&gt;&gt;
 You don&#x27;t think he&#x27;s going to make it.
 
 [[You hear a click as the TV springs to life|JK-TV2]]</tw-passagedata><tw-passagedata pid="56" name="JK-TV2" tags="" position="1200,879">The TV finishes powering on and the voice within cackles.
@@ -530,6 +594,7 @@ The basement is dim and hazy. Once you reach the bottom you see blood spatter an
 [[Search the basement|JK-SearchBasement]]</tw-passagedata><tw-passagedata pid="62" name="JKDeath-Pieces" tags="" position="963,1119">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 Looking closer, you see that some of the pieces have been arranged to make a message. It says, “look up”. Your gaze shoots upward, and you lock eyes with the dwarf, concealed in the rafters. He stares at you with glowing red eyes, releasing the trigger of a shotgun as he says “BOOM, HEADSHOT!”
 &lt;&lt;audio &quot;shotty&quot; play&gt;&gt;
+&lt;&lt;set $shotCounter to $shotCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="63" name="JK-SearchBasement" tags="" position="962,1250">In one corner are several flats of water stacked on top of each other. There is a closed door, from which the whirring noise emanates, and a lengthy message spray-painted in bright pink on the wall. The scattered Jenga pieces lay in a cluster on the other side of the room
 
 [[Examine Jenga pieces|JKDeath-Pieces]]
@@ -582,6 +647,7 @@ Blockhead turns its head all the way around and screams &quot;CHEATER CHEATER CH
 
 The whole room erupts in flames. Blockhead disappears in a puff of smoke, and you are burned alive.
 &lt;&lt;audio &quot;fires&quot; volume 1 play&gt;&gt;
+&lt;&lt;set $burnCounter to $burnCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="71" name="JK-BasementChallenge3" tags="" position="1366,1908">You continue to play the game, trying to ignore the Stoner. You’re unsure of what outcome cheating against this beast will bring.
 
 &quot;Hey. Hey... Try F9&quot;
@@ -621,6 +687,7 @@ You and the Jock anxiously watch as the Nerd performs his life or death operatio
 
 You pick up the chopsticks, your hands trembling. The egg timer begins to run. The entire contraption feels like it&#x27;s about to collapse. Sweat is pouring down your face as you steadily reach for the funny bone. With your shaky hands, you bump the detector while trying to remove the piece. Your face turns pale. With a click, the blades release, plunging through your wrists. You fall back, screaming in agony as blood pours from your arms. The last thing you hear as your vision goes black is the jock saying “Is he ok?”.
 &lt;&lt;audio &quot;chop&quot; play&gt;&gt;
+&lt;&lt;set $chopCounter to $chopCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="76" name="JK-BasementChallenge5" tags="" position="1415,2154">With little time left, you decide to take a chance and use the Stoner’s advice. Blockhead luckily doesn’t notice the Stoner since you’ve done a good job ignoring her up until now. 
 
 With that hit, you&#x27;re only one move away from defeating your opponent. 
@@ -632,6 +699,7 @@ The stoner whispers “A7”
 </tw-passagedata><tw-passagedata pid="77" name="JKDeath-BasementChallengeHonest" tags="" position="1277,2151">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 Ignoring the Stoner, you manage to miss three times in a row. Your vision begins to darken, and suddenly you feel your head smack against the table. The last thing you see as the heat saps the remaining life from your body is the final few grains of sand tumbling through the hourglass.
 &lt;&lt;audio &quot;fires&quot; volume 1 play&gt;&gt;
+&lt;&lt;set $burnCounter to $burnCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="78" name="JK-BasementChallenge6" tags="" position="1521,2261">With only a few seconds left, you &lt;&lt;if $JKcheater is 1&gt;&gt;take the Stoner’s help and utter “A7”. But it’s a miss! The sand in the hourglass runs out and Blockhead unleashes a terrible smelly belch. The room erupts into flames. With this, the Stoner lets out a squeal.
 &lt;img src=&quot;images/sto.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;/if&gt;&gt;&lt;&lt;if $JKcheater is 0&gt;&gt;choose to ignore the Stoner. Instead, you try “B7”, which turns out to be a hit! You’ve won. Blockhead seems pleased and is doing a dance around the furnace room squealing “FAIR AND SQUARE, FAIR AND SQUARE, FAIR AND SQUARE”. Then, out of the corner of its eye, it notices the stoner smoking in the darkness by the door.
@@ -660,6 +728,7 @@ She &lt;&lt;/if&gt;&gt;&lt;&lt;if $JKsaveStoner is 0&gt;&gt;The Stoner &lt;&lt;/
 
 It lunges at you, plunging the knife into your chest, and fiendishly squeals, “Oopsy.”
 &lt;&lt;audio &quot;chop&quot; play&gt;&gt;
+&lt;&lt;set $stabCounter to $stabCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="83" name="JK-KitchenChallenge2" tags="" position="1378,3017">You notice the amount of sweat pouring from the Nerd’s forehead. The sweat is going into his eyes causing them to redden and blink repeatedly; it’s obscuring his vision and causing him pain. You scour the kitchen for anything to help him. You find a cloth, which you run under a tap, and a pair of tongs. You rush to the Nerd’s aid and start padding the sweat from his forehead and eyes. He awkwardly purrs and whispers to you “no one has ever touched me like this before”. A single tear rolls down your right eye as you continue padding his face in disgust.  
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 You anxiously look at the egg timer; you’re almost out of time. The nerd carefully grabs the last piece, the wishbone, and places it on the tray. The weight of the collective pieces pushes the tray down, turning the board around 180 degrees, revealing a key taped to the back of the game. The nerd quickly pries the key off the game and pulls out both his hands out to give you the key. His face turns pale as he turns back and realizes he left the limited edition lightsaber chopsticks in the box (signed and used by Mark Hamill himself during the shoot of “The Empire Strikes Back”). The Nerd thrusts his right hand back into the box, but before he can pull out the the sticks the egg timer rings and the blade drops, along with the Nerds hand.
@@ -676,6 +745,7 @@ With no words, you all stare at the Nerd will soft saddened faces and he gets th
 You reply, “The coolest. Just like Mark Hamill.”
 
 The Nerd makes the biggest smile and one final tear of joy rolls down his face moments before his death.
+&lt;&lt;set $NerDeath to $NerDeath +1&gt;&gt;
 &lt;img src=&quot;images/ner.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 You all stare at the Nerd in remembrance one more time before returning to the task at hand.
 
@@ -720,6 +790,7 @@ You hear a sinister laugh,
 [[Keep waiting|JKDeath-AtticWait3]]
 [[Get out|JK-GetOut]]</tw-passagedata><tw-passagedata pid="91" name="JKDeath-AtticWait3" tags="" position="1005,3887">You vomit again and the tower destabilizes while you heave. The bodies tumble on you. The weight forces the air out of your lungs, and your vision is blocked by rotting flesh. You try to scream, but no one answers. You run out of air and slip into unconsciousness, never to awaken again.
 &lt;&lt;audio &quot;fall&quot; play&gt;&gt;
+&lt;&lt;set $crushCounter to $crushCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="92" name="JK-AtticFollowJ" tags="" position="1534,3654">You follow the Jock down the stairs and find him at the kitchen door, dragging the Nerd’s bloody corpse toward the stairs. He sizes you up.
 
 “Only one of us is making it out of here alive.”
@@ -745,6 +816,7 @@ The Closet door opens a crack and a pair of eyes peer out. You can throw yoursel
 [[Dive for the closet|JK-Closet]]</tw-passagedata><tw-passagedata pid="96" name="JKDeath-FightJ" tags="" position="1839,4085">&lt;&lt;if $hiddenInFurnace == 1&gt;&gt;The angry footsteps of the Jock close in on you. He whips open the furnace door. &lt;&lt;/if&gt;&gt;&lt;&lt;if $newHidingSpot&gt;&gt;You exit the furnace, hoping to find better refuge. But as you reach the middle of the room, the Jock comes barreling down the stairs. &lt;&lt;/if&gt;&gt;Moving instinctively and with skill, the Jock overpowers you easily. Putting you in a headlock, he snaps your neck.
 &lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;snap&quot; play&gt;&gt;
+&lt;&lt;set $snapCounter to $snapCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="97" name="JK-GetOut" tags="" position="1380,3694">You can no longer bear the horrid stench and decide it’s best to get out while you still can. With no option left you set out to find the Jock and try to work together.
 
 [[Follow the Jock|JK-AtticFollowJ]]</tw-passagedata><tw-passagedata pid="98" name="StoryInit" tags="" position="1050,9">&lt;&lt;cacheaudio &quot;aah&quot; &quot;sound/0477.ogg&quot;&gt;&gt;
@@ -777,6 +849,7 @@ He reveals a baseball bat, a 20-Sided Die, and a walkman with a Mariah Carey dis
 
 Why did you do that? Dumbass.
 &lt;&lt;audio &quot;fires&quot; play&gt;&gt;
+&lt;&lt;set $burnCounter to $burnCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="102" name="JK-D20" tags="" position="1626,4401">You’re trying to get into the mind of this game-loving torturer, and maybe this is the way to do it. You open the closet door and throw the die, trying to aim for the Jock’s gaped-open, screaming mouth. Maybe you can choke him. The Mysterious Figure watches from the shadows.
 
 You miss. The dice bounces off his nose, angering him further, and lands on the ground in between you.
@@ -791,6 +864,7 @@ It’s a 20.
 The Jock opens the door to the closet. You attempt to wrap the cord of the walkman around his neck but he simply flexes and the wire disintegrates. Moving instinctively and with skill, the Jock overpowers you easily. Putting you in a headlock, he snaps your neck. Hey, at least that was quick and painless.
 &lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;snap&quot; play&gt;&gt;
+&lt;&lt;set $snapCounter to $snapCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="104" name="JKDeath-Bat" tags="" position="1462,4272">“A very interesting choice. A logical one too. Let’s see how you do.”, says the Mysterious Figure before he disappears in a cloud of cheap cologne and used $2 scratch cards.
 
 You open the closet door and get let out a good swing. The Jock is pushed back. He laughs, “You’re tougher than you look! But not as tough as me”
@@ -798,6 +872,7 @@ You open the closet door and get let out a good swing. The Jock is pushed back. 
 Charging forward, he snatches the bat out of your grip with ease and clubs you over the head. You collapse to the ground, feeling confused. There is no light, just pain. He takes the bat again and strikes once more before everything goes black
 &lt;&lt;audio &quot;snap&quot; play&gt;&gt;
 &lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
+&lt;&lt;set $clubCounter to $clubCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="105" name="JK-SmashHim" tags="" position="1505,4521">You snag the baseball bat, and the mysterious figure vanishes in a puff of cheap cologne and used $2 scratch-cards. The walls are singing: “CHEATER, CHEATER,CHEATER,CHEATER”. But there’s not time to waste, so you better waste the Jock.
 
 Slamming the bat against his groin to stun him, you then go for the head. He crumples to the floor, unconscious but not dead.
@@ -810,7 +885,7 @@ Slamming the bat against his groin to stun him, you then go for the head. He cru
 [[Attack|JK-SmashHim]]</tw-passagedata><tw-passagedata pid="107" name="JK-MurderJock" tags="" position="1378,4549">&lt;&lt;if $JockAlive == 0&gt;&gt;You smash his head one final time. There is blood everywhere. The walls are screaming now. “CHEATERCHEATERCHEATERCHEATERCHEATERCHEATERCHEATER”
 &lt;&lt;audio &quot;snap&quot; play&gt;&gt;
  Oh god. Make it stop.
-
+&lt;&lt;set $JocDeath to $JocDeath +1&gt;&gt;
 You drag the body,&lt;&lt;/if&gt;&gt;&lt;&lt;if $JockAlive==1&gt;&gt;You drag his unconscious form,&lt;&lt;/if&gt;&gt; which is unbelievably heavy, up the stairs, along with the Nerd. &lt;&lt;if $JockAlive==1&gt;&gt;The Jock stirs.&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/joc.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 [[Let&#x27;s finish this|JK-AtticFinal]]</tw-passagedata><tw-passagedata pid="108" name="JK-ReasonWithJ3" tags="" position="1796,4666">You try to convince the Jock that the puzzle could be solved if you both went under the tower, and used your own bodies to stabilize it.
@@ -831,9 +906,11 @@ It’s a scene of joy..
 A hidden doorway opens, and the slightly charred Stoner appears and lights up a joint.
 
 “Wow, what a thing of beauty. Hahaha... took you long enough.”
+&lt;&lt;set $TeamJen to 1&gt;&gt;
+&lt;&lt;if $S1Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S2Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Stats][$S2Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;
-SCENARIO COMPLETE</tw-passagedata><tw-passagedata pid="110" name="JK-AtticFinal" tags="" position="1300,4899">You arrive at the top of the stairs, ready to face your final gruesome challenge. Who do you use to stabilize the tower?
+</tw-passagedata><tw-passagedata pid="110" name="JK-AtticFinal" tags="" position="1299,4899">You arrive at the top of the stairs, ready to face your final gruesome challenge. Who do you use to stabilize the tower?
 &lt;&lt;if $JockAlive==1&gt;&gt;
 [[Jock and Nerd|JKDeath-JNCollapse(Alive)]]
 [[Nerd and you|JK-GoodEnd]]
@@ -856,7 +933,8 @@ The blockheads look on, overjoyed at your display of teamwork and tactical think
 You won, I guess. But you also died... 
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;
-[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="112" name="JK-BadEnd" tags="" position="1502,5100">You wedge the Jock’s body underneath the tower first. It stabilizes slightly. Overpowered by unbearable guilt, you decide to skip the Nerd and just put yourself under. You don’t deserve to survive.
+&lt;&lt;set $crushCounter to $crushCounter+1&gt;&gt;
+[[Try again|Reset]]</tw-passagedata><tw-passagedata pid="112" name="JK-BadEnd" tags="" position="1503,5100">You wedge the Jock’s body underneath the tower first. It stabilizes slightly. Overpowered by unbearable guilt, you decide to skip the Nerd and just put yourself under. You don’t deserve to survive.
 
 Once you are secured underneath the pile of rotting bodies, you begin to come to terms with your own death. Only then do a parade of Blockheads emerge from the corridors, filling the room, and begin deconstructing the tower from the top down, freeing you.
 
@@ -868,7 +946,9 @@ Did anyone have to die?
 
 A hidden doorway opens, and the slightly charred Stoner appears and lights up a joint.
 
-“Wow, what a thing of beauty. Hahaha… took you long enough.”
+“Wow, what a thing of beauty. Hahaha... took you long enough.”
+&lt;&lt;set $BadJen to 1&gt;&gt;
+&lt;&lt;if $S1Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S2Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Stats][$S2Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
 &lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="JKDeath-NYCollapse" tags="" position="1500,4953">You wedge the Nerd’s body underneath the tower first. It stabilizes slightly. Overpowered by unbearable guilt, you decide to skip the Jock and just put yourself under. You don’t deserve to survive.
 
@@ -877,16 +957,19 @@ Once you are secured underneath the pile of rotting bodies, you begin to come to
 &quot;CHEATER, CHEATER, WHAT WILL YOUR FATE BE YOU DIRTY, DIRTY, DIRTY, CHEATER???&quot;
 
 The blockheads grab all your limbs and start to pull... It’s a slow and agonizing process as they tear your body apart, feasting on the limbs as they detach.
+&lt;&lt;set $pullCounter to $pullCounter+1&gt;&gt;
 &lt;&lt;audio &quot;tear&quot; play&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="114" name="JKDeath-JNCollapse(Alive)" tags="" position="1101,4799">You stuff the Jock and Nerd underneath the tower. This wasn’t wise. The Jock comes to and begins thrashing. The tower topples down on you, smothering you in rotting flesh.
 
 The Blockheads laugh and jeer at you as you suffocate.
 &lt;&lt;audio &quot;fall&quot; play&gt;&gt;
+&lt;&lt;set $crushCounter to $crushCounter+1&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="115" name="JKDeath-JNCollapse(Dead)" tags="" position="1500,4798">You stuff the smaller corpse, the Nerd, under the tower first. Then, you place the Jock, stabilizing the towering monstrosity. Nothing happens for a while... then, you hear:
 
 &quot;CHEATER, CHEATER, WHAT WILL YOUR FATE BE, YOU DIRTY, DIRTY, DIRTY, CHEATER???&quot;
 
 The blockheads grab your limbs and start to pull... It’s a slow and agonizing process as they tear your body apart, feasting on the limbs as they detach them.
+&lt;&lt;set $pullCounter to $pullCounter+1&gt;&gt;
 &lt;&lt;audio &quot;tear&quot; play&gt;&gt;
 [[Try again|Reset]]</tw-passagedata><tw-passagedata pid="116" name="JK-GoodEnd" tags="" position="1100,4950">Overcome with guilt, you decide to ditch the Jock. Let him live.
 
@@ -899,9 +982,43 @@ They are chanting
 It’s a scene of joy. The Jock comes to, and looks amazed.
 
 A hidden door slides open, and you leave together, hand in hand. Free forever.
+&lt;&lt;set $MercyJen to 1&gt;&gt;
+&lt;&lt;if $S1Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S2Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Stats][$S2Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-&lt;&lt;audio &quot;yay&quot; play&gt;&gt;
-SCENARIO COMPLETE</tw-passagedata></tw-storydata></div>
+&lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="EndGame" tags="" position="578,5693">Congratulations, you&#x27;ve finished the game!
+
+You died a total of $deathCounter time&lt;&lt;if $deathCounter &gt;= 2 ||$deathCounter == 0&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+
+[[Start again|Stats]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="795.9999999999999,184">You have died $deathCounter time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+The jock has died $JocDeath time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+The nerd has died $NerDeath time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+The stoner has died $StoDeath time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+The investigator has died $InvDeath time&lt;&lt;if $deathCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+
+You have been shot $shotCounter time&lt;&lt;if $shotCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been pulled apart $pullCounter time&lt;&lt;if $pullCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have burned to death $burnCounter time&lt;&lt;if $burnCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been stabbed $stabCounter time&lt;&lt;if $stabCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have blown up $explodeCounter time&lt;&lt;if $explodeCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have had limbs chopped off $chopCounter time&lt;&lt;if $chopCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have had your neck snapped $snapCounter time&lt;&lt;if $snapCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been beaten to death $clubCounter time&lt;&lt;if $clubCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been strangled $chokeCounter time&lt;&lt;if $chokeCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+You have been crushed $crushCounter time&lt;&lt;if $crushCounter &gt;= 2&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+
+&lt;&lt;if $GoodIce == 1&gt;&gt; You have obtained the Surprise Party ending.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $BadIce == 1&gt;&gt; You have obtained the Unfortunate Misunderstanding ending.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $TeamJen == 1&gt;&gt; You have obtained the Friendly Fun ending.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $MercyJen == 1&gt;&gt; You have obtained the Survivors ending.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $BadJen == 1&gt;&gt; You have obtained the Cheater ending.&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $currentScenario == 1&gt;&gt;
+&lt;&lt;if $S2Complete == 0&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $currentScenario == 2&gt;&gt;
+&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(/^(?:(?:uncaught\s+(?:exception:\s+)?)?error:\s+)+/i,"")+".":": unknown error."),"object"===("undefined"==typeof n?"undefined":_typeof(n))&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}();!function(){function e(e,t){var a=String(e);switch(t){case"start":return a&&r.test(a)?a.replace(r,""):a;case"end":return a&&n.test(a)?a.replace(n,""):a;default:throw new Error('_trimFrom called with incorrect where parameter value: "'+t+'"')}}function t(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n="undefined"==typeof t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var r=/^[\s\u00A0\uFEFF][\s\u00A0\uFEFF]*/,n=/[\s\u00A0\uFEFF][\s\u00A0\uFEFF]*$/;Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(t===n||t!==t&&n!==n)return!0}return!1}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(e,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(e,10);return i<=a?n:t(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(e,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(e,10);return i<=a?n:n+t(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return e(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return e(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return e(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return e(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r,r<0&&(r=0)),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n,n<0&&(n=e-1)),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if(null==e||"object"!==("undefined"==typeof e?"undefined":_typeof(e))||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){var r=0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1));return e[r]}}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;(r=e.call(this,t,r))!==-1;)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=Array.prototype.splice,a=Array.prototype.concat.apply([],arguments),i=[],o=0,s=a.length;o<s;++o)for(var u=a[o],l=0;(l=t.call(this,u,l))!==-1;)r.apply(i,n.call(this,l,1));return i}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.reduce.call(this,function(e,t){return e.concat(Array.isArray(t)?t.flatten():t)},[])}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do a.push(n.call(this,_random(0,i--),1)[0]);while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return this[t]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do o=_random(0,i);while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function e(t,r,n){var e=Number(t);return Number.isNaN(e)?NaN:e.clamp(r,n)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||!function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch("undefined"==typeof i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return String.prototype.indexOf.apply(this,arguments)!==-1}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;(n=t.call(this,e,n))!==-1;)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n,a<0&&(a=0)):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return"undefined"!=typeof r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return n===-1?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return n===-1?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Windows:t||e.includes("iemobile"),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null;return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a})}(),_ref3=function(){function e(t){if("object"!==("undefined"==typeof t?"undefined":_typeof(t))||null==t)return t;if("function"==typeof t.clone)return t.clone(!0);if(t.nodeType&&"function"==typeof t.cloneNode)return t.cloneNode(!0);var r=void 0;return Array.isArray(t)?r=[]:t instanceof Date?r=new Date(t.getTime()):t instanceof Map?(r=new Map,t.forEach(function(t,n){r.set(n,e(t))})):t instanceof RegExp?r=new RegExp(t):t instanceof Set?(r=new Set,t.forEach(function(t){r.add(e(t))})):r=Object.create(Object.getPrototypeOf(t)),Object.keys(t).forEach(function(n){return r[n]=e(t[n])}),r}function t(e){for(var t=document.createDocumentFragment(),r=document.createElement("p"),n=void 0;null!==(n=e.firstChild);){if(n.nodeType===Node.ELEMENT_NODE){var a=n.nodeName.toUpperCase();switch(a){case"BR":if(null!==n.nextSibling&&n.nextSibling.nodeType===Node.ELEMENT_NODE&&"BR"===n.nextSibling.nodeName.toUpperCase()){e.removeChild(n.nextSibling),e.removeChild(n),t.appendChild(r),r=document.createElement("p");continue}if(!r.hasChildNodes()){e.removeChild(n);continue}break;case"ADDRESS":case"ARTICLE":case"ASIDE":case"BLOCKQUOTE":case"CENTER":case"DIV":case"DL":case"FIGURE":case"FOOTER":case"FORM":case"H1":case"H2":case"H3":case"H4":case"H5":case"H6":case"HEADER":case"HR":case"MAIN":case"NAV":case"OL":case"P":case"PRE":case"SECTION":case"TABLE":case"UL":r.hasChildNodes()&&(t.appendChild(r),r=document.createElement("p")),t.appendChild(n);continue}}r.appendChild(n)}r.hasChildNodes()&&t.appendChild(r),e.appendChild(t)}function r(){try{return document.activeElement||null}catch(e){return null}}function n(e,t,r){var n="object"===("undefined"==typeof e?"undefined":_typeof(e))?e:document.getElementById(e);if(null==n)return null;var a=Array.isArray(t)?t:[t];jQuery(n).empty();for(var i=0,o=a.length;i<o;++i)if(Story.has(a[i]))return new Wikifier(n,Story.get(a[i]).processText().trim()),n;if(null!=r){var s=String(r).trim();""!==s&&new Wikifier(n,s)}return n}function a(e,t,r){return jQuery(document.createElement("span")).addClass("error").attr("title",r).text(L10n.get("errorTitle")+": "+(t||"unknown error")).appendTo(e),!1}function i(e,t){var r=i;switch("undefined"==typeof e?"undefined":_typeof(e)){case"number":if(Number.isNaN(e))return t;break;case"object":if(null===e)return t;if(Array.isArray(e))return e.map(function(e){return r(e,t)}).join(", ");if(e instanceof Set)return[].concat(_toConsumableArray(e)).map(function(e){return r(e,t)}).join(", ");if(e instanceof Map){var n=[].concat(_toConsumableArray(e)).map(function(e){return r(e[0],t)+" ⇒ "+r(e[1],t)}).join("; ");return"( "+n+" )"}return e instanceof Date?e.toLocaleString():"function"==typeof e.toString?e.toString():Object.prototype.toString.call(e);case"function":case"undefined":return t}return String(e)}return Object.freeze(Object.defineProperties({},{clone:{value:e},convertBreaks:{value:t},safeActiveElement:{value:r},setPageElement:{value:n},throwError:{value:a},toStringOrDefault:{value:i}}))}(),clone=_ref3.clone,convertBreaks=_ref3.convertBreaks,safeActiveElement=_ref3.safeActiveElement,setPageElement=_ref3.setPageElement,throwError=_ref3.throwError,toStringOrDefault=_ref3.toStringOrDefault;!function(){function e(e){13!==e.which&&32!==e.which||(e.preventDefault(),jQuery(safeActiveElement()||this).trigger("click"))}function t(e){return function(){var t=jQuery(this);t.is("[aria-pressed]")&&t.attr("aria-pressed","true"===t.attr("aria-pressed")?"false":"true"),e.apply(this,arguments)}}function r(e){return t(function(){jQuery(this).off(".aria-clickable").removeAttr("tabindex aria-controls aria-pressed").not("a,button").removeAttr("role").end().filter("button").prop("disabled",!0),e.apply(this,arguments)})}jQuery.fn.extend({ariaClick:function(n,a){if(0===this.length||0===arguments.length)return this;var i=n,o=a;return null==o&&(o=i,i=undefined),i=jQuery.extend({namespace:undefined,one:!1,selector:undefined,data:undefined,controls:undefined,pressed:undefined,label:undefined},i),"string"!=typeof i.namespace?i.namespace="":"."!==i.namespace[0]&&(i.namespace="."+i.namespace),"boolean"==typeof i.pressed&&(i.pressed=i.pressed?"true":"false"),this.filter("button").prop("type","button"),this.not("a,button").attr("role","button"),this.attr("tabindex",0),null!=i.controls&&this.attr("aria-controls",i.controls),null!=i.pressed&&this.attr("aria-pressed",i.pressed),null!=i.label&&this.attr({"aria-label":i.label,title:i.label}),this.not("button").on("keypress.aria-clickable"+i.namespace,i.selector,e),this.on("click.aria-clickable"+i.namespace,i.selector,i.data,i.one?r(o):t(o)),this}})}(),function(){jQuery.extend({wikiWithOptions:function(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];if(0!==r.length){var a=document.createDocumentFragment();r.forEach(function(t){return new Wikifier(a,t,e)});var i=[].concat(_toConsumableArray(a.querySelectorAll(".error"))).map(function(e){return e.textContent.replace(/^(?:(?:Uncaught\s+)?Error:\s+)+/,"")});if(i.length>0)throw new Error(i.join("; "))}},wiki:function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];this.wikiWithOptions.apply(this,[undefined].concat(t))}}),jQuery.fn.extend({wikiWithOptions:function(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];if(0===this.length||0===r.length)return this;var a=document.createDocumentFragment();return r.forEach(function(t){return new Wikifier(a,t,e)}),this.append(a),this},wiki:function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return this.wikiWithOptions.apply(this,[undefined].concat(t))}})}();var Util=function(){function e(e){return Object.freeze(Object.assign(Object.create(null),e))}function t(e){return Object.prototype.toString.call(e).slice(8,-1)}function r(e){var t=void 0;switch("undefined"==typeof e?"undefined":_typeof(e)){case"number":t=e;break;case"string":t=Number(e);break;default:return!1}return!Number.isNaN(t)&&Number.isFinite(t)}function n(e){return"boolean"==typeof e||"string"==typeof e&&("true"===e||"false"===e)}function a(e){return String(e).trim().replace(/[^\w\s\u2013\u2014-]+/g,"").replace(/[_\s\u2013\u2014-]+/g,"-").toLocaleLowerCase()}function i(e){if(null==e)return"";var t=String(e);return t&&h.test(t)?t.replace(p,function(e){return g[e]}):t}function o(e){if(null==e)return"";var t=String(e);return t&&y.test(t)?t.replace(m,function(e){return v[e.toLowerCase()]}):t}function s(e,t){var r=String(e),n=Math.trunc(t),a=r.charCodeAt(n);if(Number.isNaN(a))return{char:"",start:-1,end:-1};var i={char:r.charAt(n),start:n,end:n};if(a<55296||a>57343)return i;if(a>=55296&&a<=56319){var o=n+1;if(o>=r.length)return i;var s=r.charCodeAt(o);return s<56320||s>57343?i:(i.char=i.char+r.charAt(o),i.end=o,i)}if(0===n)return i;var u=n-1,l=r.charCodeAt(u);return l<55296||l>56319?i:(i.char=r.charAt(u)+i.char,i.start=u,i)}function u(){return(Has.performance?performance:Date).now()}function l(e){var t=/^([+-]?(?:\d*\.)?\d+)([Mm]?[Ss])$/,r=t.exec(String(e));if(null===r)throw new SyntaxError('invalid time value syntax: "'+e+'"');var n=Number(r[1]);if(/^[Ss]$/.test(r[2])&&(n*=1e3),Number.isNaN(n)||!Number.isFinite(n))throw new RangeError('invalid time value: "'+e+'"');return n}function c(e){if("number"!=typeof e||Number.isNaN(e)||!Number.isFinite(e)){var t=void 0;switch("undefined"==typeof e?"undefined":_typeof(e)){case"string":t='"'+e+'"';break;case"number":t=String(e);break;default:t=Object.prototype.toString.call(e)}throw new Error("invalid milliseconds: "+t)}return e+"ms"}function d(e){if(!e.includes("-"))switch(e){case"bgcolor":return"backgroundColor";case"float":return"cssFloat";default:return e}var t="-ms-"===e.slice(0,4)?e.slice(1):e;return t.split("-").map(function(e,t){return 0===t?e:e.toUpperFirst()}).join("")}function f(e){var t=document.createElement("a"),r=Object.create(null);t.href=e,t.search&&t.search.replace(/^\?/,"").splitOrEmpty(/(?:&(?:amp;)?|;)/).forEach(function(e){var t=e.split("="),n=_slicedToArray(t,2),a=n[0],i=n[1];r[a]=i});var n=t.host&&"/"!==t.pathname[0]?"/"+t.pathname:t.pathname;return{href:t.href,protocol:t.protocol,host:t.host,hostname:t.hostname,port:t.port,path:""+n+t.search,pathname:n,query:t.search,search:t.search,queries:r,searches:r,hash:t.hash}}var p=/[&<>"'`]/g,h=new RegExp(p.source),g=Object.freeze({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"}),m=/&(?:amp|#38|#x26|lt|#60|#x3c|gt|#62|#x3e|quot|#34|#x22|apos|#39|#x27|#96|#x60);/gi,y=new RegExp(m.source,"i"),v=Object.freeze({"&amp;":"&","&#38;":"&","&#x26;":"&","&lt;":"<","&#60;":"<","&#x3c;":"<","&gt;":">","&#62;":">","&#x3e;":">","&quot;":'"',"&#34;":'"',"&#x22;":'"',"&apos;":"'","&#39;":"'","&#x27;":"'","&#96;":"`","&#x60;":"`"});return Object.freeze(Object.defineProperties({},{toEnum:{value:e},toStringTag:{value:t},isNumeric:{value:r},isBoolean:{value:n},slugify:{value:a},escape:{value:i},unescape:{value:o},charAndPosAt:{value:s},fromCssTime:{value:l},toCssTime:{value:c},fromCssProperty:{value:d},parseUrl:{value:f},now:{value:u},random:{value:Math.random},entityEncode:{value:i},entityDecode:{value:o},evalExpression:{value:function(){return Scripting.evalJavaScript.apply(Scripting,arguments)}},evalStatements:{value:function(){return Scripting.evalJavaScript.apply(Scripting,arguments)}}}))}(),SimpleAudio=function(){function e(){return g}function t(e){g=!!e,l("mute",g)}function r(){return p}function n(e){p=Math.clamp(e,.2,5),l("rate",p)}function a(){return h}function i(e){h=Math.clamp(e,0,1),l("volume",h)}function o(){l("stop")}function s(e,t){if("function"!=typeof t)throw new Error("callback parameter must be a function");f.set(e,t)}function u(e){f.delete(e)}function l(e,t){f.forEach(function(r){return r(e,t)})}function c(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return new(Function.prototype.bind.apply(m,[null].concat(t)))}function d(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return new(Function.prototype.bind.apply(y,[null].concat(t)))}var f=new Map,p=1,h=1,g=!1,m=function(){function e(t){if(_classCallCheck(this,e),Array.isArray(t))this._create(t);else{if(!(t instanceof e))throw new Error("sources parameter must be an array of either URLs or source objects");this._copy(t)}}return _createClass(e,[{key:"_create",value:function(t){if(!Array.isArray(t)||0===t.length)throw new Error("sources parameter must be an array of either URLs or source objects");var r=/^data:\s*audio\/([^;,]+)\s*[;,]/i,n=/\.([^.\/\\]+)$/,a=e.getType,i=[],o=document.createElement("audio");if(t.forEach(function(e){var t=null;switch("undefined"==typeof e?"undefined":_typeof(e)){case"string":var s=void 0;if("data:"===e.slice(0,5)){if(s=r.exec(e),null===s)throw new Error("source data URI missing media type")}else if(s=n.exec(Util.parseUrl(e).pathname),null===s)throw new Error("source URL missing file extension");var u=a(s[1]);null!==u&&(t={src:e,type:u});break;case"object":if(null===e)throw new Error("source object cannot be null");if(!e.hasOwnProperty("src"))throw new Error('source object missing required "src" property');if(!e.hasOwnProperty("format"))throw new Error('source object missing required "format" property');var l=a(e.format);null!==l&&(t={src:e.src,type:l});break;default:throw new Error("invalid source value (type: "+("undefined"==typeof e?"undefined":_typeof(e))+")")}if(null!==t){var c=document.createElement("source");c.src=t.src,c.type=Browser.isOpera?t.type.replace(/;.*$/,""):t.type,o.appendChild(c),i.push(t)}}),!o.hasChildNodes())if(Browser.isIE)o.src=undefined;else{var s=document.createElement("source");s.src=undefined,s.type=undefined,o.appendChild(s)}this._finalize(o,i,clone(t))}},{key:"_copy",value:function(t){if(!(t instanceof e))throw new Error("original parameter must be an instance of AudioWrapper");this._finalize(t.audio.cloneNode(!0),clone(t.sources),clone(t.originalSources))}},{key:"_finalize",value:function(e,t,r){var n=this;Object.defineProperties(this,{audio:{configurable:!0,value:e},sources:{configurable:!0,value:Object.freeze(t)},originalSources:{configurable:!0,value:Object.freeze(r)},_error:{writable:!0,value:!1},_faderId:{writable:!0,value:null},_mute:{writable:!0,value:!1},_rate:{writable:!0,value:1},_volume:{writable:!0,value:1}}),jQuery(this.audio).on("loadstart",function(){
