@@ -1,7 +1,8 @@
-<tw-storydata name="Back to Black" startnode="7" creator="Twine" creator-version="2.1.3" ifid="3E610642-5310-4A14-A1CD-4A12A49BD54D" format="SugarCube" format-version="2.20.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.aliens:hover {
+<tw-storydata name="Back to Black" startnode="7" creator="Twine" creator-version="2.1.3" ifid="3E610642-5310-4A14-A1CD-4A12A49BD54D" format="SugarCube" format-version="2.18.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.aliens:hover {
   opacity: 0;
   transition: 1s all ease;
 }
+
 
 
 
@@ -86,6 +87,7 @@
 
 
 
+
 </script><tw-passagedata pid="1" name="Scenario-1-Start" tags="" position="364,569">You awake in a freezing cold, dark space. Your hands and feet are bound and there is an opaque mask blocking your vision. The icy floor shakes intermittently. Slight noises can be heard around you; they sound human.
 &lt;&lt;audio &quot;music1&quot; loop play&gt;&gt;
 [[Scream for help|ICTDeath-ScreamBlind]]
@@ -106,7 +108,7 @@ Across from you is a a girl, also maskless, who has managed to loosen her wrist 
 [[Talk to the Stoner|ICT-StonerConv1]]
 [[Scream for help|ICTDeath-ScreamNoBlind]]</tw-passagedata><tw-passagedata pid="5" name="ICT-AfterListen" tags="" position="497,697">The floor continues to shake occasionally, and your fingers feel stiff from the cold.
 [[Scream for help|ICTDeath-ScreamBlind]]
-[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="798.3333333333334,328">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="798,328">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;set $deathCounter to $deathCounter +1&gt;&gt;
 &lt;img src=&quot;images/ver.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;470&quot;&gt;
 &lt;&lt;audio &quot;aah&quot; play&gt;&gt;
@@ -885,7 +887,7 @@ A hidden door slides open, and you leave together, hand in hand. Free forever.
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 You died a total of $deathCounter time&lt;&lt;if $deathCounter &gt;= 2 ||$deathCounter == 0&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 
-[[Start again|Stats][$currentScenario=3]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="795.9999999999999,184">You have died $deathCounter time&lt;&lt;if $deathCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+[[Start again|Stats][$currentScenario=3]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="795,184">You have died $deathCounter time&lt;&lt;if $deathCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 You have been shot $shotCounter time&lt;&lt;if $shotCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 You have been pulled apart $pullCounter time&lt;&lt;if $pullCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 You have burned to death $burnCounter time&lt;&lt;if $burnCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
