@@ -48,7 +48,11 @@
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">//config.history.controls = false;
+
+
 
 
 
@@ -108,11 +112,12 @@ Across from you is a a girl, also maskless, who has managed to loosen her wrist 
 [[Talk to the Stoner|ICT-StonerConv1]]
 [[Scream for help|ICTDeath-ScreamNoBlind]]</tw-passagedata><tw-passagedata pid="5" name="ICT-AfterListen" tags="" position="497,697">The floor continues to shake occasionally, and your fingers feel stiff from the cold.
 [[Scream for help|ICTDeath-ScreamBlind]]
-[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="798,328">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-&lt;&lt;set $deathCounter to $deathCounter +1&gt;&gt;
-&lt;img src=&quot;images/ver.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;470&quot;&gt;
+[[Try to free yourself|ICT-BlindfoldOff]]</tw-passagedata><tw-passagedata pid="6" name="Reset" tags="" position="798,328">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $deathCounter to $deathCounter +1&gt;&gt;&lt;img src=&quot;images/ver.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;470&quot;&gt;
 &lt;&lt;audio &quot;aah&quot; play&gt;&gt;
-&lt;&lt;if $S1Complete==1 &amp;&amp; $S2Complete==1&gt;&gt;Congratulations, you&#x27;ve finished the game!&lt;&lt;/if&gt;&gt;.
+&lt;&lt;if $S1Complete==1 &amp;&amp; $S2Complete==1&gt;&gt;Congratulations, you&#x27;ve finished the game!
+
+&lt;&lt;/if&gt;&gt;&lt;&lt;if $currentScenario == 1&gt;&gt;&lt;&lt;if $S2Complete == 0&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $currentScenario == 2&gt;&gt;&lt;&lt;if $S1Complete == 0&gt;&gt;[[Continue|Scenario-1-Start][$currentScenario=1]]&lt;&lt;else&gt;&gt;[[Continue|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $currentScenario == 3&gt;&gt;[[I Scream, You Scream|Scenario-1-Start][$currentScenario=1]]
+[[The Jenga Killer|Scenario-2-Start][$currentScenario=2]]&lt;&lt;/if&gt;&gt;
 
 [[Stats|Stats]]</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="826,26">
 The story so far:
@@ -883,11 +888,11 @@ A hidden door slides open, and you leave together, hand in hand. Free forever.
 &lt;&lt;set $MercyJen to 1&gt;&gt;
 &lt;&lt;if $S1Complete==1&gt;&gt;[[SCENARIO COMPLETE|EndGame][$S2Complete = 1]]&lt;&lt;else&gt;&gt;[[SCENARIO COMPLETE|Stats][$S2Complete = 1]]&lt;&lt;/if&gt;&gt;
 &lt;img src=&quot;images/you.png&quot; alt=&quot;failure!&quot; width=&quot;370&quot; height=&quot;370&quot;&gt;
-&lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="EndGame" tags="" position="578,5693">Congratulations, you&#x27;ve finished the game!
+&lt;&lt;audio &quot;yay&quot; play&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="EndGame" tags="" position="743,5522">Congratulations, you&#x27;ve finished the game!
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 You died a total of $deathCounter time&lt;&lt;if $deathCounter &gt;= 2 ||$deathCounter == 0&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 
-[[Start again|Stats][$currentScenario=3]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="795,184">You have died $deathCounter time&lt;&lt;if $deathCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
+[[Start again|Stats][$currentScenario=3]]</tw-passagedata><tw-passagedata pid="118" name="Stats" tags="" position="800,179">You have died $deathCounter time&lt;&lt;if $deathCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 You have been shot $shotCounter time&lt;&lt;if $shotCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 You have been pulled apart $pullCounter time&lt;&lt;if $pullCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
 You have burned to death $burnCounter time&lt;&lt;if $burnCounter != 1&gt;&gt;s&lt;&lt;/if&gt;&gt;.
